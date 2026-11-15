@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playground | Pedro Medeiros</title>
+  <meta name="description" content="Product Designer no Brasil. Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+  <meta property="og:title" content="Playground | Pedro Medeiros">
+  <meta property="og:description" content="Product Designer no Brasil. Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+  <meta property="og:image" content="/assets/covers/projeto-01.svg">
+  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+  <link rel="alternate" hreflang="pt-BR" href="/playground/">
+  <link rel="alternate" hreflang="en" href="/en/playground/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <script src="/theme-init.js"></script>
+  <script src="/main.js" defer></script>
+  <!-- Analytics: desligado. Adicione o script do provedor aqui quando quiser medir visitas. -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="shell">
+    <header class="top fade-in" style="--n:0">
+      <a class="top-id" href="/">
+        <!-- FOTO: troque /assets/avatar.svg pela sua foto (ex.: /assets/avatar.webp, 88×88 ou maior) -->
+        <img class="avatar" src="/assets/avatar.svg" alt="Foto de Pedro Medeiros" width="44" height="44">
+        <span class="top-name">
+          <strong>Pedro Medeiros</strong>
+          <span>Product Designer</span>
+        </span>
+      </a>
+      <div class="top-tools">
+        <nav class="menu" aria-label="Principal"><a href="/playground/" aria-current="page">Playground</a></nav>
+        <a class="ghost-btn lang-btn" href="/en/playground/" hreflang="en" lang="en" title="Read in English" aria-label="Read in English"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="#fff"/><g fill="#b22234"><rect x="1.5" y="4.5" width="29" height="2.6"/><rect x="1.5" y="9.8" width="29" height="2.6"/><rect x="1.5" y="15.1" width="29" height="2.6"/><rect x="1.5" y="20.4" width="29" height="2.6"/><rect x="1.5" y="25" width="29" height="2.5"/></g><rect x="1.5" y="4.5" width="14" height="12.4" fill="#3c3b6e"/><g fill="#fff"><circle cx="4.5" cy="7.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="12.5" cy="7.5" r=".8"/><circle cx="6.5" cy="10.5" r=".8"/><circle cx="10.5" cy="10.5" r=".8"/><circle cx="4.5" cy="13.5" r=".8"/><circle cx="8.5" cy="13.5" r=".8"/><circle cx="12.5" cy="13.5" r=".8"/></g><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="none" stroke="#000" stroke-opacity=".15"/></svg></a>
+        <button class="ghost-btn theme-btn" type="button" data-theme-btn aria-label="Alternar tema claro e escuro">
+          <svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.6 9.6A5.6 5.6 0 0 1 6.4 2.4a5.6 5.6 0 1 0 7.2 7.2Z"/></svg>
+          <svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.6v1.3M8 13.1v1.3M1.6 8h1.3M13.1 8h1.3M3.5 3.5l.9.9M11.6 11.6l.9.9M3.5 12.5l.9-.9M11.6 4.4l.9-.9"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="page-intro fade-in" style="--n:1">
+        <h1>Explorações, estudos e <span class="serif">peças soltas.</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </section>
+
+      <!-- PEÇAS: duas colunas; data-zoom = imagem ampliada no diálogo -->
+      <section class="block fade-in" style="--n:2" aria-label="Playground">
+        <div class="pieces">
+          <ul class="pieces-col">
+            <li class="piece">
+              <button type="button" data-zoom="/assets/playground/peca-01.svg" aria-label="Peça 01">
+                <img src="/assets/playground/peca-01.svg" alt="Peça 01" width="800" height="600" loading="lazy" decoding="async">
+              </button>
+              <p class="piece-label">Peça 01 <span>· Lorem</span></p>
+            </li>
+            <li class="piece">
+              <button type="button" data-zoom="/assets/playground/peca-03.svg" aria-label="Peça 03">
+                <img src="/assets/playground/peca-03.svg" alt="Peça 03" width="800" height="800" loading="lazy" decoding="async">
+              </button>
+              <p class="piece-label">Peça 03 <span>· Lorem</span></p>
+            </li>
+            <li class="piece">
+              <button type="button" data-zoom="/assets/playground/peca-05.svg" aria-label="Peça 05">
+                <img src="/assets/playground/peca-05.svg" alt="Peça 05" width="800" height="1000" loading="lazy" decoding="async">
+              </button>
+              <p class="piece-label">Peça 05 <span>· Lorem</span></p>
+            </li>
+          </ul>
+          <ul class="pieces-col">
+            <li class="piece">
+              <button type="button" data-zoom="/assets/playground/peca-02.svg" aria-label="Peça 02">
+                <img src="/assets/playground/peca-02.svg" alt="Peça 02" width="800" height="1000" loading="lazy" decoding="async">
+              </button>
+              <p class="piece-label">Peça 02 <span>· Lorem</span></p>
+            </li>
+            <li class="piece">
+              <button type="button" data-zoom="/assets/playground/peca-04.svg" aria-label="Peça 04">
+                <img src="/assets/playground/peca-04.svg" alt="Peça 04" width="800" height="520" loading="lazy" decoding="async">
+              </button>
+              <p class="piece-label">Peça 04 <span>· Lorem</span></p>
+            </li>
+            <li class="piece">
+              <button type="button" data-zoom="/assets/playground/peca-06.svg" aria-label="Peça 06">
+                <img src="/assets/playground/peca-06.svg" alt="Peça 06" width="800" height="640" loading="lazy" decoding="async">
+              </button>
+              <p class="piece-label">Peça 06 <span>· Lorem</span></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span>Pedro Medeiros © 2026</span>
+      <nav class="foot-menu" aria-label="Rodapé"><a href="/playground/" aria-current="page">Playground</a></nav>
+      <span class="foot-clock" data-clock>Brasil</span>
+    </footer>
+  </div>
+
+  <dialog class="zoom" data-zoom-dialog aria-label="Playground">
+    <form method="dialog"><button class="ghost-btn zoom-close" aria-label="Fechar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></form>
+    <img alt="">
+  </dialog>
+  <button class="ghost-btn inspect-btn" type="button" data-inspect-btn aria-haspopup="menu" aria-expanded="false" aria-label="Inspecionar" title="Inspecionar">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5 1.5 8 5 11.5M11 4.5 14.5 8 11 11.5M9.2 2.8l-2.4 10.4"/></svg>
+  </button>
+</body>
+</html>
