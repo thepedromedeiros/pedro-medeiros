@@ -73,7 +73,7 @@ aponte o `href` da linha na home e ajuste o `up-next` dos cases vizinhos.
 ## Marca, tema e fonte
 
 - **Cor de ação:** laranja `#FF5E00` (`--accent`), texto branco no botão principal. Laranja em texto: `--accent-text`.
-- **Tema:** só escuro por enquanto (`--bg: #050505`). O tema claro segue no CSS; para reativar, volte a ler
+- **Tema:** só escuro por enquanto (`--bg: #121110`, off-black quente). O tema claro segue no CSS; para reativar, volte a ler
   `localStorage` em `theme-init.js` e devolva um botão de troca.
 - **Fonte:** Manrope (`--font-sans`) + Geist Mono para números e etiquetas.
 

@@ -23,7 +23,7 @@ mostrar os dois lado a lado.
 | Cor | Hex | Uso aqui |
 | --- | --- | --- |
 | Stack Orange ([stackoverflow.design](https://stackoverflow.design/brand/color)) | `#FF5E00` | `--accent` (ação) e `--accent-text` no escuro |
-| Quase preto | `#050505` | `--bg` do escuro |
+| Off-black quente | `#121110` | `--bg` do escuro; demais superfícies e linhas são degraus no mesmo matiz |
 | Off-White | `#F0EFEE` | `--fg` do escuro e `--panel` do claro |
 | Off-Black | `#201C1D` | `--fg` do claro |
 
@@ -33,30 +33,30 @@ Contraste entre parênteses = contra o `--bg` do tema (WCAG).
 
 | Token | Escuro (ativo) | Claro (reserva) | Papel | Onde é usado |
 | --- | --- | --- | --- | --- |
-| `--bg` | `#050505` | `#faf9f8` | Fundo | Página, células de `.numbers`, fundo do `.section-nav` |
-| `--panel` | `#0e0e0e` | `#f0efee` | Superfície de mídia | Miniaturas `.work-thumb`, `.media img`, `.tray`, `.soon-box` |
-| `--chip` | `#141414` | `#ffffff` | Superfície elevada | `.cta` secundário e pílulas inativas, ícone do `.brand`, `.grave-icon`, `.swatch-list li` |
-| `--fg` | `#f0efee` (17.8:1) | `#201c1d` (16.0:1) | Texto primário | Título da home, nomes, títulos |
-| `--muted` | `#a3a3a3` (8.1:1) | `#635c5a` (6.2:1) | Texto secundário | Parágrafos de apoio, `.work-desc`, `.block-title`, `.grave-name`, ícones |
-| `--subtle` | `#6e6e6e` (4.0:1) | `#918987` (3.3:1) | Texto terciário | Ano, categoria, rodapé, `figcaption`, `.grave-desc`, `dt` |
-| `--line` | `rgba(255,255,255,.08)` ≈ `#191919` | `rgba(32,28,29,.08)` ≈ `#E9E7E6` | Divisória | Anéis de imagens, avatar e chips; linhas do rodapé e dos cases |
-| `--line-strong` | `rgba(255,255,255,.15)` ≈ `#2A2A2A` | `rgba(32,28,29,.14)` ≈ `#DBDAD9` | Contorno | Anel do `.cta` secundário e das pílulas inativas, sublinhado de links |
-| `--hover` | `rgba(255,255,255,.05)` ≈ `#121212` | `rgba(32,28,29,.035)` ≈ `#F2F1F0` | Hover | Fundo da linha `.work`, `.ghost-btn`, `.cta`, bandeira ativa |
+| `--bg` | `#121110` | `#faf9f8` | Fundo | Página, células de `.numbers`, fundo do `.section-nav` |
+| `--panel` | `#1a1917` | `#f0efee` | Superfície de mídia | Miniaturas `.work-thumb`, `.media img`, `.tray`, `.soon-box` |
+| `--chip` | `#22201e` | `#ffffff` | Superfície elevada | `.cta` secundário e pílulas inativas, ícone do `.brand`, `.grave-icon`, `.swatch-list li` |
+| `--fg` | `#f0efee` (16.4:1) | `#201c1d` (16.0:1) | Texto primário | Título da home, nomes, títulos |
+| `--muted` | `#aca69f` (7.8:1) | `#635c5a` (6.2:1) | Texto secundário | Parágrafos de apoio, `.work-desc`, `.block-title`, `.grave-name`, ícones |
+| `--subtle` | `#7a746e` (4.1:1) | `#918987` (3.3:1) | Texto terciário | Ano, categoria, rodapé, `figcaption`, `.grave-desc`, `dt` |
+| `--line` | `rgba(255,247,240,.08)` ≈ `#252322` | `rgba(32,28,29,.08)` ≈ `#E9E7E6` | Divisória | Anéis de imagens, avatar e chips; linhas do rodapé e dos cases |
+| `--line-strong` | `rgba(255,247,240,.15)` ≈ `#363432` | `rgba(32,28,29,.14)` ≈ `#DBDAD9` | Contorno | Anel do `.cta` secundário e das pílulas inativas, sublinhado de links |
+| `--hover` | `rgba(255,247,240,.05)` ≈ `#1E1C1B` | `rgba(32,28,29,.035)` ≈ `#F2F1F0` | Hover | Fundo da linha `.work`, `.ghost-btn`, `.cta`, bandeira ativa |
 | `--accent` | `#ff5e00` | `#ff5e00` | **Ação / marca** | `::selection`, sublinhado no hover, foco. **Não é usado em botões** |
 | `--accent-fg` | `#ffffff` | `#ffffff` | Texto sobre a ação | Texto da `::selection` |
-| `--btn-bg` | `#ededed` | `#201c1d` | **Botão principal (neutro)** | Fundo do `.cta--main` (WhatsApp) e da pílula ativa |
-| `--btn-fg` | `#0a0a0a` (16.9:1) | `#faf9f8` (16.0:1) | Texto do botão principal | Texto e ícone do `.cta--main` e da pílula ativa |
+| `--btn-bg` | `#eeece9` | `#201c1d` | **Botão principal (neutro)** | Fundo do `.cta--main` (WhatsApp) e da pílula ativa |
+| `--btn-fg` | `#121110` (16.0:1 sobre `--btn-bg`) | `#faf9f8` (16.0:1 sobre `--btn-bg`) | Texto do botão principal | Texto e ícone do `.cta--main` e da pílula ativa |
 | `--btn-hover` | `#ffffff` | `#3a3536` | Hover do botão principal | `.cta--main:hover`, pílula ativa no hover |
-| `--accent-text` | `#ff5e00` (6.7:1) | `#b84400` (5.2:1) | Laranja como texto | `.hl`, `.case-lede em`, hover de `.work-name`, contador da `.step-list` |
+| `--accent-text` | `#ff5e00` (6.2:1) | `#b84400` (5.2:1) | Laranja como texto | `.hl`, `.case-lede em`, hover de `.work-name`, contador da `.step-list` |
 | `--accent-soft` | `rgba(255,94,0,.14)` | `rgba(255,94,0,.10)` | Fundo laranja sutil | Reservado (sem uso atual) |
 | `--focus` | `= --accent-text` | `= --accent-text` | Foco | `:focus-visible` (outline 2px) |
 
 **Botões são neutros, nunca laranja.** O botão principal (WhatsApp) e a pílula de seção ativa usam
-`--btn-bg` quase branco com texto e ícone escuros (`--btn-fg`, 16.9:1); o secundário (LinkedIn) e as
+`--btn-bg` quase branco com texto e ícone escuros (`--btn-fg`, 16.0:1); o secundário (LinkedIn) e as
 pílulas inativas são chips escuros (`--chip`) com anel `--line-strong`. O laranja continua como cor de
 ação em todo o resto: destaques de texto, hover de links e nomes, seleção, foco.
 
-**GitHub (seção oculta):** `--gh-0…4` escuro `#1f2328 #0e4429 #006d32 #26a641 #39d353`, claro `#ebedf0 #9be9a8 #40c463 #30a14e #216e39`.
+**GitHub (seção oculta):** `--gh-0…4` escuro `#262422 #0e4429 #006d32 #26a641 #39d353`, claro `#ebedf0 #9be9a8 #40c463 #30a14e #216e39`.
 
 Cores fixas fora dos tokens: `.invert-dark` (logos escuros) usa fundo `#e4e4e4` + `filter: invert(1)` no escuro.
 
@@ -173,7 +173,7 @@ Valores fixos em px:
 
 | Nome | Escuro | Claro | Onde |
 | --- | --- | --- | --- |
-| `--shadow` | `0 1px 2px rgba(0,0,0,.5), 0 16px 40px -8px rgba(0,0,0,.9)` | `0 1px 2px rgba(32,28,29,.04), 0 12px 32px -8px rgba(32,28,29,.18)` | Reservada (elevação) |
+| `--shadow` | `0 1px 2px rgba(0,0,0,.4), 0 16px 40px -8px rgba(0,0,0,.6)` | `0 1px 2px rgba(32,28,29,.04), 0 12px 32px -8px rgba(32,28,29,.18)` | Reservada (elevação) |
 | Imagem na bandeja | `0 0 0 1px var(--line), 0 8px 24px -12px rgba(0,0,0,.18)` | igual | `.tray img` |
 
 ## 8. Movimento

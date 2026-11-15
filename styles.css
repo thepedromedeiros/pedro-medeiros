@@ -10,6 +10,7 @@
 
 /* 1. Tokens ---------------------------------------------------------------- */
 /* Marca: laranja e off-black da identidade Stack Overflow (stackoverflow.design/brand/color).
+   Escuro: off-black quente #121110, com degraus tonais no mesmo matiz.
    O site usa só o tema escuro por enquanto (theme-init.js força data-theme="dark");
    o tema claro fica aqui pronto para voltar.
    --accent = cor de ação (preenchimentos), --accent-fg = texto sobre ela (branco),
@@ -55,26 +56,26 @@
 }
 
 [data-theme="dark"] {
-  --bg: #050505;
+  --bg: #121110;
   --fg: #f0efee;
-  --muted: #a3a3a3;
-  --subtle: #6e6e6e;
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.15);
-  --hover: rgba(255, 255, 255, 0.05);
-  --chip: #141414;
-  --panel: #0e0e0e;
+  --muted: #aca69f;
+  --subtle: #7a746e;
+  --line: rgba(255, 247, 240, 0.08);
+  --line-strong: rgba(255, 247, 240, 0.15);
+  --hover: rgba(255, 247, 240, 0.05);
+  --chip: #22201e;
+  --panel: #1a1917;
   --accent: #ff5e00;
   --accent-fg: #ffffff;
   --accent-text: #ff5e00;
   --accent-soft: rgba(255, 94, 0, 0.14);
-  --btn-bg: #ededed;
-  --btn-fg: #0a0a0a;
+  --btn-bg: #eeece9;
+  --btn-fg: #121110;
   --btn-hover: #ffffff;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 16px 40px -8px rgba(0, 0, 0, 0.9);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 16px 40px -8px rgba(0, 0, 0, 0.6);
 
 
-  --gh-0: #1f2328; --gh-1: #0e4429; --gh-2: #006d32; --gh-3: #26a641; --gh-4: #39d353;
+  --gh-0: #262422; --gh-1: #0e4429; --gh-2: #006d32; --gh-3: #26a641; --gh-4: #39d353;
   color-scheme: dark;
 }
 
