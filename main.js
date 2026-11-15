@@ -60,6 +60,7 @@
         event.preventDefault();
         el.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
         history.replaceState(null, "", a.hash);
+        setActive(a.hash.slice(1));
       });
     });
 
@@ -78,6 +79,8 @@
       targets.forEach((el) => { if (el.getBoundingClientRect().top <= line) current = el.id; });
       // no fim da página, a última seção é a ativa
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) current = targets[targets.length - 1].id;
+      // Página curta (cabe inteira na tela): no topo, a primeira seção é a ativa
+      if (window.scrollY < 8 && targets[0]) current = targets[0].id;
       setActive(current);
     };
     window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });

@@ -49,9 +49,9 @@
 
       <!-- INTRO: o 1º parágrafo é o "título" (peso 600); destaques com class="hl" ficam em laranja -->
       <section class="hero fade-in" style="--n:1">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <span class="hl">sed do eiusmod tempor incididunt.</span></p>
-        <p>São mais de 00 anos em lorem ipsum, dolor sit amet e consectetur adipiscing, da ideia à interface em uso. Hoje sou product designer na <a class="brand" href="#"><img class="invert-dark" src="/assets/logos/empresa-a.svg" alt="">Empresa A</a>, onde ut enim ad minim veniam, quis nostrud exercitation.</p>
-        <p>Meu último cargo foi Lorem Designer na <a class="brand" href="#"><img class="invert-dark" src="/assets/logos/empresa-b.svg" alt="">Empresa B</a>, onde duis aute irure dolor in reprehenderit. Antes passei pela <span class="brand"><img class="invert-dark" src="/assets/logos/empresa-c.svg" alt="">Empresa C</span> e pela <span class="brand"><img class="invert-dark" src="/assets/logos/empresa-d.svg" alt="">Empresa D</span>. Excepteur sint occaecat cupidatat non proident.</p>
+        <p>Conecto <span class="hl">necessidades</span> das pessoas e <span class="hl">objetivos</span> do negócio por meio do design.</p>
+        <p>Há <strong>8 anos</strong> atuo no mercado de design, com experiências em comunicação visual, marketing e construção de produtos digitais. Atualmente, faço parte do time da <a class="brand" href="https://ecxpay.com.br/" target="_blank" rel="noopener noreferrer"><img src="/assets/logos/icon-ecx-pay.svg" alt="">Ecx Pay</a>, trabalhando na evolução dos produtos <strong>XMulti</strong>, <strong>XCorp</strong> e <strong>XFleet</strong>, em diferentes frentes que envolvem estrutura, design system, interfaces e UX web e mobile.</p>
+        <p>Construo produtos e ajudo a desenvolver processos em equipe com a AI aplicada no dia a dia.</p>
 
         <!-- REDES: X, Behance e e-mail (o LinkedIn fica só no botão de Contato) -->
         <ul class="socials">
@@ -77,14 +77,13 @@
       </section>
     </div>
 
-    <!-- COLUNA DA DIREITA (rola): atalhos, projetos, cases, insights, empresas, cemitério e rodapé -->
+    <!-- COLUNA DA DIREITA (rola): atalhos, projetos, cases, insights, empresas e rodapé (Cemitério e GitHub ficam ocultos) -->
     <div class="flow">
       <!-- ATALHOS: pílulas que rolam até cada seção (href = id da seção) -->
       <nav class="section-nav fade-in" style="--n:1" aria-label="Seções" data-section-nav>
         <a class="cta" href="#projetos">Projetos</a>
-        <a class="cta" href="#cases">Cases</a>
+        <a class="cta" href="#cases">Cases <span class="soon-tag">em breve</span></a>
         <a class="cta" href="#insights">Insights <span class="soon-tag">em breve</span></a>
-        <a class="cta" href="#cemiterio">Cemitério</a>
       </nav>
 
     <main id="conteudo">
@@ -93,70 +92,31 @@
         <h2 class="block-title" id="projetos-titulo">Projetos – O que estou construindo <small>02</small></h2>
         <ul class="rows work-list" id="projetos-lista">
           <li>
-            <a class="work" href="#">
+            <div class="work">
               <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-01.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
-              <span class="work-info"><span class="work-name">Projeto 01</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</span></span>
-              <span class="work-meta"><span class="work-tag">Categoria</span><span class="work-year mono">0000</span></span>
-            </a>
+              <span class="work-info"><span class="work-name">Voally <span class="soon-tag">building</span></span><span class="work-desc">Viaje mais, procure menos. Encontre excursões e bate-voltas tudo num lugar só.</span></span>
+              <span class="work-meta"><span class="work-tag">SaaS · IA</span><span class="work-year mono">2026</span></span>
+            </div>
           </li>
           <li>
-            <a class="work" href="#">
+            <div class="work">
               <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-02.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
-              <span class="work-info"><span class="work-name">Projeto 02</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</span></span>
-              <span class="work-meta"><span class="work-tag">Categoria</span><span class="work-year mono">0000</span></span>
-            </a>
+              <span class="work-info"><span class="work-name">Planly <span class="soon-tag">building</span></span><span class="work-desc">Organize seus eventos em família sem dor de cabeça. Um organizador de eventos familiares, facilitando a vida de quem fica responsável.</span></span>
+              <span class="work-meta"><span class="work-tag">SaaS · IA</span><span class="work-year mono">2026</span></span>
+            </div>
           </li>
         </ul>
       </section>
 
-      <!-- CASES: itens com data-extra hidden só aparecem ao clicar em "Ver mais" -->
+      <!-- CASES: por enquanto "em breve" (como Insights). As páginas /projetos/case-01 e case-02
+           ficam no repositório, mas não entram na lista até haver cases reais.
+           Quando houver itens, troque o .soon-box pela lista .work-list (e o "Ver mais", se precisar). -->
       <section class="block fade-in" style="--n:3" id="cases" aria-labelledby="cases-titulo">
-        <h2 class="block-title" id="cases-titulo">Cases <small>06</small></h2>
-        <ul class="rows work-list" id="cases-lista">
-          <li>
-            <a class="work" href="/projetos/case-01/">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-03.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
-              <span class="work-info"><span class="work-name">Case 01</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-meta"><span class="work-tag">SaaS · IA</span><span class="work-year mono">0000</span></span>
-            </a>
-          </li>
-          <li>
-            <a class="work" href="/projetos/case-02/">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-04.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
-              <span class="work-info"><span class="work-name">Case 02</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-meta"><span class="work-tag">Design System</span><span class="work-year mono">0000</span></span>
-            </a>
-          </li>
-          <li data-extra hidden>
-            <a class="work" href="#">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-05.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
-              <span class="work-info"><span class="work-name">Case 03</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-meta"><span class="work-tag">Site institucional</span><span class="work-year mono">0000</span></span>
-            </a>
-          </li>
-          <li data-extra hidden>
-            <a class="work" href="#">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-06.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
-              <span class="work-info"><span class="work-name">Case 04</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-meta"><span class="work-tag">Web & Mobile App</span><span class="work-year mono">0000</span></span>
-            </a>
-          </li>
-          <li data-extra hidden>
-            <a class="work" href="#">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-07.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
-              <span class="work-info"><span class="work-name">Case 05</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-meta"><span class="work-tag">Mobile App</span><span class="work-year mono">0000</span></span>
-            </a>
-          </li>
-          <li>
-            <a class="work" href="#">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-08.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
-              <span class="work-info"><span class="work-name">Case 06</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-meta"><span class="work-tag">Portal</span><span class="work-year mono">0000</span></span>
-            </a>
-          </li>
-        </ul>
-        <button class="show-more" type="button" aria-expanded="false" aria-controls="cases-lista" data-show-more>Ver mais</button>
+        <h2 class="block-title" id="cases-titulo"><span>Cases <span class="soon-tag">em breve</span></span> <small>00</small></h2>
+        <div class="soon-box">
+          <strong>Em breve</strong>
+          Estudos de caso sobre produtos que desenhei e o processo por trás deles.
+        </div>
       </section>
 
       <!-- EXPERIÊNCIA: oculta (remova o atributo hidden para exibir) -->
@@ -207,34 +167,18 @@
         <h2 class="block-title" id="insights-titulo"><span>Insights <span class="soon-tag">em breve</span></span> <small>00</small></h2>
         <div class="soon-box">
           <strong>Em breve</strong>
-          Notas curtas sobre produto, design e o que venho aprendendo pelo caminho. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Notas curtas sobre produto, design e o que venho aprendendo pelo caminho.
         </div>
       </section>
 
-      <!-- EMPRESAS: data-name aparece no tooltip; troque os SVGs em /assets/logos -->
-      <section class="block fade-in" style="--n:5" aria-labelledby="empresas-titulo">
-        <h2 class="block-title" id="empresas-titulo">Empresas que conhecem meu trabalho <small>20</small></h2>
+      <!-- EMPRESAS: data-name aparece no tooltip; SVGs em /assets/logos/company-1…4.svg (artboard 114×57) -->
+      <section class="block fade-in" style="--n:5" id="empresas" aria-labelledby="empresas-titulo">
+        <h2 class="block-title" id="empresas-titulo">Empresas que conhecem meu trabalho <small>04</small></h2>
         <ul class="logo-grid">
-          <li data-name="Empresa A"><img src="/assets/logos/empresa-a.svg" alt="Empresa A" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa B"><img src="/assets/logos/empresa-b.svg" alt="Empresa B" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa C"><img src="/assets/logos/empresa-c.svg" alt="Empresa C" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa D"><img src="/assets/logos/empresa-d.svg" alt="Empresa D" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa E"><img src="/assets/logos/empresa-e.svg" alt="Empresa E" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa F"><img src="/assets/logos/empresa-f.svg" alt="Empresa F" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa G"><img src="/assets/logos/empresa-g.svg" alt="Empresa G" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa H"><img src="/assets/logos/empresa-h.svg" alt="Empresa H" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa I"><img src="/assets/logos/empresa-i.svg" alt="Empresa I" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa J"><img src="/assets/logos/empresa-j.svg" alt="Empresa J" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa K"><img src="/assets/logos/empresa-k.svg" alt="Empresa K" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa L"><img src="/assets/logos/empresa-l.svg" alt="Empresa L" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa M"><img src="/assets/logos/empresa-m.svg" alt="Empresa M" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa N"><img src="/assets/logos/empresa-n.svg" alt="Empresa N" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa O"><img src="/assets/logos/empresa-o.svg" alt="Empresa O" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa P"><img src="/assets/logos/empresa-p.svg" alt="Empresa P" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa Q"><img src="/assets/logos/empresa-q.svg" alt="Empresa Q" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa R"><img src="/assets/logos/empresa-r.svg" alt="Empresa R" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa S"><img src="/assets/logos/empresa-s.svg" alt="Empresa S" loading="lazy" decoding="async"></li>
-          <li data-name="Empresa T"><img src="/assets/logos/empresa-t.svg" alt="Empresa T" loading="lazy" decoding="async"></li>
+          <li data-name="Ecx Pay"><img src="/assets/logos/company-1.svg" alt="Ecx Pay" loading="lazy" decoding="async"></li>
+          <li data-name="Gibb"><img src="/assets/logos/company-2.svg" alt="Gibb" loading="lazy" decoding="async"></li>
+          <li data-name="FacilitaPay (Atual Attrus)"><img src="/assets/logos/company-3.svg" alt="FacilitaPay (Atual Attrus)" loading="lazy" decoding="async"></li>
+          <li data-name="Sixtema Marketing"><img src="/assets/logos/company-4.svg" alt="Sixtema Marketing" loading="lazy" decoding="async"></li>
         </ul>
       </section>
 
@@ -251,14 +195,14 @@
         </div>
       </section>
 
-      <!-- CEMITÉRIO: o que tentei e não deu certo. Ícone em /assets/cemiterio/, nome riscado, descrição curta -->
-      <section class="block fade-in" style="--n:6" id="cemiterio" aria-labelledby="cemiterio-titulo">
+      <!-- CEMITÉRIO: oculto por enquanto (remova hidden e devolva a pílula em .section-nav para exibir) -->
+      <section class="block" id="cemiterio" aria-labelledby="cemiterio-titulo" hidden>
         <h2 class="block-title" id="cemiterio-titulo">Cemitério <small>06</small></h2>
         <p class="block-lede">Coisas que tentei construir e não deram certo. Lorem ipsum dolor sit amet. Descansem em paz.</p>
         <ul class="grave-list">
           <li>
             <span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-01.svg" alt="" width="36" height="36" loading="lazy" decoding="async"></span>
-            <span class="grave-text"><s class="grave-name">Projeto Alfa</s><span class="grave-desc">Lorem ipsum dolor sit amet</span></span>
+            <span class="grave-text"><s class="grave-name">Visione quadros</s><span class="grave-desc">Quadros personalizados</span></span>
           </li>
           <li>
             <span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-02.svg" alt="" width="36" height="36" loading="lazy" decoding="async"></span>

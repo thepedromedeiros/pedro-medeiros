@@ -129,7 +129,7 @@ Valores fixos em px:
 | Home (< 1024px) | Uma coluna: cabeçalho, intro, redes, contato, seções, rodapé. **Pílulas de seção escondidas** |
 | Cases e `/design/` | Coluna única de 600px (`.shell`, padding `72px 24px 48px`); mídia larga até `--wide: 880px` |
 | Linha de projeto | `.work`: grid `72px 1fr auto`, miniatura 4:3. Mobile: `60px 1fr`, sem categoria/ano |
-| Logos | `.logo-grid`: 10 colunas (5 no mobile) |
+| Logos | `.logo-grid`: flex; células iguais 2:1 (artboard 114×57); altura = célula do grid antigo de 10 colunas (5 no mobile) |
 
 | Media query | Efeito |
 | --- | --- |
@@ -200,14 +200,14 @@ Não existem mais o preview flutuante, o loader de "planta" nem o Inspetor.
 | Botão fantasma | `.ghost-btn` | 32×32, raio 8, ícone 16px | hover: `--fg` sobre `--hover` |
 | Redes | `.socials` | X, Behance, e-mail (LinkedIn só no Contato) | igual ao botão fantasma |
 | CTA | `.cta` / `.cta--main` | 36px, padding 0 14, raio 10, ícone 15 | secundário: `--chip` + anel forte, hover `--hover`; principal: fundo `--btn-bg` (quase branco), texto/ícone `--btn-fg` (escuro), hover `--btn-hover`; active .98. Sem laranja |
-| Pílulas de seção | `.section-nav .cta` | 32px, 13px; Projetos, Cases, Insights + `.soon-tag`, Cemitério | inativa = CTA secundário; ativa = CTA principal (`--btn-bg`/`--btn-fg`). Escondidas abaixo de 1024px |
+| Pílulas de seção | `.section-nav .cta` | 32px, 13px; Projetos, Cases + `.soon-tag`, Insights + `.soon-tag` (Cemitério oculto) | inativa = CTA secundário; ativa = CTA principal (`--btn-bg`/`--btn-fg`). Escondidas abaixo de 1024px |
 | Etiqueta | `.soon-tag` | Mono 10 caixa alta, neutra: cor herdada a 70% e fundo `currentColor` 14% | — |
-| Linha de projeto/case | `.work` | `.work-thumb` (72px, 4:3) + `.work-name`/`.work-desc` + `.work-meta` (categoria, ano) | hover: fundo `--hover`, nome laranja, miniatura amplia |
+| Linha de projeto/case | `.work` | `.work-thumb` (72px, 4:3) + `.work-name` (`.soon-tag` opcional) / `.work-desc` + `.work-meta` (categoria, ano). Pode ser `<a>` ou `<div>` | hover: fundo `--hover`; se for link, nome laranja e miniatura amplia |
 | Ver mais | `.show-more` | Texto 14 `--muted` | hover: `--accent-text`; revela `[data-extra]` |
-| Insights (vazio) | `.soon-box` | "Em breve" + texto | — |
+| Insights / Cases (vazio) | `.soon-box` | "Em breve" + texto | — |
 | Insight (futuro) | `.insight-list > li > a.insight` | `time` (mono) + título + descrição | hover: título laranja |
 | Cemitério | `.grave-list li` | `.grave-icon` 36px raio 9 + `s.grave-name` riscado + `.grave-desc` | — |
-| Grade de logos | `.logo-grid li` | Logo cinza a .5; `data-name` vira tooltip | hover: logo a 1, escala 1.06 |
+| Grade de logos | `.logo-grid li` | Células iguais 2:1, altura do grid de 10 colunas; o SVG preenche a caixa (já traz o recuo); logo cinza a .5; `data-name` vira tooltip | hover: logo a 1, escala 1.06 |
 | Rodapé | `.foot` | Nome © + relógio `[data-clock]` (America/Sao_Paulo) | — |
 | Case | `.case-intro`, `.facts`, `.media`, `.tray`, `.story`, `.step-list`, `.numbers`, `.swatch-list`, `.up-next` | Ver seção 16 do CSS | `.up-next` hover: seta laranja +3px |
 
