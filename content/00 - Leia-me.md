@@ -21,7 +21,7 @@ assistente leva as mudanças para o site.
 | `Insights/_Modelo - Insight.md` | — (futuro `/insights/…`) | Modelo de insight. Cada insight publicado vira uma linha na seção Insights da home |
 
 A home tem estas seções, na ordem: Cabeçalho (foto, nome, bandeiras de idioma), Introdução (o 1º
-parágrafo é o título), Redes (LinkedIn, X, Behance, e-mail), Contato, Atalhos de seção (pílulas),
+parágrafo é o título), Redes (X, Behance, e-mail), Contato, Atalhos de seção (pílulas),
 Projetos, Cases, Insights (em breve), Empresas, Cemitério e Rodapé. GitHub e Experiência estão ocultas.
 
 Hoje todo o conteúdo do site é **provisório** (lorem ipsum, `0000`, "Empresa A", "Case 01", imagens cinza).

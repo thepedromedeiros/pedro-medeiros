@@ -36,8 +36,8 @@ A home tem duas colunas no desktop: a **esquerda** (`<div class="side">`) fica f
 | Idiomas | `<nav class="lang-switch">` | Bandeiras BR/US; a do idioma da página tem `aria-current="true"` (fica colorida) |
 | Título e intro | `<section class="hero">` | 3 parágrafos; o 1º é o título (peso 600). Destaque em laranja: `<span class="hl">…</span>` |
 | Empresas na intro | `.brand` | Nome, link e logo (`assets/logos/…`); mantenha `class="invert-dark"` em logos escuros |
-| Redes | `<ul class="socials">` | LinkedIn, X, Behance e e-mail (`href`) |
-| Contato | `.contact-block` | WhatsApp: `phone=5500000000000` e `text=…`; LinkedIn: URL |
+| Redes | `<ul class="socials">` | X, Behance e e-mail (`href`); o LinkedIn fica só no botão de Contato |
+| Contato | `.contact-block` | WhatsApp: `phone=5531971361175` e `text=…` (mensagem em pt e en); LinkedIn: URL |
 | Atalhos de seção | `<nav class="section-nav">` | Pílulas com `href="#id-da-seção"`; o `soon-tag` marca "em breve" |
 | Projetos | `<section id="projetos">` | Um `<li>` por projeto: miniatura (`.work-thumb img`), nome, descrição, categoria (`work-tag`), ano (`work-year`), link. Atualize o contador `<small>` |
 | Cases | `<section id="cases">` | Igual. Itens com `data-extra hidden` aparecem após "Ver mais". Case 01/02 apontam para `/projetos/case-0X/` |

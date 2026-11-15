@@ -198,7 +198,7 @@ Não existem mais o preview flutuante, o loader de "planta" nem o Inspetor.
 | Cabeçalho | `.top` | Home: `.top-id` (avatar 44px a partir de `/assets/avatar-160/320.webp` + nome/cargo). Cases: `.back-link`. Direita: `.lang-switch` | — |
 | Idiomas | `.lang-switch a` | Bandeiras BR e US (22px) em `.ghost-btn` | Atual (`aria-current="true"`): colorida, fundo `--hover`; outra: cinza, opacidade .4 (hover .8) |
 | Botão fantasma | `.ghost-btn` | 32×32, raio 8, ícone 16px | hover: `--fg` sobre `--hover` |
-| Redes | `.socials` | LinkedIn, X, Behance, e-mail | igual ao botão fantasma |
+| Redes | `.socials` | X, Behance, e-mail (LinkedIn só no Contato) | igual ao botão fantasma |
 | CTA | `.cta` / `.cta--main` | 36px, padding 0 14, raio 10, ícone 15 | secundário: `--chip` + anel forte, hover `--hover`; principal: fundo `--btn-bg` (quase branco), texto/ícone `--btn-fg` (escuro), hover `--btn-hover`; active .98. Sem laranja |
 | Pílulas de seção | `.section-nav .cta` | 32px, 13px; Projetos, Cases, Insights + `.soon-tag`, Cemitério | inativa = CTA secundário; ativa = CTA principal (`--btn-bg`/`--btn-fg`). Escondidas abaixo de 1024px |
 | Etiqueta | `.soon-tag` | Mono 10 caixa alta, neutra: cor herdada a 70% e fundo `currentColor` 14% | — |

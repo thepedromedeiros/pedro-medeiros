@@ -56,30 +56,31 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 
 ## Redes
 
-> Onde aparece: fileira de ícones abaixo da introdução. São só estas quatro.
+> Onde aparece: fileira de ícones abaixo da introdução. São só estas três; o LinkedIn
+> fica apenas no botão grande de Contato (sem ícone duplicado).
 
 | Rede | Link |
 | --- | --- |
-| LinkedIn | https://www.linkedin.com/in/placeholder |
-| X (Twitter) | https://x.com/placeholder |
-| Behance | https://www.behance.net/placeholder |
-| E-mail | mailto:contato@placeholder.com |
+| X (Twitter) | https://x.com/themedeiross |
+| Behance | https://www.behance.net/pedromedeiros1 |
+| E-mail | mailto:pedr.henrique16medeiros@gmail.com |
 
 ---
 
 ## Contato
 
-> Onde aparece: na base da coluna da esquerda. Título "Contato" e dois botões: o principal em laranja
-> com texto branco (WhatsApp) e o secundário com contorno (LinkedIn).
+> Onde aparece: na base da coluna da esquerda. Título "Contato" e dois botões: o principal claro
+> (quase branco, texto escuro) para o WhatsApp e o secundário escuro com contorno (LinkedIn).
 
 - título: Contato
 - botão principal:
   - texto: Chamar no WhatsApp
-  - telefone: 5500000000000   %% DDI + DDD + número, só dígitos %%
-  - mensagem inicial: Olá Pedro
+  - telefone: 5531971361175   %% DDI + DDD + número, só dígitos: (31) 9 7136-1175 %%
+  - mensagem inicial: Olá Pedro, vim pelo seu portfólio e quero conversar sobre um projeto.
+  - mensagem inicial (inglês): Hi Pedro, I came across your portfolio and would like to talk about a project.
 - botão secundário:
   - texto: LinkedIn
-  - link: https://www.linkedin.com/in/placeholder
+  - link: https://www.linkedin.com/in/thepedromedeiros/
 
 ---
 
