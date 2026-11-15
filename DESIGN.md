@@ -4,7 +4,7 @@ Especificação do design system do site. Todos os valores abaixo saem de `style
 fonte da verdade. Se mudar algo lá, atualize aqui também.
 
 - **Guia visual ao vivo:** `/design/` no site. Fica fora do menu, tem `noindex` e lê os tokens direto do CSS.
-- **Princípio:** fundo quase preto, texto pequeno (15px) e o **laranja da marca** só onde há ação ou
+- **Princípio:** fundo quase preto, texto pequeno (15px) e o **laranja da marca** (nunca em botões) só onde há ação ou
   destaque. A hierarquia vem mais da cor (`--fg` → `--muted` → `--subtle`) do que do tamanho.
   Não há bordas pesadas: as superfícies se separam com anéis de 1px (`box-shadow: 0 0 0 1px`).
 - **Tema:** por enquanto o site é **só escuro**. `theme-init.js` força `data-theme="dark"` e ignora
@@ -35,22 +35,26 @@ Contraste entre parênteses = contra o `--bg` do tema (WCAG).
 | --- | --- | --- | --- | --- |
 | `--bg` | `#050505` | `#faf9f8` | Fundo | Página, células de `.numbers`, fundo do `.section-nav` |
 | `--panel` | `#0e0e0e` | `#f0efee` | Superfície de mídia | Miniaturas `.work-thumb`, `.media img`, `.tray`, `.soon-box` |
-| `--chip` | `#141414` | `#ffffff` | Superfície elevada | `.cta` e pílulas, ícone do `.brand`, `.grave-icon`, `.swatch-list li` |
+| `--chip` | `#141414` | `#ffffff` | Superfície elevada | `.cta` secundário e pílulas inativas, ícone do `.brand`, `.grave-icon`, `.swatch-list li` |
 | `--fg` | `#f0efee` (17.8:1) | `#201c1d` (16.0:1) | Texto primário | Título da home, nomes, títulos |
 | `--muted` | `#a3a3a3` (8.1:1) | `#635c5a` (6.2:1) | Texto secundário | Parágrafos de apoio, `.work-desc`, `.block-title`, `.grave-name`, ícones |
 | `--subtle` | `#6e6e6e` (4.0:1) | `#918987` (3.3:1) | Texto terciário | Ano, categoria, rodapé, `figcaption`, `.grave-desc`, `dt` |
 | `--line` | `rgba(255,255,255,.08)` ≈ `#191919` | `rgba(32,28,29,.08)` ≈ `#E9E7E6` | Divisória | Anéis de imagens, avatar e chips; linhas do rodapé e dos cases |
-| `--line-strong` | `rgba(255,255,255,.15)` ≈ `#2A2A2A` | `rgba(32,28,29,.14)` ≈ `#DBDAD9` | Contorno | Anel do `.cta` e das pílulas, sublinhado de links |
+| `--line-strong` | `rgba(255,255,255,.15)` ≈ `#2A2A2A` | `rgba(32,28,29,.14)` ≈ `#DBDAD9` | Contorno | Anel do `.cta` secundário e das pílulas inativas, sublinhado de links |
 | `--hover` | `rgba(255,255,255,.05)` ≈ `#121212` | `rgba(32,28,29,.035)` ≈ `#F2F1F0` | Hover | Fundo da linha `.work`, `.ghost-btn`, `.cta`, bandeira ativa |
-| `--accent` | `#ff5e00` | `#ff5e00` | **Ação / marca** | Fundo do `.cta--main` (WhatsApp), `::selection`, anel da pílula ativa, sublinhado no hover |
-| `--accent-fg` | `#ffffff` | `#ffffff` | Texto sobre a ação | Texto e ícone do `.cta--main` |
-| `--accent-text` | `#ff5e00` (6.7:1) | `#b84400` (5.2:1) | Laranja como texto | `.hl`, `.case-lede em`, hover de `.work-name`, pílula ativa, `.soon-tag`, contador da `.step-list` |
-| `--accent-soft` | `rgba(255,94,0,.14)` | `rgba(255,94,0,.10)` | Fundo laranja sutil | Pílula ativa, `.soon-tag` |
+| `--accent` | `#ff5e00` | `#ff5e00` | **Ação / marca** | `::selection`, sublinhado no hover, foco. **Não é usado em botões** |
+| `--accent-fg` | `#ffffff` | `#ffffff` | Texto sobre a ação | Texto da `::selection` |
+| `--btn-bg` | `#ededed` | `#201c1d` | **Botão principal (neutro)** | Fundo do `.cta--main` (WhatsApp) e da pílula ativa |
+| `--btn-fg` | `#0a0a0a` (16.9:1) | `#faf9f8` (16.0:1) | Texto do botão principal | Texto e ícone do `.cta--main` e da pílula ativa |
+| `--btn-hover` | `#ffffff` | `#3a3536` | Hover do botão principal | `.cta--main:hover`, pílula ativa no hover |
+| `--accent-text` | `#ff5e00` (6.7:1) | `#b84400` (5.2:1) | Laranja como texto | `.hl`, `.case-lede em`, hover de `.work-name`, contador da `.step-list` |
+| `--accent-soft` | `rgba(255,94,0,.14)` | `rgba(255,94,0,.10)` | Fundo laranja sutil | Reservado (sem uso atual) |
 | `--focus` | `= --accent-text` | `= --accent-text` | Foco | `:focus-visible` (outline 2px) |
 
-**Branco sobre laranja:** o texto do botão do WhatsApp é branco por decisão de marca. A relação é
-3.06:1: passa para texto grande/negrito (AA ≥ 3:1), mas fica abaixo de 4.5:1 para texto de 14px.
-Se quiser AA estrito, use `--accent-fg: #201c1d` (5.5:1) ou escureça o laranja do botão.
+**Botões são neutros, nunca laranja.** O botão principal (WhatsApp) e a pílula de seção ativa usam
+`--btn-bg` quase branco com texto e ícone escuros (`--btn-fg`, 16.9:1); o secundário (LinkedIn) e as
+pílulas inativas são chips escuros (`--chip`) com anel `--line-strong`. O laranja continua como cor de
+ação em todo o resto: destaques de texto, hover de links e nomes, seleção, foco.
 
 **GitHub (seção oculta):** `--gh-0…4` escuro `#1f2328 #0e4429 #006d32 #26a641 #39d353`, claro `#ebedf0 #9be9a8 #40c463 #30a14e #216e39`.
 
@@ -122,7 +126,7 @@ Valores fixos em px:
 | Item | Valor |
 | --- | --- |
 | Home (≥ 1024px) | `.shell--split`: grid `minmax(300px, var(--side)) minmax(0, var(--column))`, `--side: 380px`, `--column: 600px`, gap 72, padding `0 48px`. **Esquerda** `.side`: `position: sticky; top: 0; height: 100dvh`, padding `72px 0 48px`, contato preso embaixo. **Direita** `.flow`: padding `56px 0 48px`, começa pelas pílulas `.section-nav` (sticky no topo) |
-| Home (< 1024px) | Uma coluna: cabeçalho, intro, redes, contato, pílulas (rolagem horizontal no celular), seções, rodapé |
+| Home (< 1024px) | Uma coluna: cabeçalho, intro, redes, contato, seções, rodapé. **Pílulas de seção escondidas** |
 | Cases e `/design/` | Coluna única de 600px (`.shell`, padding `72px 24px 48px`); mídia larga até `--wide: 880px` |
 | Linha de projeto | `.work`: grid `72px 1fr auto`, miniatura 4:3. Mobile: `60px 1fr`, sem categoria/ano |
 | Logos | `.logo-grid`: 10 colunas (5 no mobile) |
@@ -130,7 +134,7 @@ Valores fixos em px:
 | Media query | Efeito |
 | --- | --- |
 | `min-width: 1024px` | Home em duas colunas com a esquerda fixa |
-| `max-width: 640px` | Mobile: padding `40px 20px 32px`, `.block` 56, pílulas em linha com rolagem, `.work` sem meta, Cemitério em duas linhas |
+| `max-width: 640px` | Mobile: padding `40px 20px 32px`, `.block` 56, `.work` sem meta, Cemitério em duas linhas |
 | `max-width: 400px` | Avatar 36px |
 | `pointer: coarse` | Área de toque +8px em `.show-more`, `.ghost-btn`, `.brand` |
 
@@ -160,7 +164,6 @@ Valores fixos em px:
 | --- | --- | --- |
 | Anel | `box-shadow: 0 0 0 1px var(--line)` | `.avatar`, `.brand img`, `.work-thumb`, `.grave-icon`, `.media img`, `.soon-box` |
 | Anel forte | `box-shadow: 0 0 0 1px var(--line-strong)` | `.cta`, pílulas |
-| Anel de ação | `box-shadow: 0 0 0 1px var(--accent)` | Pílula ativa |
 | Divisória | `1px solid var(--line)` | `.foot`, `.facts`, `.step-list li`, `.up-next`, `.insight` |
 | Riscado | `text-decoration: line-through 1.5px var(--subtle)` | `.grave-name` |
 | Sublinhado | `underline 1px var(--line-strong)`, offset 3px → `--accent` no hover | `a.brand`, `.text-link` |
@@ -196,9 +199,9 @@ Não existem mais o preview flutuante, o loader de "planta" nem o Inspetor.
 | Idiomas | `.lang-switch a` | Bandeiras BR e US (22px) em `.ghost-btn` | Atual (`aria-current="true"`): colorida, fundo `--hover`; outra: cinza, opacidade .4 (hover .8) |
 | Botão fantasma | `.ghost-btn` | 32×32, raio 8, ícone 16px | hover: `--fg` sobre `--hover` |
 | Redes | `.socials` | LinkedIn, X, Behance, e-mail | igual ao botão fantasma |
-| CTA | `.cta` / `.cta--main` | 36px, padding 0 14, raio 10, ícone 15 | secundário: `--chip` + anel forte, hover `--hover`; principal: fundo `--accent`, texto/ícone branco, hover opacidade .88; active .98 |
-| Pílulas de seção | `.section-nav .cta` | 32px, 13px; Projetos, Cases, Insights + `.soon-tag`, Cemitério | ativa: texto `--accent-text`, anel `--accent`, fundo `--accent-soft` |
-| Etiqueta | `.soon-tag` | Mono 10 caixa alta, pílula `--accent-soft` | — |
+| CTA | `.cta` / `.cta--main` | 36px, padding 0 14, raio 10, ícone 15 | secundário: `--chip` + anel forte, hover `--hover`; principal: fundo `--btn-bg` (quase branco), texto/ícone `--btn-fg` (escuro), hover `--btn-hover`; active .98. Sem laranja |
+| Pílulas de seção | `.section-nav .cta` | 32px, 13px; Projetos, Cases, Insights + `.soon-tag`, Cemitério | inativa = CTA secundário; ativa = CTA principal (`--btn-bg`/`--btn-fg`). Escondidas abaixo de 1024px |
+| Etiqueta | `.soon-tag` | Mono 10 caixa alta, neutra: cor herdada a 70% e fundo `currentColor` 14% | — |
 | Linha de projeto/case | `.work` | `.work-thumb` (72px, 4:3) + `.work-name`/`.work-desc` + `.work-meta` (categoria, ano) | hover: fundo `--hover`, nome laranja, miniatura amplia |
 | Ver mais | `.show-more` | Texto 14 `--muted` | hover: `--accent-text`; revela `[data-extra]` |
 | Insights (vazio) | `.soon-box` | "Em breve" + texto | — |

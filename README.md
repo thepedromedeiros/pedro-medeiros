@@ -95,7 +95,7 @@ as alterações são aplicadas no HTML (pt e en) e publicadas.
 ## Recursos
 
 - **Idioma**: bandeiras no cabeçalho alternam entre `/` e `/en/` (e entre as versões de cada case).
-- **Pílulas de seção** no topo da coluna direita: rolagem suave e seção atual em laranja.
+- **Pílulas de seção** no topo da coluna direita: rolagem suave e seção atual no estilo do botão principal (branco). Escondidas no celular/tablet (< 1024px). Botões não usam laranja.
 - **Relógio** local (horário de Brasília) no rodapé.
 - **Ver mais** revela os cases extras.
 - **Vídeos de capa** (opcional): `<video data-autoplay muted loop playsinline poster="…">`.

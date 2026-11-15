@@ -13,7 +13,9 @@
    O site usa só o tema escuro por enquanto (theme-init.js força data-theme="dark");
    o tema claro fica aqui pronto para voltar.
    --accent = cor de ação (preenchimentos), --accent-fg = texto sobre ela (branco),
-   --accent-text = laranja para texto/linhas sobre o fundo (≥ 4.5:1). */
+   --accent-text = laranja para texto/linhas sobre o fundo (≥ 4.5:1).
+   Botões NÃO usam laranja: --btn-bg/--btn-fg/--btn-hover formam o botão
+   principal neutro (quase branco no escuro); o secundário usa --chip. */
 :root, [data-theme="light"] {
   --bg: #faf9f8;
   --fg: #201c1d;
@@ -28,6 +30,9 @@
   --accent-fg: #ffffff;
   --accent-text: #b84400;
   --accent-soft: rgba(255, 94, 0, 0.1);
+  --btn-bg: #201c1d;
+  --btn-fg: #faf9f8;
+  --btn-hover: #3a3536;
   --focus: var(--accent-text);
   --shadow: 0 1px 2px rgba(32, 28, 29, 0.04), 0 12px 32px -8px rgba(32, 28, 29, 0.18);
 
@@ -63,6 +68,9 @@
   --accent-fg: #ffffff;
   --accent-text: #ff5e00;
   --accent-soft: rgba(255, 94, 0, 0.14);
+  --btn-bg: #ededed;
+  --btn-fg: #0a0a0a;
+  --btn-hover: #ffffff;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 16px 40px -8px rgba(0, 0, 0, 0.9);
 
 
@@ -365,9 +373,9 @@ a.brand:hover { text-decoration-color: var(--accent); }
 .cta:hover { background: var(--hover); }
 .cta:active { transform: scale(0.98); }
 .cta svg { width: 15px; height: 15px; color: var(--muted); }
-.cta--main { color: var(--accent-fg); background: var(--accent); box-shadow: none; }
-.cta--main:hover { background: var(--accent); opacity: 0.88; }
-.cta--main svg { color: inherit; opacity: 0.7; }
+.cta--main, .section-nav .cta[aria-current="true"] { color: var(--btn-fg); background: var(--btn-bg); box-shadow: none; }
+.cta--main:hover, .section-nav .cta[aria-current="true"]:hover { background: var(--btn-hover); }
+.cta--main svg { color: inherit; opacity: 0.85; }
 
 /* 9. Rodapé ---------------------------------------------------------------- */
 .foot {
@@ -599,7 +607,8 @@ a.brand:hover { text-decoration-color: var(--accent); }
 
 /* 18. Atalhos de seção (topo da coluna da direita) ------------------------- */
 /* Pílulas reaproveitam o botão secundário (.cta). Ficam presas no topo
-   enquanto a coluna rola; a da seção visível fica laranja. */
+   enquanto a coluna rola; a da seção visível usa o estilo do botão principal
+   (neutro, sem laranja). Abaixo de 1024px (uma coluna) as pílulas somem. */
 .section-nav {
   position: sticky;
   top: 0;
@@ -612,15 +621,15 @@ a.brand:hover { text-decoration-color: var(--accent); }
   background: linear-gradient(var(--bg) 75%, transparent);
 }
 .section-nav .cta { height: 32px; padding: 0 12px; font-size: 13px; }
-.section-nav .cta[aria-current="true"] { color: var(--accent-text); box-shadow: 0 0 0 1px var(--accent); background: var(--accent-soft); }
 .soon-tag {
   display: inline-block;
   padding: 1px 6px;
   font: 500 10px/1.5 var(--font-mono);
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--accent-text);
-  background: var(--accent-soft);
+  color: inherit;
+  opacity: 0.7;
+  background: color-mix(in srgb, currentColor 14%, transparent);
   border-radius: 999px;
 }
 .block[id], section[aria-labelledby] { scroll-margin-top: 72px; }
@@ -657,8 +666,7 @@ a.insight:hover strong { color: var(--accent-text); }
   .grave-text { display: grid; gap: 0; }
   .insight { grid-template-columns: 1fr; }
 }
-@media (max-width: 640px) {
-  .section-nav { flex-wrap: nowrap; margin-inline: -20px; padding-inline: 20px; overflow-x: auto; scrollbar-width: none; }
-  .section-nav::-webkit-scrollbar { display: none; }
-  .section-nav .cta { flex: none; }
+@media (max-width: 1023.98px) {
+  .flow .section-nav { display: none; }
+  .flow main > .block:first-of-type { margin-top: 56px; }
 }

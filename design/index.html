@@ -65,7 +65,7 @@
           <li><div class="ds-type-meta"><strong>Rótulo</strong><code>Sans 400 · 13 / 1.65</code><span>.block-title, .work-tag, .foot, figcaption, .facts dt, .story h2</span></div><p style="font-size:13px">Projetos · Legenda · Ano</p></li>
           <li><div class="ds-type-meta"><strong>Mono</strong><code>Geist Mono 400 · 12 · +0.01em</code><span>.mono, .work-year, contador de .step-list</span></div><p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.01em">2026 · 01 · 12:00</p></li>
           <li><div class="ds-type-meta"><strong>Mono pequeno</strong><code>Geist Mono 400 · 11 · +0.02em</code><span>.block-title small, .swatch-list span</span></div><p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.02em">#FAFAF9 · 08</p></li>
-          <li><div class="ds-type-meta"><strong>Etiqueta</strong><code>Geist Mono 500 · 10 / 1.5 · +0.02em · caixa alta</code><span>.soon-tag</span></div><p style="font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:0.02em;text-transform:uppercase;color:var(--accent-text)">em breve</p></li>
+          <li><div class="ds-type-meta"><strong>Etiqueta</strong><code>Geist Mono 500 · 10 / 1.5 · +0.02em · caixa alta</code><span>.soon-tag</span></div><p style="font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:0.02em;text-transform:uppercase;color:var(--muted)">em breve</p></li>
           <li><div class="ds-type-meta"><strong>Destaque</strong><code>Fonte principal, mesmo tamanho e peso do texto em volta · cor --accent-text</code><span>.hl, .case-lede em</span></div><p style="color:var(--accent-text)">sed do eiusmod tempor</p></li>
         </ol>
         <p class="ds-note">Hierarquia é feita mais por cor (<code>--fg</code> → <code>--muted</code> → <code>--subtle</code>) do que por tamanho; o laranja (<code>--accent-text</code>) marca destaques e estados ativos. "Sans" = <code>--font-sans</code> (Manrope). Corpo usa <code>text-wrap: balance</code>.</p>
@@ -86,7 +86,7 @@
           </ul>
           <h3 class="ds-h3">Texto</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--fg)"></i><div><code>--fg</code><span class="ds-val" data-token="--fg"></span><p>Texto principal, títulos, nome do projeto, fundo do botão principal</p></div></li>
+            <li><i style="background:var(--fg)"></i><div><code>--fg</code><span class="ds-val" data-token="--fg"></span><p>Texto principal, títulos, nome do projeto</p></div></li>
             <li><i style="background:var(--muted)"></i><div><code>--muted</code><span class="ds-val" data-token="--muted"></span><p>Texto secundário: parágrafos de apoio, menu, descrições, títulos de bloco</p></div></li>
             <li><i style="background:var(--subtle)"></i><div><code>--subtle</code><span class="ds-val" data-token="--subtle"></span><p>Texto terciário: anos, tags, legendas, rodapé, rótulos de meta</p></div></li>
           </ul>
@@ -97,10 +97,16 @@
           </ul>
           <h3 class="ds-h3">Marca / ação</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Laranja da marca (Stack Orange #FF5E00). Preenchimento de ações: CTA principal, seleção de texto, sublinhado no hover</p></div></li>
-            <li><i style="background:var(--accent-fg)"></i><div><code>--accent-fg</code><span class="ds-val" data-token="--accent-fg"></span><p>Texto e ícones sobre o laranja: branco (#fff), por decisão de marca (3.06:1; ok para texto grande/negrito, abaixo de AA para texto pequeno)</p></div></li>
-            <li><i style="background:var(--accent-text)"></i><div><code>--accent-text</code><span class="ds-val" data-token="--accent-text"></span><p>Laranja para texto e linhas sobre o fundo: destaques, hover de links, item ativo, foco (≥ 4.5:1)</p></div></li>
+            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Laranja da marca (Stack Orange #FF5E00). Cor de ação fora dos botões: seleção de texto, sublinhado no hover, foco</p></div></li>
+            <li><i style="background:var(--accent-fg)"></i><div><code>--accent-fg</code><span class="ds-val" data-token="--accent-fg"></span><p>Texto sobre o laranja (seleção de texto): branco</p></div></li>
+            <li><i style="background:var(--accent-text)"></i><div><code>--accent-text</code><span class="ds-val" data-token="--accent-text"></span><p>Laranja para texto e linhas sobre o fundo: destaques, hover de links e nomes, contador de passos (≥ 4.5:1)</p></div></li>
             <li><i style="background:var(--accent-soft)"></i><div><code>--accent-soft</code><span class="ds-val" data-token="--accent-soft"></span><p>Laranja translúcido para fundos sutis (reservado)</p></div></li>
+          </ul>
+          <h3 class="ds-h3">Botões (neutros, sem laranja)</h3>
+          <ul class="ds-colors">
+            <li><i style="background:var(--btn-bg)"></i><div><code>--btn-bg</code><span class="ds-val" data-token="--btn-bg"></span><p>Fundo do botão principal (WhatsApp) e da pílula de seção ativa: quase branco no escuro</p></div></li>
+            <li><i style="background:var(--btn-fg)"></i><div><code>--btn-fg</code><span class="ds-val" data-token="--btn-fg"></span><p>Texto e ícone do botão principal (16.9:1 no escuro)</p></div></li>
+            <li><i style="background:var(--btn-hover)"></i><div><code>--btn-hover</code><span class="ds-val" data-token="--btn-hover"></span><p>Hover do botão principal</p></div></li>
           </ul>
           <h3 class="ds-h3">GitHub (seção oculta)</h3>
           <ul class="ds-colors">
@@ -122,7 +128,7 @@
           </ul>
           <h3 class="ds-h3">Texto</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--fg)"></i><div><code>--fg</code><span class="ds-val" data-token="--fg"></span><p>Texto principal, títulos, nome do projeto, fundo do botão principal</p></div></li>
+            <li><i style="background:var(--fg)"></i><div><code>--fg</code><span class="ds-val" data-token="--fg"></span><p>Texto principal, títulos, nome do projeto</p></div></li>
             <li><i style="background:var(--muted)"></i><div><code>--muted</code><span class="ds-val" data-token="--muted"></span><p>Texto secundário: parágrafos de apoio, menu, descrições, títulos de bloco</p></div></li>
             <li><i style="background:var(--subtle)"></i><div><code>--subtle</code><span class="ds-val" data-token="--subtle"></span><p>Texto terciário: anos, tags, legendas, rodapé, rótulos de meta</p></div></li>
           </ul>
@@ -133,10 +139,16 @@
           </ul>
           <h3 class="ds-h3">Marca / ação</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Laranja da marca (Stack Orange #FF5E00). Preenchimento de ações: CTA principal, seleção de texto, sublinhado no hover</p></div></li>
-            <li><i style="background:var(--accent-fg)"></i><div><code>--accent-fg</code><span class="ds-val" data-token="--accent-fg"></span><p>Texto e ícones sobre o laranja: branco (#fff), por decisão de marca (3.06:1; ok para texto grande/negrito, abaixo de AA para texto pequeno)</p></div></li>
-            <li><i style="background:var(--accent-text)"></i><div><code>--accent-text</code><span class="ds-val" data-token="--accent-text"></span><p>Laranja para texto e linhas sobre o fundo: destaques, hover de links, item ativo, foco (≥ 4.5:1)</p></div></li>
+            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Laranja da marca (Stack Orange #FF5E00). Cor de ação fora dos botões: seleção de texto, sublinhado no hover, foco</p></div></li>
+            <li><i style="background:var(--accent-fg)"></i><div><code>--accent-fg</code><span class="ds-val" data-token="--accent-fg"></span><p>Texto sobre o laranja (seleção de texto): branco</p></div></li>
+            <li><i style="background:var(--accent-text)"></i><div><code>--accent-text</code><span class="ds-val" data-token="--accent-text"></span><p>Laranja para texto e linhas sobre o fundo: destaques, hover de links e nomes, contador de passos (≥ 4.5:1)</p></div></li>
             <li><i style="background:var(--accent-soft)"></i><div><code>--accent-soft</code><span class="ds-val" data-token="--accent-soft"></span><p>Laranja translúcido para fundos sutis (reservado)</p></div></li>
+          </ul>
+          <h3 class="ds-h3">Botões (neutros, sem laranja)</h3>
+          <ul class="ds-colors">
+            <li><i style="background:var(--btn-bg)"></i><div><code>--btn-bg</code><span class="ds-val" data-token="--btn-bg"></span><p>Fundo do botão principal (WhatsApp) e da pílula de seção ativa: quase branco no escuro</p></div></li>
+            <li><i style="background:var(--btn-fg)"></i><div><code>--btn-fg</code><span class="ds-val" data-token="--btn-fg"></span><p>Texto e ícone do botão principal (16.9:1 no escuro)</p></div></li>
+            <li><i style="background:var(--btn-hover)"></i><div><code>--btn-hover</code><span class="ds-val" data-token="--btn-hover"></span><p>Hover do botão principal</p></div></li>
           </ul>
           <h3 class="ds-h3">GitHub (seção oculta)</h3>
           <ul class="ds-colors">
@@ -243,7 +255,7 @@
           <li><code>.fade-in</code><span>rise 700ms · de translateY(8px) + blur(4px) + opacity 0 · atraso <code>--n × 70ms</code></span></li>
           <li><code>150–200ms</code><span>Cores, hover, tooltips, press do CTA (150ms)</span></li>
           <li><code>250–350ms</code><span>Fundo das linhas (200ms), setas (250ms), zoom da miniatura (400ms)</span></li>
-          <li><code>smooth scroll</code><span>Pílulas de seção rolam suave até a seção (scroll-margin-top 72px) e marcam a ativa em laranja</span></li>
+          <li><code>smooth scroll</code><span>Pílulas de seção rolam suave até a seção (scroll-margin-top 72px) e marcam a ativa com o estilo do botão principal (neutro). Escondidas abaixo de 1024px</span></li>
           <li><code>prefers-reduced-motion</code><span>Desliga todas as animações e transições; a rolagem das pílulas fica instantânea</span></li>
         </ul>
       </section>
