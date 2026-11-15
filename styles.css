@@ -208,6 +208,7 @@ p:last-child { margin-bottom: 0; }
 .hero { margin-top: 40px; }
 .hero p { color: var(--muted); }
 .hero p:first-child { font-weight: 600; letter-spacing: -0.005em; color: var(--fg); }
+.hero strong { font-weight: 600; color: var(--fg); }
 
 .brand {
   color: var(--fg);
@@ -311,9 +312,8 @@ a.work:hover .work-name { color: var(--accent-text); }
 
 /* 7. Logos ----------------------------------------------------------------- */
 .logo-grid {
-  /* Célula = a mesma do grid antigo de 10 colunas (quadrado). 100cqw mede a
-     largura da grade (porcentagem em height colapsava). Com poucos itens,
-     a altura se mantém e a largura acompanha a marca, sem fileira vazia. */
+  /* Células iguais, 2:1 (artboard 114×57, já com o recuo das marcas).
+     A altura é a da célula antiga do grid de 10 colunas. */
   container-type: inline-size;
   --logo-cell: calc((100cqw - 36px) / 10);
   display: flex;
@@ -331,16 +331,16 @@ a.work:hover .work-name { color: var(--accent-text); }
   flex: 0 0 auto;
   box-sizing: border-box;
   height: var(--logo-cell);
-  min-width: var(--logo-cell);
-  padding: 0 10px;
+  width: calc(var(--logo-cell) * 2);
+  padding: 0;
   border-radius: 12px;
   transition: background-color 0.25s var(--ease-out);
 }
 .logo-grid img {
-  width: auto;
-  height: 62%;
-  max-width: 148px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
   opacity: 0.5;
   filter: grayscale(1);
   transition: opacity 0.3s var(--ease-out), filter 0.3s var(--ease-out), transform 0.3s var(--ease-out);

@@ -38,17 +38,17 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 > Onde aparece: abaixo do cabeçalho. O **1º parágrafo é o título da home** (mais pesado, cor principal);
 > os outros dois ficam em cinza. `==texto==` fica em laranja e `{Empresa}` vira um chip com logo.
 
-1. Desenho produtos digitais focando na melhor experiência de ==quem irá utilizar e no melhor retorno para o negócio==.
-2. Há 8 anos construo minha trajetória no design, passando pela comunicação visual, marketing e experiências digitais até chegar ao Product Design. Atualmente, faço parte do time da {ECX Pay}, contribuindo para a evolução dos produtos Multi, XCorp e XFleet, da estrutura das interfaces à experiência nos ambientes web e mobile.
-3. Também exploro novas possibilidades com IA no meu dia a dia, tanto no desenvolvimento de processos quanto na criação de projetos independentes. Essa troca constante entre experimentar, aprender e construir amplia minha forma de trabalhar e pensar produtos digitais.
+1. Conecto ==necessidades== das pessoas e ==objetivos== do negócio por meio do design.
+2. Há **8 anos** atuo no mercado de design, com experiências em comunicação visual, marketing e construção de produtos digitais. Atualmente, faço parte do time da {Ecx Pay}, trabalhando na evolução dos produtos **XMulti**, **XCorp** e **XFleet**, em diferentes frentes que envolvem estrutura, design system, interfaces e UX web e mobile.
+3. Construo produtos e ajudo a desenvolver processos em equipe com a AI aplicada no dia a dia.
 
 ### Marcas citadas
 
 %% Cada {Nome} do texto acima usa a linha correspondente aqui. Link vazio = chip sem link. %%
 
-| Nome    | Logo                          | Link                   |
-| ------- | ----------------------------- | ---------------------- |
-| ECX Pay | /assets/logos/icon-ecx-pay.svg | https://ecxpay.com.br/ |
+| Nome    | Logo                           | Link                   |
+| ------- | ------------------------------ | ---------------------- |
+| Ecx Pay | /assets/logos/icon-ecx-pay.svg | https://ecxpay.com.br/ |
 
 ---
 
@@ -151,7 +151,7 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 - estado: em breve   %% troque para "publicado" quando houver itens na tabela abaixo %%
 - caixa "em breve":
   - título: Em breve
-  - texto: Notas curtas sobre produto, design e o que venho aprendendo pelo caminho. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  - texto: Notas curtas sobre produto, design e o que venho aprendendo pelo caminho.
 
 | Data | Título | Descrição curta | Link |
 | --- | --- | --- | --- |
@@ -162,17 +162,17 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 ## Empresas
 
 > Onde aparece: fileira de logos em cinza. No hover o logo acende e o nome aparece num balão.
-> A altura da célula é a do grid original (10 colunas no desktop, 5 no celular); a largura
-> acompanha o desenho da marca, para caber bem com poucas empresas.
+> Os quatro SVGs compartilham o mesmo artboard 114×57 (já com o recuo). No site, cada um
+> entra numa célula igual, 2:1, com a altura do grid original.
 
 - título: Empresas que conhecem meu trabalho
 
-| Nome (balão)               | Logo                                          |
-| -------------------------- | --------------------------------------------- |
-| Ecx Pay                    | /assets/logos/icon-company-ecxpay.svg         |
-| Gibb                       | /assets/logos/icon-company-gibb.svg           |
-| FacilitaPay (Atual Attrus) | /assets/logos/icon-company-facilitapay.svg    |
-| Sixtema Marketing          | /assets/logos/icon-company-sixtema.svg        |
+| Nome (balão)               | Logo                          |
+| -------------------------- | ----------------------------- |
+| Ecx Pay                    | /assets/logos/company-1.svg   |
+| Gibb                       | /assets/logos/company-2.svg   |
+| FacilitaPay (Atual Attrus) | /assets/logos/company-3.svg   |
+| Sixtema Marketing          | /assets/logos/company-4.svg   |
 
 ---
 

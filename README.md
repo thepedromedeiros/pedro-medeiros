@@ -36,7 +36,7 @@ A home tem duas colunas no desktop: a **esquerda** (`<div class="side">`) fica f
 | Nome e cargo | `.top-name` | "Pedro Medeiros" / "Product Designer" |
 | Idiomas | `<nav class="lang-switch">` | Bandeiras BR/US; a do idioma da página tem `aria-current="true"` (fica colorida) |
 | Título e intro | `<section class="hero">` | 3 parágrafos; o 1º é o título (peso 600). Destaque em laranja: `<span class="hl">…</span>` |
-| Empresas na intro | `.brand` | Nome, link e logo (`assets/logos/…`). `class="invert-dark"` só em logos escuros; logos coloridos (ex.: ECX Pay) vão sem essa classe |
+| Empresas na intro | `.brand` | Nome, link e logo (`assets/logos/…`). `class="invert-dark"` só em logos escuros; logos coloridos (ex.: Ecx Pay) vão sem essa classe |
 | Redes | `<ul class="socials">` | X, Behance e e-mail (`href`); o LinkedIn fica só no botão de Contato |
 | Contato | `.contact-block` | WhatsApp: `phone=5531971361175` e `text=…` (mensagem em pt e en); LinkedIn: URL |
 | Atalhos de seção | `<nav class="section-nav">` | Pílulas com `href="#id-da-seção"`; o `soon-tag` marca "em breve" |
