@@ -27,8 +27,9 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 
 - nome: Pedro Medeiros
 - cargo: Product Designer
-- foto: /assets/avatar-320.webp   %% recorte quadrado; o site gera o círculo. Para trocar, mande a foto nova %%
 - idiomas: Português → / · English → /en/
+
+%% Foto: a atual segue em /assets/avatar-160.webp e avatar-320.webp (recorte quadrado; o site gera o círculo). %%
 
 ---
 
@@ -37,20 +38,17 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 > Onde aparece: abaixo do cabeçalho. O **1º parágrafo é o título da home** (mais pesado, cor principal);
 > os outros dois ficam em cinza. `==texto==` fica em laranja e `{Empresa}` vira um chip com logo.
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, ==sed do eiusmod tempor incididunt.==
-2. São mais de 00 anos em lorem ipsum, dolor sit amet e consectetur adipiscing, da ideia à interface em uso. Hoje sou product designer na {Empresa A}, onde ut enim ad minim veniam, quis nostrud exercitation.
-3. Meu último cargo foi Lorem Designer na {Empresa B}, onde duis aute irure dolor in reprehenderit. Antes passei pela {Empresa C} e pela {Empresa D}. Excepteur sint occaecat cupidatat non proident.
+1. Desenho produtos digitais focando na melhor experiência de ==quem irá utilizar e no melhor retorno para o negócio==.
+2. Há 8 anos construo minha trajetória no design, passando pela comunicação visual, marketing e experiências digitais até chegar ao Product Design. Atualmente, faço parte do time da {ECX Pay}, contribuindo para a evolução dos produtos Multi, XCorp e XFleet, da estrutura das interfaces à experiência nos ambientes web e mobile.
+3. Também exploro novas possibilidades com IA no meu dia a dia, tanto no desenvolvimento de processos quanto na criação de projetos independentes. Essa troca constante entre experimentar, aprender e construir amplia minha forma de trabalhar e pensar produtos digitais.
 
 ### Marcas citadas
 
 %% Cada {Nome} do texto acima usa a linha correspondente aqui. Link vazio = chip sem link. %%
 
-| Nome | Logo | Link |
-| --- | --- | --- |
-| Empresa A | /assets/logos/empresa-a.svg | # |
-| Empresa B | /assets/logos/empresa-b.svg | # |
-| Empresa C | /assets/logos/empresa-c.svg |  |
-| Empresa D | /assets/logos/empresa-d.svg |  |
+| Nome    | Logo                          | Link                   |
+| ------- | ----------------------------- | ---------------------- |
+| ECX Pay | /assets/logos/icon-ecx-pay.svg | https://ecxpay.com.br/ |
 
 ---
 
@@ -87,16 +85,15 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 ## Atalhos de seção
 
 > Onde aparece: fileira de botões em pílula no topo da coluna da direita (fica presa no topo enquanto
-> rola). Cada um leva até a seção; o da seção que está na tela fica laranja.
+> rola). Cada um leva até a seção; o da seção que está na tela fica no estilo do botão principal.
 
 | Botão | Leva para | Etiqueta |
 | --- | --- | --- |
 | Projetos | Projetos | — |
-| Cases | Cases | — |
+| Cases | Cases | em breve |
 | Insights | Insights | em breve |
-| Cemitério | Cemitério | — |
 
-%% O texto do botão pode ser mais curto que o título da seção (ex.: "Projetos"). %%
+%% Cemitério fica de fora das pílulas enquanto a seção estiver oculta. %%
 
 ---
 
@@ -104,14 +101,15 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 
 > Onde aparece: primeiro bloco da coluna da direita. Cada linha tem uma **miniatura à esquerda**,
 > nome e descrição no meio, e categoria + ano à direita (no celular, só miniatura, nome e descrição).
+> A etiqueta **building** fica ao lado do nome. Sem link por enquanto (as linhas não são clicáveis).
 
 - título: Projetos – O que estou construindo
 - botão do atalho: Projetos
 
-| Miniatura | Nome | Descrição | Categoria | Ano | Link |
-| --- | --- | --- | --- | --- | --- |
-| /assets/covers/projeto-01.svg | Projeto 01 | Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod. | Categoria | 0000 | # |
-| /assets/covers/projeto-02.svg | Projeto 02 | Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod. | Categoria | 0000 | # |
+| Miniatura                     | Nome   | Descrição                                                                                                      | Categoria | Ano  | Link | Etiqueta |
+| ----------------------------- | ------ | -------------------------------------------------------------------------------------------------------------- | --------- | ---- | ---- | -------- |
+| /assets/covers/projeto-01.svg | Voally | Viaje mais, procure menos. Encontre excursões e bate-voltas tudo num lugar só.                                | SaaS · IA | 2026 | —    | building |
+| /assets/covers/projeto-02.svg | Planly | Organize seus eventos em família sem dor de cabeça. Um organizador de eventos familiares, facilitando a vida de quem fica responsável. | SaaS · IA | 2026 | —    | building |
 
 %% Miniatura: imagem horizontal 4:3 (ex.: 288×216). Ela é cortada para caber. %%
 
@@ -119,10 +117,16 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 
 ## Cases
 
-> Onde aparece: abaixo de Projetos, no mesmo formato. As linhas com "Ver mais = sim" ficam escondidas
-> até a pessoa clicar em **Ver mais**. Case 01 e Case 02 abrem as páginas de case.
+> Onde aparece: abaixo de Projetos. Enquanto não houver cases reais, a seção fica no estado
+> **em breve** (etiqueta na pílula e uma caixa "Em breve"), no mesmo formato do Insights.
+> As páginas `/projetos/case-01/` e `/projetos/case-02/` existem no site, mas não entram na lista.
 
 - título: Cases
+- etiqueta: em breve
+- estado: em breve   %% troque para "publicado" quando houver itens na tabela abaixo %%
+- caixa "em breve":
+  - título: Em breve
+  - texto: Estudos de caso sobre produtos que desenhei e o processo por trás deles.
 - botão: Ver mais
 
 | Miniatura | Nome | Descrição | Categoria | Ano | Link | Ver mais |
@@ -157,53 +161,38 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 
 ## Empresas
 
-> Onde aparece: grade de logos em cinza. No hover o logo acende e o nome aparece num balão.
+> Onde aparece: fileira de logos em cinza. No hover o logo acende e o nome aparece num balão.
+> A altura da célula é a do grid original (10 colunas no desktop, 5 no celular); a largura
+> acompanha o desenho da marca, para caber bem com poucas empresas.
 
 - título: Empresas que conhecem meu trabalho
 
-| Nome (balão) | Logo |
-| --- | --- |
-| Empresa A | /assets/logos/empresa-a.svg |
-| Empresa B | /assets/logos/empresa-b.svg |
-| Empresa C | /assets/logos/empresa-c.svg |
-| Empresa D | /assets/logos/empresa-d.svg |
-| Empresa E | /assets/logos/empresa-e.svg |
-| Empresa F | /assets/logos/empresa-f.svg |
-| Empresa G | /assets/logos/empresa-g.svg |
-| Empresa H | /assets/logos/empresa-h.svg |
-| Empresa I | /assets/logos/empresa-i.svg |
-| Empresa J | /assets/logos/empresa-j.svg |
-| Empresa K | /assets/logos/empresa-k.svg |
-| Empresa L | /assets/logos/empresa-l.svg |
-| Empresa M | /assets/logos/empresa-m.svg |
-| Empresa N | /assets/logos/empresa-n.svg |
-| Empresa O | /assets/logos/empresa-o.svg |
-| Empresa P | /assets/logos/empresa-p.svg |
-| Empresa Q | /assets/logos/empresa-q.svg |
-| Empresa R | /assets/logos/empresa-r.svg |
-| Empresa S | /assets/logos/empresa-s.svg |
-| Empresa T | /assets/logos/empresa-t.svg |
-
-%% A grade tem 10 colunas no desktop e 5 no celular; múltiplos de 10 fecham as linhas. %%
+| Nome (balão)               | Logo                                          |
+| -------------------------- | --------------------------------------------- |
+| Ecx Pay                    | /assets/logos/icon-company-ecxpay.svg         |
+| Gibb                       | /assets/logos/icon-company-gibb.svg           |
+| FacilitaPay (Atual Attrus) | /assets/logos/icon-company-facilitapay.svg    |
+| Sixtema Marketing          | /assets/logos/icon-company-sixtema.svg        |
 
 ---
 
-## Cemitério
+## Cemitério (oculto)
 
-> Onde aparece: última seção da coluna da direita. Coisas que você tentou construir e não deram certo:
+> Onde aparece: hoje **não aparece**. Se ligar, entra no fim da coluna da direita, com pílula no topo:
 > ícone pequeno arredondado, **nome riscado** e uma descrição curta em cinza. Uma frase curta abre a seção.
 
+- exibir: não
 - título: Cemitério
 - frase de abertura: Coisas que tentei construir e não deram certo. Lorem ipsum dolor sit amet. Descansem em paz.
 
-| Ícone | Nome | Descrição curta |
-| --- | --- | --- |
-| /assets/cemiterio/item-01.svg | Projeto Alfa | Lorem ipsum dolor sit amet |
-| /assets/cemiterio/item-02.svg | Projeto Beta | Consectetur adipiscing elit |
-| /assets/cemiterio/item-03.svg | Projeto Gama | Sed do eiusmod tempor |
-| /assets/cemiterio/item-04.svg | Projeto Delta | Ut enim ad minim veniam |
-| /assets/cemiterio/item-05.svg | Projeto Épsilon | Quis nostrud exercitation |
-| /assets/cemiterio/item-06.svg | Projeto Zeta | Duis aute irure dolor |
+| Ícone                         | Nome            | Descrição curta             |
+| ----------------------------- | --------------- | --------------------------- |
+| /assets/cemiterio/item-01.svg | Visione quadros | Quadros personalizados      |
+| /assets/cemiterio/item-02.svg | Projeto Beta    | Consectetur adipiscing elit |
+| /assets/cemiterio/item-03.svg | Projeto Gama    | Sed do eiusmod tempor       |
+| /assets/cemiterio/item-04.svg | Projeto Delta   | Ut enim ad minim veniam     |
+| /assets/cemiterio/item-05.svg | Projeto Épsilon | Quis nostrud exercitation   |
+| /assets/cemiterio/item-06.svg | Projeto Zeta    | Duis aute irure dolor       |
 
 %% Ícone: quadrado (ex.: 72×72). A descrição cabe numa linha curta (até ~40 caracteres). %%
 

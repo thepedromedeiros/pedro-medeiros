@@ -20,8 +20,9 @@ theme-init.js              Força o tema escuro antes da pintura
 assets/                    Avatar, favicon, miniaturas, logos e imagens dos cases
 ```
 
-> Tudo que está em **lorem ipsum**, `0000`, `00`, "Empresa A…T", "Projeto 01", "Case 01", "Projeto Alfa" etc.
-> é provisório. Edite **as duas versões** (`index.html` e `en/index.html`).
+> A intro, os projetos (Voally e Planly) e as quatro empresas da grade já estão com conteúdo real.
+> Ainda são provisórios a description/og, o texto do Insights, as páginas de case (Case 01/02) e
+> as seções ocultas (Cemitério, Experiência, GitHub). Edite **as duas versões** (`index.html` e `en/index.html`).
 
 ## Onde editar cada bloco da home
 
@@ -35,16 +36,16 @@ A home tem duas colunas no desktop: a **esquerda** (`<div class="side">`) fica f
 | Nome e cargo | `.top-name` | "Pedro Medeiros" / "Product Designer" |
 | Idiomas | `<nav class="lang-switch">` | Bandeiras BR/US; a do idioma da página tem `aria-current="true"` (fica colorida) |
 | Título e intro | `<section class="hero">` | 3 parágrafos; o 1º é o título (peso 600). Destaque em laranja: `<span class="hl">…</span>` |
-| Empresas na intro | `.brand` | Nome, link e logo (`assets/logos/…`); mantenha `class="invert-dark"` em logos escuros |
+| Empresas na intro | `.brand` | Nome, link e logo (`assets/logos/…`). `class="invert-dark"` só em logos escuros; logos coloridos (ex.: ECX Pay) vão sem essa classe |
 | Redes | `<ul class="socials">` | X, Behance e e-mail (`href`); o LinkedIn fica só no botão de Contato |
 | Contato | `.contact-block` | WhatsApp: `phone=5531971361175` e `text=…` (mensagem em pt e en); LinkedIn: URL |
 | Atalhos de seção | `<nav class="section-nav">` | Pílulas com `href="#id-da-seção"`; o `soon-tag` marca "em breve" |
-| Projetos | `<section id="projetos">` | Um `<li>` por projeto: miniatura (`.work-thumb img`), nome, descrição, categoria (`work-tag`), ano (`work-year`), link. Atualize o contador `<small>` |
-| Cases | `<section id="cases">` | Igual. Itens com `data-extra hidden` aparecem após "Ver mais". Case 01/02 apontam para `/projetos/case-0X/` |
+| Projetos | `<section id="projetos">` | Um `<li>` por projeto: miniatura (`.work-thumb img`), nome (com `.soon-tag` "building" se estiver em construção), descrição, categoria (`work-tag`), ano (`work-year`). Sem link por enquanto (`<div class="work">` em vez de `<a>`). Atualize o contador `<small>` |
+| Cases | `<section id="cases">` | Hoje "Em breve" (`.soon-box` + etiqueta nas pílulas), como Insights. As páginas `/projetos/case-01/` e `case-02/` existem, mas não entram na lista até haver cases reais |
 | Insights | `<section id="insights">` | Hoje "Em breve" (`.soon-box`). O comentário no HTML mostra a estrutura de item (`.insight-list`) |
 | Empresas | `<ul class="logo-grid">` | Um `<li data-name="…">` por empresa (o nome vira tooltip) |
-| Cemitério | `<section id="cemiterio">` | Frase de abertura (`.block-lede`) e um `<li>` por item: ícone (`assets/cemiterio/`), nome riscado (`<s class="grave-name">`), descrição |
-| Experiência / GitHub | seções com `hidden` | Ocultas; remova `hidden` para exibir |
+| Cemitério | `<section id="cemiterio">` | Oculto por enquanto (atributo `hidden`, sem pílula). Remova `hidden` e devolva a pílula em `.section-nav` para exibir |
+| Experiência / GitHub | seções com `hidden` | Ocultas; remova `hidden` para exibir. O Cemitério segue o mesmo padrão |
 | Rodapé | `<footer class="foot">` | Nome/ano; relógio em America/Sao_Paulo |
 | Cores, fontes, espaços | `styles.css`, seção 1 | Ver `DESIGN.md` e `/design/` |
 
@@ -97,7 +98,7 @@ as alterações são aplicadas no HTML (pt e en) e publicadas.
 - **Idioma**: bandeiras no cabeçalho alternam entre `/` e `/en/` (e entre as versões de cada case).
 - **Pílulas de seção** no topo da coluna direita: rolagem suave e seção atual no estilo do botão principal (branco). Escondidas no celular/tablet (< 1024px). Botões não usam laranja.
 - **Relógio** local (horário de Brasília) no rodapé.
-- **Ver mais** revela os cases extras.
+- **Ver mais** revela itens extras numa lista (hoje as seções Cases e Insights estão em "em breve", sem esse botão).
 - **Vídeos de capa** (opcional): `<video data-autoplay muted loop playsinline poster="…">`.
 - Entrada suave dos blocos (`.fade-in`); respeita `prefers-reduced-motion`.
 - **Analytics**: desligado (espaço comentado em `main.js` e no `<head>`).
