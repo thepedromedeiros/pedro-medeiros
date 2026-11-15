@@ -139,6 +139,7 @@
     // Nome de cada peça, como as camadas no Figma (a ordem define a prioridade)
     const PARTS = [
       [".avatar", "Avatar"],
+      [".back-link", "Back link"],
       [".lang-btn", "Button / Language"],
       [".theme-btn", "Button / Theme"],
       [".cta--main", "Button / Primary"],
@@ -153,7 +154,14 @@
       [".logo-grid", "Logo grid"],
       [".gh", "GitHub / Contributions"],
       [".piece", "Exploration card"],
-      [".page-intro", "Page header"],
+      [".facts", "Meta"],
+      [".numbers", "Stats"],
+      [".step-list", "Steps"],
+      [".swatch-list", "Swatches"],
+      [".up-next", "Next case"],
+      [".tray", "Panel"],
+      [".media", "Figure"],
+      [".page-intro, .case-intro", "Page header"],
       [".top", "Header"],
       [".foot", "Footer"],
     ];
@@ -497,12 +505,12 @@
     const PICK = [
       ".top .avatar", ".top-name", ".menu a", ".top .ghost-btn",
       "main h1", "main h2", "main p", "main summary", "main .work",
-      "main li > a", "main .piece", "main .logo-grid li", ".cta",
+      "main li > a", "main .piece", "main figure", ".case-intro > *", "main .logo-grid li", ".cta",
       ".page-intro > *", ".foot > *",
     ].join(",");
     const kind = (el) => {
       if (el.classList.contains("work")) return "row";
-      if (el.tagName === "IMG" || el.classList.contains("piece")) return "img";
+      if (el.tagName === "IMG" || el.tagName === "FIGURE" || el.classList.contains("piece")) return "img";
       if (/^(P|H1|H2|H3|SUMMARY)$/.test(el.tagName)) return "text";
       if (el.tagName === "BUTTON" || el.classList.contains("ghost-btn") || el.classList.contains("cta")) return "btn";
       if (el.tagName === "A") return "link";

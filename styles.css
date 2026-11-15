@@ -4,10 +4,12 @@
    Sumário: 1. Tokens  2. Base  3. Cabeçalho  4. Intro  5. Listas/Projetos
             6. Preview  7. Logos  8. Contato  9. Rodapé  10. Playground
             11. GitHub  12. Inspetor  13. Loader  14. Animações  15. Mobile
+            16. Página de case
+   Documentação: DESIGN.md (raiz do repo) e guia visual em /design/
    ========================================================================== */
 
 /* 1. Tokens ---------------------------------------------------------------- */
-:root {
+:root, [data-theme="light"] {
   --bg: #fafaf9;
   --fg: #171717;
   --muted: #6f6f6f;
@@ -37,11 +39,12 @@
   --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
 
   --column: 600px;
+  --wide: 880px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: light;
 }
 
-:root[data-theme="dark"] {
+[data-theme="dark"] {
   --bg: #111111;
   --fg: #ededed;
   --muted: #a1a1a1;
@@ -823,4 +826,135 @@ a.brand:hover { text-decoration-color: currentColor; }
 }
 @media (max-width: 400px) {
   .top .avatar { width: 36px; height: 36px; }
+}
+
+/* 16. Página de case -------------------------------------------------------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  transition: color 0.2s var(--ease-out);
+}
+.back-link:hover { color: var(--fg); }
+.back-link svg { width: 14px; height: 14px; transition: transform 0.25s var(--ease-out); }
+.back-link:hover svg { transform: translateX(-2px); }
+
+.case-intro { margin-top: 56px; }
+.case-intro h1 { margin: 0; font-size: 15px; font-weight: 500; }
+.case-lede {
+  margin-top: 12px;
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  text-wrap: balance;
+}
+.case-lede em { font-family: var(--font-serif); font-size: 1.12em; font-weight: 400; }
+.case-sub { color: var(--muted); }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+}
+.facts dt { font-size: 13px; color: var(--subtle); }
+.facts dd { margin: 2px 0 0; font-size: 14px; }
+
+.text-link { text-decoration: underline 1px var(--line-strong); text-underline-offset: 3px; transition: text-decoration-color 0.2s var(--ease-out); }
+.text-link:hover { text-decoration-color: currentColor; }
+
+.media { margin: 40px 0; }
+.media--wide {
+  --media-w: min(var(--wide), calc(100vw - 40px));
+  width: var(--media-w);
+  margin-inline: calc((100% - var(--media-w)) / 2);
+}
+.media img, .media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--panel);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--line);
+}
+.media figcaption { margin-top: 10px; font-size: 13px; color: var(--subtle); text-align: center; }
+
+.tray { padding: 28px; background: var(--panel); border-radius: 16px; }
+.tray img { box-shadow: 0 0 0 1px var(--line), 0 8px 24px -12px rgba(0, 0, 0, 0.18); }
+.cols-2, .cols-3 { display: grid; align-items: start; gap: 16px; }
+.cols-2 { grid-template-columns: 1fr 1fr; }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+.story { margin-top: 64px; }
+.story h2 { margin: 0 0 4px; font-size: 13px; font-weight: 400; color: var(--muted); }
+.story h3 { margin: 0 0 14px; font-size: 17px; font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; }
+.story p { color: var(--muted); }
+.story p strong { font-weight: 500; color: var(--fg); }
+.story .note { margin-top: 10px; color: var(--subtle); }
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 24px 0;
+  overflow: hidden;
+  background: var(--line);
+  border-radius: 14px;
+  box-shadow: 0 0 0 1px var(--line);
+}
+.numbers div { padding: 16px; background: var(--bg); }
+.numbers strong { display: block; font-size: 22px; font-weight: 500; letter-spacing: -0.02em; }
+.numbers span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.45; color: var(--muted); }
+
+.step-list { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: step; }
+.step-list li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  counter-increment: step;
+}
+.step-list li::before { content: counter(step, decimal-leading-zero); padding-top: 3px; font: 12px var(--font-mono); color: var(--subtle); }
+.step-list strong { font-weight: 500; color: var(--fg); }
+
+.swatch-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.swatch-list li { padding: 8px; font-size: 13px; line-height: 1.4; background: var(--chip); border-radius: 12px; box-shadow: 0 0 0 1px var(--line); }
+.swatch-list i { display: block; height: 56px; margin-bottom: 8px; border-radius: 7px; box-shadow: inset 0 0 0 1px var(--line); }
+.swatch-list span { display: block; font: 11px var(--font-mono); color: var(--subtle); }
+
+.up-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 80px;
+  padding: 16px 0;
+  border-block: 1px solid var(--line);
+}
+.up-next small { display: block; font-size: 13px; color: var(--subtle); }
+.up-next strong { font-weight: 500; }
+.up-next span { font-size: 14px; color: var(--muted); }
+.up-next svg { flex: none; width: 16px; height: 16px; color: var(--muted); transition: transform 0.25s var(--ease-out), color 0.2s; }
+.up-next:hover svg { color: var(--fg); transform: translateX(3px); }
+
+@media (max-width: 640px) {
+  .case-intro { margin-top: 40px; }
+  .case-lede { font-size: 20px; }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .cols-2, .numbers { grid-template-columns: 1fr; }
+  .cols-3 { gap: 8px; }
+  .tray { padding: 14px; border-radius: 12px; }
 }
