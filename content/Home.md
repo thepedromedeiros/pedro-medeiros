@@ -12,28 +12,30 @@ og_image: /assets/covers/projeto-01.svg
 %% O bloco acima (frontmatter) é o que aparece na aba do navegador e quando o link é compartilhado:
 title = título da aba, description = resumo do Google/WhatsApp, og_image = imagem do compartilhamento. %%
 
-No desktop a home tem **duas colunas**. A da esquerda fica fixa (Cabeçalho, Introdução, Redes, Contato)
-e a da direita rola (Projetos, Cases, Empresas, Rodapé). No celular vira uma coluna só, nessa mesma ordem.
+No desktop a home tem **duas colunas**:
+- **Esquerda (fixa):** Cabeçalho, Introdução, Redes, Contato.
+- **Direita (rola):** Atalhos de seção, Projetos, Cases, Insights, Empresas, Cemitério, Rodapé.
+
+No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escuro.
 
 ---
 
 ## Cabeçalho
 
-> Onde aparece: topo da coluna da esquerda. Foto redonda, nome e cargo; à direita, o link Playground,
-> a bandeira que troca o idioma e o botão de tema claro/escuro.
+> Onde aparece: topo da coluna da esquerda. Foto redonda, nome e cargo; à direita, as bandeiras de
+> idioma (🇧🇷 / 🇺🇸). A bandeira do idioma da página fica colorida; a outra fica cinza.
 
 - nome: Pedro Medeiros
 - cargo: Product Designer
-- foto: /assets/avatar.svg   %% provisória; mande sua foto (quadrada, 88×88 ou maior) %%
-- menu:
-  - Playground → /playground/
+- foto: /assets/avatar-320.webp   %% recorte quadrado; o site gera o círculo. Para trocar, mande a foto nova %%
+- idiomas: Português → / · English → /en/
 
 ---
 
 ## Introdução / Destaques
 
-> Onde aparece: logo abaixo do cabeçalho, na coluna da esquerda. São três parágrafos: o primeiro
-> em cor principal e os outros em cinza. `==texto==` fica em laranja e `{Empresa}` vira um chip com logo.
+> Onde aparece: abaixo do cabeçalho. O **1º parágrafo é o título da home** (mais pesado, cor principal);
+> os outros dois ficam em cinza. `==texto==` fica em laranja e `{Empresa}` vira um chip com logo.
 
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, ==sed do eiusmod tempor incididunt.==
 2. São mais de 00 anos em lorem ipsum, dolor sit amet e consectetur adipiscing, da ideia à interface em uso. Hoje sou product designer na {Empresa A}, onde ut enim ad minim veniam, quis nostrud exercitation.
@@ -54,24 +56,21 @@ e a da direita rola (Projetos, Cases, Empresas, Rodapé). No celular vira uma co
 
 ## Redes
 
-> Onde aparece: fileira de ícones abaixo da introdução.
+> Onde aparece: fileira de ícones abaixo da introdução. São só estas quatro.
 
 | Rede | Link |
 | --- | --- |
 | LinkedIn | https://www.linkedin.com/in/placeholder |
-| Dribbble | # |
-| Instagram | # |
-| Behance | # |
-| E-mail | mailto:contato@exemplo.com |
-
-%% Apague a linha da rede que não usar. "#" = ainda sem link. %%
+| X (Twitter) | https://x.com/placeholder |
+| Behance | https://www.behance.net/placeholder |
+| E-mail | mailto:contato@placeholder.com |
 
 ---
 
 ## Contato
 
 > Onde aparece: na base da coluna da esquerda. Título "Contato" e dois botões: o principal em laranja
-> (WhatsApp) e o secundário com contorno (LinkedIn).
+> com texto branco (WhatsApp) e o secundário com contorno (LinkedIn).
 
 - título: Contato
 - botão principal:
@@ -84,43 +83,80 @@ e a da direita rola (Projetos, Cases, Empresas, Rodapé). No celular vira uma co
 
 ---
 
+## Atalhos de seção
+
+> Onde aparece: fileira de botões em pílula no topo da coluna da direita (fica presa no topo enquanto
+> rola). Cada um leva até a seção; o da seção que está na tela fica laranja.
+
+| Botão | Leva para | Etiqueta |
+| --- | --- | --- |
+| Projetos | Projetos | — |
+| Cases | Cases | — |
+| Insights | Insights | em breve |
+| Cemitério | Cemitério | — |
+
+%% O texto do botão pode ser mais curto que o título da seção (ex.: "Projetos"). %%
+
+---
+
 ## Projetos
 
-> Onde aparece: primeiro bloco da coluna da direita. Cada linha mostra ano, nome, descrição e
-> categoria; ao passar o mouse, a capa aparece flutuando junto do cursor.
+> Onde aparece: primeiro bloco da coluna da direita. Cada linha tem uma **miniatura à esquerda**,
+> nome e descrição no meio, e categoria + ano à direita (no celular, só miniatura, nome e descrição).
 
-- título: Projetos
+- título: Projetos – O que estou construindo
+- botão do atalho: Projetos
 
-| Ano | Nome | Descrição | Categoria | Capa | Link |
+| Miniatura | Nome | Descrição | Categoria | Ano | Link |
 | --- | --- | --- | --- | --- | --- |
-| 0000 | Projeto 01 | Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod. | Categoria | /assets/covers/projeto-01.svg | # |
-| 0000 | Projeto 02 | Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod. | Categoria | /assets/covers/projeto-02.svg | # |
+| /assets/covers/projeto-01.svg | Projeto 01 | Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod. | Categoria | 0000 | # |
+| /assets/covers/projeto-02.svg | Projeto 02 | Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod. | Categoria | 0000 | # |
+
+%% Miniatura: imagem horizontal 4:3 (ex.: 288×216). Ela é cortada para caber. %%
 
 ---
 
 ## Cases
 
-> Onde aparece: abaixo de Projetos, no mesmo formato. As linhas marcadas "Ver mais = sim" ficam escondidas
+> Onde aparece: abaixo de Projetos, no mesmo formato. As linhas com "Ver mais = sim" ficam escondidas
 > até a pessoa clicar em **Ver mais**. Case 01 e Case 02 abrem as páginas de case.
 
 - título: Cases
 - botão: Ver mais
 
-| Ano | Nome | Descrição | Categoria | Capa | Link | Ver mais |
+| Miniatura | Nome | Descrição | Categoria | Ano | Link | Ver mais |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0000 | Case 01 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | SaaS · IA | /assets/covers/projeto-03.svg | /projetos/case-01/ | não |
-| 0000 | Case 02 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Design System | /assets/covers/projeto-04.svg | /projetos/case-02/ | não |
-| 0000 | Case 03 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Site institucional | /assets/covers/projeto-05.svg | # | sim |
-| 0000 | Case 04 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Web & Mobile App | /assets/covers/projeto-06.svg | # | sim |
-| 0000 | Case 05 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Mobile App | /assets/covers/projeto-07.svg | # | sim |
-| 0000 | Case 06 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Portal | /assets/covers/projeto-08.svg | # | não |
+| /assets/covers/projeto-03.svg | Case 01 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | SaaS · IA | 0000 | /projetos/case-01/ | não |
+| /assets/covers/projeto-04.svg | Case 02 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Design System | 0000 | /projetos/case-02/ | não |
+| /assets/covers/projeto-05.svg | Case 03 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Site institucional | 0000 | # | sim |
+| /assets/covers/projeto-06.svg | Case 04 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Web & Mobile App | 0000 | # | sim |
+| /assets/covers/projeto-07.svg | Case 05 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Mobile App | 0000 | # | sim |
+| /assets/covers/projeto-08.svg | Case 06 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. | Portal | 0000 | # | não |
+
+---
+
+## Insights
+
+> Onde aparece: abaixo de Cases. Hoje mostra a etiqueta **em breve** e uma caixa "Em breve". Quando
+> houver insights, a caixa vira uma lista (data, título, descrição curta, link). Cada insight novo
+> nasce do modelo `Insights/_Modelo - Insight.md`.
+
+- título: Insights
+- etiqueta: em breve
+- estado: em breve   %% troque para "publicado" quando houver itens na tabela abaixo %%
+- caixa "em breve":
+  - título: Em breve
+  - texto: Notas curtas sobre produto, design e o que venho aprendendo pelo caminho. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+| Data | Título | Descrição curta | Link |
+| --- | --- | --- | --- |
+|  |  |  |  |
 
 ---
 
 ## Empresas
 
-> Onde aparece: grade de logos em cinza na coluna da direita. No hover o logo ganha cor e o nome
-> aparece num balão.
+> Onde aparece: grade de logos em cinza. No hover o logo acende e o nome aparece num balão.
 
 - título: Empresas que conhecem meu trabalho
 
@@ -151,10 +187,31 @@ e a da direita rola (Projetos, Cases, Empresas, Rodapé). No celular vira uma co
 
 ---
 
+## Cemitério
+
+> Onde aparece: última seção da coluna da direita. Coisas que você tentou construir e não deram certo:
+> ícone pequeno arredondado, **nome riscado** e uma descrição curta em cinza. Uma frase curta abre a seção.
+
+- título: Cemitério
+- frase de abertura: Coisas que tentei construir e não deram certo. Lorem ipsum dolor sit amet. Descansem em paz.
+
+| Ícone | Nome | Descrição curta |
+| --- | --- | --- |
+| /assets/cemiterio/item-01.svg | Projeto Alfa | Lorem ipsum dolor sit amet |
+| /assets/cemiterio/item-02.svg | Projeto Beta | Consectetur adipiscing elit |
+| /assets/cemiterio/item-03.svg | Projeto Gama | Sed do eiusmod tempor |
+| /assets/cemiterio/item-04.svg | Projeto Delta | Ut enim ad minim veniam |
+| /assets/cemiterio/item-05.svg | Projeto Épsilon | Quis nostrud exercitation |
+| /assets/cemiterio/item-06.svg | Projeto Zeta | Duis aute irure dolor |
+
+%% Ícone: quadrado (ex.: 72×72). A descrição cabe numa linha curta (até ~40 caracteres). %%
+
+---
+
 ## GitHub (oculto)
 
-> Onde aparece: hoje **não aparece** (seção escondida). Se ligar, fica abaixo de Empresas: um gráfico de
-> contribuições (dados de exemplo) e o link do perfil.
+> Onde aparece: hoje **não aparece**. Se ligar, entra na coluna da direita: gráfico de contribuições
+> (dados de exemplo) e link do perfil.
 
 - exibir: não
 - título: GitHub
@@ -166,8 +223,7 @@ e a da direita rola (Projetos, Cases, Empresas, Rodapé). No celular vira uma co
 
 ## Experiência (oculto)
 
-> Onde aparece: hoje **não aparece**. Se ligar, fica abaixo de Cases: lista de cargos que abre ao clicar,
-> mostrando o texto do cargo.
+> Onde aparece: hoje **não aparece**. Se ligar, fica abaixo de Cases: lista de cargos que abre ao clicar.
 
 - exibir: não
 - título: Experiência
@@ -183,8 +239,7 @@ e a da direita rola (Projetos, Cases, Empresas, Rodapé). No celular vira uma co
 
 ## Rodapé
 
-> Onde aparece: final da coluna da direita. Assinatura à esquerda e relógio ao vivo (horário de Brasília)
-> à direita. No celular, o link Playground também aparece aqui.
+> Onde aparece: final da coluna da direita. Assinatura à esquerda e relógio ao vivo (horário de Brasília).
 
 - assinatura: Pedro Medeiros © 2026
-- relógio: horário de Brasília (America/Sao_Paulo), seguido de "Brasil"
+- relógio: horário de Brasília (America/Sao_Paulo), seguido de "no Brasil"

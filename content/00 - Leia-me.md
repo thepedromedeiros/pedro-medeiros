@@ -1,7 +1,7 @@
 ---
 tipo: guia
 site: Pedro Medeiros · portfólio
-atualizado: 2026-11-15
+atualizado: 2026-11-15 (v2)
 ---
 
 # Leia-me: como este cofre vira o site
@@ -18,6 +18,11 @@ assistente leva as mudanças para o site.
 | `Cases/Case 02.md` | `/projetos/case-02/` (e `/en/projetos/case-02/`) | Conteúdo atual do Case 02 (modelo de case curto e visual) |
 | `Cases/_Modelo - Case.md` | — | Modelo vazio, com a estrutura completa do Case 01. Duplique para um case novo |
 | `Cases/_Modelo - Case (variação 02).md` | — | Modelo vazio, com a estrutura do Case 02 (mais imagens, paleta da marca) |
+| `Insights/_Modelo - Insight.md` | — (futuro `/insights/…`) | Modelo de insight. Cada insight publicado vira uma linha na seção Insights da home |
+
+A home tem estas seções, na ordem: Cabeçalho (foto, nome, bandeiras de idioma), Introdução (o 1º
+parágrafo é o título), Redes (LinkedIn, X, Behance, e-mail), Contato, Atalhos de seção (pílulas),
+Projetos, Cases, Insights (em breve), Empresas, Cemitério e Rodapé. GitHub e Experiência estão ocultas.
 
 Hoje todo o conteúdo do site é **provisório** (lorem ipsum, `0000`, "Empresa A", "Case 01", imagens cinza).
 Ele está aqui igualzinho ao site, para você saber onde cada coisa aparece antes de trocar.
@@ -46,6 +51,8 @@ Ele está aqui igualzinho ao site, para você saber onde cada coisa aparece ante
 | Tabela | Lista de itens repetidos (projetos, cases, empresas) |
 | `> [!imagem]` | Um bloco de imagem do case: arquivo, texto alternativo e legenda |
 | `%% comentário %%` | Instrução para você. Não aparece no modo leitura do Obsidian e não vai para o site |
+| Coluna "Miniatura" / "Ícone" | Imagem pequena à esquerda da linha (projetos, cases) ou do item (Cemitério) |
+| `estado: em breve` | Seção ainda sem conteúdo: mostra a etiqueta "em breve" |
 | `0000`, `00`, lorem | Conteúdo provisório: troque quando tiver o real |
 
 Imagens: o campo traz o caminho no site (ex.: `/assets/cases/case-01/cover.svg`). Para trocar, mande a
@@ -53,6 +60,12 @@ imagem nova ao assistente (ou coloque na pasta e diga o nome) e atualize o camin
 
 Inglês: escreva em português. O assistente traduz para a versão `/en/`. Se quiser um texto específico
 em inglês, escreva-o num campo `en:` logo abaixo do campo em português.
+
+## Criar um insight novo
+
+1. Duplique `Insights/_Modelo - Insight.md`, renomeie com o título e preencha.
+2. Quando quiser publicar, mude `status: publicado` e peça ao assistente. Ele adiciona a linha na
+   seção Insights da home (e tira o "em breve" quando houver o primeiro).
 
 ## Criar um case novo
 

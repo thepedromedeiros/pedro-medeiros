@@ -12,15 +12,6 @@
       ]
     },
     {
-      "source": "/fontes/(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
-    },
-    {
       "source": "/content/(.*)",
       "headers": [
         {
