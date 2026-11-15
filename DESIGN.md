@@ -4,8 +4,10 @@ Especificação do design system do site. Todos os valores abaixo saem de `style
 fonte da verdade. Se mudar algo lá, atualize aqui também.
 
 - **Guia visual ao vivo:** `/design/` no site (ex.: `https://<domínio>/design/`). Fica fora do menu, tem `noindex` e lê os tokens direto do CSS.
-- **Princípio:** é uma coluna única de 600px, com texto pequeno (15px). A hierarquia vem mais da **cor**
-  (`--fg` → `--muted` → `--subtle`) do que do tamanho. Não há bordas pesadas: as superfícies se
+- **Princípio:** texto pequeno (15px) em colunas estreitas. Na home, a coluna da esquerda (identidade,
+  intro e contato) fica fixa e a da direita rola; nas demais páginas é uma coluna única de 600px.
+  A hierarquia vem mais da **cor** (`--fg` → `--muted` → `--subtle`) do que do tamanho, e o **laranja
+  da marca** marca ação e destaque. Não há bordas pesadas: as superfícies se
   separam com anéis de 1px (`box-shadow: 0 0 0 1px`) e linhas translúcidas.
 
 ---
@@ -17,20 +19,43 @@ O tema fica salvo em `localStorage` (`pm-theme`) e é aplicado antes da pintura 
 Como os seletores não dependem de `:root`, qualquer elemento pode receber `data-theme` e mudar de
 tema localmente. O `/design/` usa isso para mostrar os dois temas lado a lado.
 
-### 1.1 Cores do site
+### 1.1 Origem da paleta
+
+A marca usa a identidade atual da Stack Overflow ([stackoverflow.design/brand/color](https://stackoverflow.design/brand/color)):
+
+| Cor da marca | Hex | Uso aqui |
+| --- | --- | --- |
+| Stack Orange | `#FF5E00` | `--accent` (ação) nos dois temas e `--accent-text` no escuro |
+| Off-Black | `#201C1D` | `--bg` do escuro, `--fg` do claro e `--accent-fg` (texto sobre laranja) |
+| Off-White | `#F0EFEE` | `--fg` do escuro e `--panel` do claro |
+| Blue `#5074EF` / Pink `#F39FFF` | — | Reservadas, ainda sem uso |
+
+### 1.2 Cores do site
 
 | Token | Claro | Escuro | Papel semântico | Onde é usado |
 | --- | --- | --- | --- | --- |
-| `--bg` | `#fafaf9` | `#111111` | Fundo | Fundo da página, células de `.numbers`, texto do `.cta--main` |
-| `--fg` | `#171717` | `#ededed` | Texto primário | Corpo forte, títulos, `.work-name`, fundo do `.cta--main`, seleção de texto |
-| `--muted` | `#6f6f6f` | `#a1a1a1` | Texto secundário | Parágrafos de apoio, `.menu a`, `.work-desc`, `.block-title`, `.story p`, ícones |
-| `--subtle` | `#a3a3a3` | `#666666` | Texto terciário | `.work-year`, `.work-tag`, rodapé, `figcaption`, `dt`, rótulos mono |
-| `--line` | `rgba(0,0,0,.08)` ≈ `#E6E6E5` | `rgba(255,255,255,.08)` ≈ `#242424` | Divisória | Linhas entre itens, rodapé, `.facts`, `.up-next`, anéis de imagens e avatar |
-| `--line-strong` | `rgba(0,0,0,.14)` ≈ `#D7D7D6` | `rgba(255,255,255,.16)` ≈ `#373737` | Contorno | Anel do `.cta`, sublinhado de links, menus do Inspetor |
-| `--hover` | `rgba(0,0,0,.035)` ≈ `#F1F1F0` | `rgba(255,255,255,.04)` ≈ `#1B1B1B` | Estado hover | Fundo de `.menu a`, `.ghost-btn`, `.cta` e logos no hover |
-| `--chip` | `#ffffff` | `#1b1b1b` | Superfície elevada | `.cta`, ícone de `.brand`, `.swatch-list li`, menus e tooltips |
-| `--panel` | `#f0f0ee` | `#191919` | Superfície de mídia | Fundo de `.media img`, `.tray`, `.work-thumb`, `.cursor-cover`, `.zoom` |
-| `--accent` | `#0a7aff` | `#0a7aff` (herdado) | Foco | `:focus-visible` (outline de 2px) |
+| `--bg` | `#faf9f8` | `#201c1d` | Fundo | Fundo da página e das células de `.numbers` |
+| `--fg` | `#201c1d` (16.0:1) | `#f0efee` (14.7:1) | Texto primário | Corpo forte, títulos, `.work-name` |
+| `--muted` | `#635c5a` (6.2:1) | `#aba4a2` (6.9:1) | Texto secundário | Parágrafos de apoio, `.menu a`, `.work-desc`, `.block-title`, `.story p`, ícones |
+| `--subtle` | `#918987` (3.3:1) | `#7a7270` (3.6:1) | Texto terciário | `.work-year`, `.work-tag`, rodapé, `figcaption`, `dt`, rótulos mono |
+| `--line` | `rgba(32,28,29,.08)` ≈ `#E9E7E6` | `rgba(240,239,238,.09)` ≈ `#332F30` | Divisória | Linhas entre itens, rodapé, `.facts`, `.up-next`, anéis de imagens e avatar |
+| `--line-strong` | `rgba(32,28,29,.14)` ≈ `#DBDAD9` | `rgba(240,239,238,.17)` ≈ `#434041` | Contorno | Anel do `.cta`, sublinhado de links, menus do Inspetor |
+| `--hover` | `rgba(32,28,29,.035)` ≈ `#F2F1F0` | `rgba(240,239,238,.05)` ≈ `#2A2727` | Estado hover | Fundo de `.menu a`, `.ghost-btn`, `.cta` e logos no hover |
+| `--chip` | `#ffffff` | `#2c2728` | Superfície elevada | `.cta`, ícone de `.brand`, `.swatch-list li`, menus e tooltips |
+| `--panel` | `#f0efee` | `#282324` | Superfície de mídia | Fundo de `.media img`, `.tray`, `.work-thumb`, `.cursor-cover`, `.zoom` |
+| `--accent` | `#ff5e00` | `#ff5e00` | **Ação / marca** (preenchimento) | Fundo do `.cta--main`, `::selection`, sublinhado no hover (`a.brand`, `.text-link`), `.font-flag` |
+| `--accent-fg` | `#201c1d` | `#201c1d` | Texto sobre a ação | Texto e ícone do `.cta--main` e da seleção (5.5:1 sobre o laranja) |
+| `--accent-text` | `#b84400` (5.2:1) | `#ff5e00` (5.5:1) | Laranja como texto | `.hl` (destaques), `.case-lede em`, hover de `.work-name`, `.show-more` e `.text-link`, item ativo do menu, contador da `.step-list`, seta do `.up-next` |
+| `--accent-soft` | `rgba(255,94,0,.10)` | `rgba(255,94,0,.14)` | Fundo laranja sutil | Reservado |
+| `--focus` | `var(--accent-text)` | (herda) | Foco | `:focus-visible` (outline de 2px) |
+
+Os números entre parênteses são o contraste com o `--bg` do tema (WCAG). Por que existem dois laranjas:
+
+- **`--accent` (#FF5E00)** é a cor da marca e serve para preencher. Sobre o fundo claro ela tem só 2.9:1,
+  então não é usada como texto no tema claro.
+- **`--accent-text`** é o laranja para texto. No claro ele foi escurecido para `#B84400`, com o mesmo matiz
+  (5.2:1 sobre `--bg` e 4.7:1 sobre `--panel`). No escuro é o próprio `#FF5E00` (5.5:1).
+- **Texto sobre o laranja** é off-black (`--accent-fg`, 5.5:1). Branco daria só 3.06:1 e não passa AA em texto de 14px.
 
 > O valor ≈ hex é a cor resultante da transparência sobre o `--bg` do tema. O `/design/` calcula isso em tempo real.
 
@@ -39,7 +64,7 @@ Há também duas cores fixas que não são tokens:
 - `[data-theme="dark"] .invert-dark` usa fundo `#e4e4e4` + `filter: invert(1)` para clarear logos escuros.
 - `.zoom::backdrop` usa `rgba(0,0,0,.55)` + `blur(6px)`.
 
-### 1.2 Cores do Inspetor (ferramenta de desenvolvimento)
+### 1.3 Cores do Inspetor (ferramenta de desenvolvimento)
 
 | Token | Claro | Escuro | Papel |
 | --- | --- | --- | --- |
@@ -53,7 +78,7 @@ Há também duas cores fixas que não são tokens:
 
 O tooltip do Inspetor (`.ins-tip`) usa fundo `#171717` no claro e `#262626` no escuro, texto `#fff`, chave `#a3a3a3` e destaque `#67e8f9`.
 
-### 1.3 GitHub (seção oculta)
+### 1.4 GitHub (seção oculta)
 
 | Nível | Claro | Escuro |
 | --- | --- | --- |
@@ -69,13 +94,25 @@ O tooltip do Inspetor (`.ins-tip`) usa fundo `#171717` no claro e `#262626` no e
 
 ### 2.1 Famílias
 
-Carregadas do Google Fonts: Geist 400/500/600, Geist Mono 400 e Instrument Serif itálico.
+Carregadas do Google Fonts: a fonte principal (400/500/600) e Geist Mono 400. A **Instrument Serif saiu**:
+os trechos que eram itálico serifado agora usam a fonte principal na cor de ação (veja "Destaque" abaixo).
 
 | Token | Pilha | Uso |
 | --- | --- | --- |
-| `--font-sans` | `"Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif` | Toda a interface e o texto |
+| `--font-sans` | `"Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif` | Toda a interface e o texto. Figtree é o padrão em teste |
 | `--font-mono` | `"Geist Mono", ui-monospace, "SF Mono", Menlo, monospace` | Anos, números, códigos, rótulos técnicos |
-| `--font-serif` | `"Instrument Serif", ui-serif, Georgia, serif` | Só em itálico, como acento dentro de frases |
+
+Os tokens de fonte ficam num bloco `:root` próprio, fora dos temas. Para comparar fontes, uma página
+pode trocar `--font-sans` com `data-font` no `<html>`:
+
+| `data-font` | Fonte | Página de comparação |
+| --- | --- | --- |
+| `figtree` | Figtree | `/fontes/figtree/` e `/fontes/figtree/case-01/` |
+| `stack-sans` | Stack Sans Text | `/fontes/stack-sans/` e `/fontes/stack-sans/case-01/` |
+| `manrope` | Manrope | `/fontes/manrope/` e `/fontes/manrope/case-01/` |
+
+O índice é `/fontes/` (noindex). Para fixar a escolhida no site todo, troque o valor de `--font-sans`
+em `styles.css` e o `family=` do link do Google Fonts no `<head>` das páginas.
 
 **Pesos:** 400 (regular) e 500 (medium). O 600 é carregado, mas hoje não é usado.
 
@@ -96,7 +133,7 @@ Carregadas do Google Fonts: Geist 400/500/600, Geist Mono 400 e Instrument Serif
 | Mono | Mono 400 | 12px | +0.01em | `.mono`, `.work-year`, contador da `.step-list` |
 | Mono pequeno | Mono 400 | 11px / 1.4 | +0.02em (`.block-title small`) | `.block-title small`, `.swatch-list span`, `.gh-months`, `.ins-*`, `.ds code` |
 | Micro | Mono 400 (`.cmp` em Sans 500) | 10px / 14–15px | +0.02em no loader | Rótulos do Inspetor (`.sp`, `.tok`, `.cmp`) e do loader (`.blueprint`) |
-| Acento serifado | Serif itálico 400 | 1.18em / 1 (1.12em dentro de títulos) | −0.005em | `.serif`, `.page-intro h1 .serif`, `.case-lede em` |
+| Destaque | Fonte principal, herda tamanho e peso | herda | herda | `.hl`, `.case-lede em`: cor `--accent-text` (antes era Instrument Serif itálico) |
 
 Outros detalhes tipográficos:
 
@@ -139,6 +176,7 @@ Não há tokens de espaçamento. Os valores são fixos em px e seguem esta escal
 
 | Item | Valor |
 | --- | --- |
+| Home em duas colunas (≥ 1024px) | `.shell--split`: grid `minmax(300px, var(--side)) minmax(0, var(--column))`, `--side: 380px`, gap 72, padding lateral 48, `max-width` 1148px. `.side` é `position: sticky; top: 0; height: 100dvh` com padding `72px 0 48px` e o contato preso embaixo (`margin-top: auto`); `.flow` (direita) tem padding `80px 0 48px`. Abaixo de 1024px vira uma coluna: lado esquerdo primeiro, depois projetos, cases, empresas e rodapé |
 | Coluna de texto | `--column: 600px`. O `.shell` tem `max-width: calc(var(--column) + 48px)`, margem `0 auto` e padding `72px 24px 48px` |
 | Mídia larga (cases) | `--wide: 880px`. `.media--wide` usa `width: min(var(--wide), calc(100vw - 40px))` e centraliza com margem negativa |
 | Guia `/design/` | `.ds-shell` usa `max-width: calc(var(--wide) + 48px)` |
@@ -152,6 +190,7 @@ Não há tokens de espaçamento. Os valores são fixos em px e seguem esta escal
 
 | Media query | Efeito |
 | --- | --- |
+| `min-width: 1024px` | Home em duas colunas, com a esquerda fixa |
 | `max-width: 640px` | Mobile: padding `40px 20px 32px`, `.block` 56, menu do topo escondido (vai para o rodapé), grids reduzidos, `.case-lede` 20px, `.tray` com padding 14 e raio 12 |
 | `max-width: 400px` | Avatar de 36px |
 | `max-width: 899px` ou `hover: none` | Inspetor escondido |
@@ -188,7 +227,7 @@ Não há tokens de espaçamento. Os valores são fixos em px e seguem esta escal
 | Anel forte | `box-shadow: 0 0 0 1px var(--line-strong)` | `.cta`, `.ins-menu`, `.ins-palette` |
 | Anel interno | `inset 0 0 0 1px var(--line)` | `.swatch-list i` |
 | Sublinhado | `text-decoration: underline 1px var(--line-strong)`, `text-underline-offset: 3px` → `currentColor` no hover | `a.brand`, `.text-link`, `.gh-foot a` |
-| Foco | `outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px` | `:focus-visible` (na `.piece` o offset é 2px) |
+| Foco | `outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px` | `:focus-visible` (na `.piece` o offset é 2px) |
 | Guia | `1px dashed var(--ins-grid)` | Coluna do Inspetor e do loader |
 | Planta | `1px dotted var(--ins-grid-strong)` | `.bp-box`, `.bp-line` |
 
@@ -232,14 +271,14 @@ Superfícies translúcidas: `color-mix(in srgb, var(--bg) 82%, transparent)` com
 | Cabeçalho | `.top` | `.top-id` (`.avatar` 44px + `.top-name`) ou `.back-link` nos cases e no guia; `.top-tools` (`.menu`, `.lang-btn`, `.theme-btn`) | Mobile: o menu some |
 | Botão fantasma | `.ghost-btn` | 32×32, raio 8, ícone 16px, cor `--muted` | hover: `--fg` sobre `--hover`; `.lang-btn` em cinza com opacidade .7, colorido no hover |
 | Alternar tema | `.theme-btn` | Ícone lua no tema claro e sol no escuro | `[data-theme]` na raiz |
-| Menu | `.menu a` | 14px, padding 4 8, raio 8 | hover: `--fg` + `--hover`; `aria-current="page"`: `--fg` |
+| Menu | `.menu a` | 14px, padding 4 8, raio 8 | hover: `--fg` + `--hover`; `aria-current="page"`: `--accent-text` |
 | Voltar | `.back-link` | Seta 14px + texto, gap 6, `--muted` | hover: `--fg`, seta −2px |
-| Chip de marca | `.brand` | Ícone 18px (raio 5, anel) + nome | Link: sublinhado `--line-strong` que vira `currentColor`; `.invert-dark` no escuro |
-| Linha de projeto | `.work` | ano mono, nome 500, descrição 14 `--muted`, tag 13 `--subtle`; `data-cover` | hover: as outras linhas vão para .45 e o preview segue o cursor; sem hover aparece a miniatura |
-| Ver mais | `.show-more` | Texto 14 `--muted` | hover/foco: `--fg`; revela `[data-extra]` |
+| Chip de marca | `.brand` | Ícone 18px inline (raio 5, anel) + nome, sem quebra entre nome e pontuação | Link: sublinhado `--line-strong` que vira `--accent` no hover; `.invert-dark` no escuro |
+| Linha de projeto | `.work` | ano mono, nome 500, descrição 14 `--muted`, tag 13 `--subtle`; `data-cover` | hover: nome em `--accent-text`, as outras linhas vão para .45 e o preview segue o cursor; sem hover aparece a miniatura |
+| Ver mais | `.show-more` | Texto 14 `--muted` | hover/foco: `--accent-text`; revela `[data-extra]` |
 | Experiência | `.job` (`details`) | logo 20, cargo, empresa, período, `+` | `[open]`: `+` gira 45° |
 | Grade de logos | `.logo-grid li` | Logo a 62%, cinza, opacidade .5; `data-name` vira tooltip | hover: fundo `--hover`, logo colorido a 1 com escala 1.06, tooltip sobe |
-| CTA | `.cta` / `.cta--main` | 36px de altura, padding 0 14, raio 10, ícone 15 | secundário: `--chip` + anel forte, hover `--hover`; principal: fundo `--fg`/texto `--bg`, hover opacidade .88; active scale .98 |
+| CTA | `.cta` / `.cta--main` | 36px de altura, padding 0 14, raio 10, ícone 15 | secundário: `--chip` + anel forte, hover `--hover`; principal: fundo `--accent` (laranja) com texto `--accent-fg`, hover opacidade .88; active scale .98 |
 | Rodapé | `.foot` | Nome ©, `.foot-menu` (só mobile), relógio `[data-clock]` | link hover: `--fg` |
 | Peça do playground | `.piece` | Botão com imagem, `.piece-label` em pílula | hover: imagem 1.015 e rótulo aparece; clique abre o `.zoom` |
 | Zoom | `dialog.zoom` | Imagem, `.zoom-close` | aberto: `zoom-pop`, backdrop com blur, scroll travado |
@@ -251,9 +290,11 @@ Superfícies translúcidas: `color-mix(in srgb, var(--bg) 82%, transparent)` com
 | Etapas | `.step-list` | Contador mono 01…, divisória entre itens | — |
 | Números | `.numbers` | 3 células com divisória de 1px (gap sobre `--line`), raio 14 | Mobile: empilhado |
 | Amostras | `.swatch-list` | Cartão `--chip` raio 12, cor de 56px raio 7, hex mono 11 | — |
-| Próximo case | `.up-next` | Rótulo 13, nome 500, descrição 14, seta | hover: seta `--fg` +3px |
+| Próximo case | `.up-next` | Rótulo 13, nome 500, descrição 14, seta | hover: seta `--accent-text` +3px |
 | Inspetor | `.inspect-btn`, `.ins-menu` | Botão `</>` fixo e menu com 4 camadas (Layout, Espaçamento, Cores, Componentes) | `[data-active]`, `aria-expanded`, `aria-checked`; só desktop |
 | Loader | `[data-build]`, `.blueprint` | Planta com caixas, medidas e cortina | Primeira visita da sessão (`pm-built`) ou `?build` |
+| Coluna fixa (home) | `.side` / `.flow` | Esquerda: `.top`, `.hero`, `.contact-block`; direita: `main` + `.foot` | Sticky só a partir de 1024px; rola por dentro se a tela for baixa |
+| Selo de fonte | `.font-flag` | Pílula laranja fixa no topo das páginas `/fontes/…` | Link para o índice `/fontes/` |
 | Skip link | `.skip-link` | Pílula `--fg`/`--bg` | foco: aparece no topo |
 
 ---

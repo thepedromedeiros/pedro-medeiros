@@ -4,23 +4,30 @@
    Sumário: 1. Tokens  2. Base  3. Cabeçalho  4. Intro  5. Listas/Projetos
             6. Preview  7. Logos  8. Contato  9. Rodapé  10. Playground
             11. GitHub  12. Inspetor  13. Loader  14. Animações  15. Mobile
-            16. Página de case
+            16. Página de case  17. Layout em duas colunas (home)  18. Fontes
    Documentação: DESIGN.md (raiz do repo) e guia visual em /design/
    ========================================================================== */
 
 /* 1. Tokens ---------------------------------------------------------------- */
+/* Marca: laranja e off-black da identidade Stack Overflow (stackoverflow.design/brand/color).
+   --accent = cor de ação (preenchimentos), --accent-fg = texto sobre ela,
+   --accent-text = laranja para texto/linhas sobre o fundo (≥ 4.5:1). */
 :root, [data-theme="light"] {
-  --bg: #fafaf9;
-  --fg: #171717;
-  --muted: #6f6f6f;
-  --subtle: #a3a3a3;
-  --line: rgba(0, 0, 0, 0.08);
-  --line-strong: rgba(0, 0, 0, 0.14);
-  --hover: rgba(0, 0, 0, 0.035);
+  --bg: #faf9f8;
+  --fg: #201c1d;
+  --muted: #635c5a;
+  --subtle: #918987;
+  --line: rgba(32, 28, 29, 0.08);
+  --line-strong: rgba(32, 28, 29, 0.14);
+  --hover: rgba(32, 28, 29, 0.035);
   --chip: #ffffff;
-  --panel: #f0f0ee;
-  --accent: #0a7aff;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px -8px rgba(0, 0, 0, 0.18);
+  --panel: #f0efee;
+  --accent: #ff5e00;
+  --accent-fg: #201c1d;
+  --accent-text: #b84400;
+  --accent-soft: rgba(255, 94, 0, 0.1);
+  --focus: var(--accent-text);
+  --shadow: 0 1px 2px rgba(32, 28, 29, 0.04), 0 12px 32px -8px rgba(32, 28, 29, 0.18);
 
   /* cores das camadas do Inspetor */
   --ins-grid: rgba(8, 145, 178, 0.32);
@@ -34,26 +41,38 @@
   /* contribuições do GitHub */
   --gh-0: #ebedf0; --gh-1: #9be9a8; --gh-2: #40c463; --gh-3: #30a14e; --gh-4: #216e39;
 
-  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
-
-  --column: 600px;
-  --wide: 880px;
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: light;
 }
 
+/* Fontes e medidas (fora dos temas). A fonte principal pode ser trocada por
+   página com data-font no <html>: veja /fontes/. */
+:root {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --column: 600px;
+  --wide: 880px;
+  --side: 380px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+:root[data-font="figtree"] { --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif; }
+:root[data-font="stack-sans"] { --font-sans: "Stack Sans Text", ui-sans-serif, system-ui, sans-serif; }
+:root[data-font="manrope"] { --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif; }
+
 [data-theme="dark"] {
-  --bg: #111111;
-  --fg: #ededed;
-  --muted: #a1a1a1;
-  --subtle: #666666;
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.16);
-  --hover: rgba(255, 255, 255, 0.04);
-  --chip: #1b1b1b;
-  --panel: #191919;
+  --bg: #201c1d;
+  --fg: #f0efee;
+  --muted: #aba4a2;
+  --subtle: #7a7270;
+  --line: rgba(240, 239, 238, 0.09);
+  --line-strong: rgba(240, 239, 238, 0.17);
+  --hover: rgba(240, 239, 238, 0.05);
+  --chip: #2c2728;
+  --panel: #282324;
+  --accent: #ff5e00;
+  --accent-fg: #201c1d;
+  --accent-text: #ff5e00;
+  --accent-soft: rgba(255, 94, 0, 0.14);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -8px rgba(0, 0, 0, 0.7);
 
   --ins-grid: rgba(34, 211, 238, 0.28);
@@ -91,8 +110,8 @@ img, svg, video { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 p { margin: 0 0 16px; }
 p:last-child { margin-bottom: 0; }
-::selection { color: var(--bg); background: var(--fg); }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+::selection { color: var(--accent-fg); background: var(--accent); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
 [hidden] { display: none !important; }
 
 .skip-link {
@@ -128,7 +147,8 @@ p:last-child { margin-bottom: 0; }
 }
 .block-title small { font: 11px var(--font-mono); letter-spacing: 0.02em; color: var(--subtle); }
 
-.serif { font-family: var(--font-serif); font-style: italic; font-size: 1.18em; line-height: 1; letter-spacing: -0.005em; }
+/* Destaque: fonte principal na cor de ação (substitui o antigo itálico serifado) */
+.hl { font: inherit; color: var(--accent-text); }
 .mono { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.01em; }
 
 /* Variantes por tema */
@@ -167,7 +187,7 @@ p:last-child { margin-bottom: 0; }
   transition: color 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
 }
 .menu a:hover { color: var(--fg); background: var(--hover); }
-.menu a[aria-current="page"] { color: var(--fg); }
+.menu a[aria-current="page"] { color: var(--accent-text); }
 
 .ghost-btn {
   display: inline-grid;
@@ -197,22 +217,21 @@ p:last-child { margin-bottom: 0; }
 .hero p:first-child { color: var(--fg); }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
   color: var(--fg);
   white-space: nowrap;
-  vertical-align: bottom;
 }
 .brand img {
+  display: inline-block;
   width: 18px;
   height: 18px;
+  margin-right: 5px;
+  vertical-align: -4px;
   background: var(--chip);
   border-radius: 5px;
   box-shadow: 0 0 0 1px var(--line);
 }
 a.brand { text-decoration: underline 1px var(--line-strong); text-underline-offset: 3px; transition: text-decoration-color 0.2s var(--ease-out); }
-a.brand:hover { text-decoration-color: currentColor; }
+a.brand:hover { text-decoration-color: var(--accent); }
 
 .socials { display: flex; gap: 4px; margin: 16px 0 0; padding: 0; list-style: none; }
 
@@ -231,7 +250,8 @@ a.brand:hover { text-decoration-color: currentColor; }
   transition: opacity 0.25s var(--ease-out);
 }
 .work-year { color: var(--subtle); }
-.work-name { font-weight: 500; }
+.work-name { font-weight: 500; transition: color 0.2s var(--ease-out); }
+.work:hover .work-name { color: var(--accent-text); }
 .work-desc { display: block; margin-top: 2px; font-size: 14px; line-height: 1.55; color: var(--muted); }
 .work-tag { font-size: 13px; color: var(--subtle); text-align: right; white-space: nowrap; }
 
@@ -262,7 +282,7 @@ a.brand:hover { text-decoration-color: currentColor; }
   border: 0;
   cursor: pointer;
 }
-.show-more:hover, .show-more:focus-visible { color: var(--fg); }
+.show-more:hover, .show-more:focus-visible { color: var(--accent-text); }
 
 /* Experiência (oculta na home, mantida para uso futuro) */
 .job summary {
@@ -385,8 +405,8 @@ a.brand:hover { text-decoration-color: currentColor; }
 .cta:hover { background: var(--hover); }
 .cta:active { transform: scale(0.98); }
 .cta svg { width: 15px; height: 15px; color: var(--muted); }
-.cta--main { color: var(--bg); background: var(--fg); box-shadow: none; }
-.cta--main:hover { background: var(--fg); opacity: 0.88; }
+.cta--main { color: var(--accent-fg); background: var(--accent); box-shadow: none; }
+.cta--main:hover { background: var(--accent); opacity: 0.88; }
 .cta--main svg { color: inherit; opacity: 0.7; }
 
 /* 9. Rodapé ---------------------------------------------------------------- */
@@ -407,7 +427,6 @@ a.brand:hover { text-decoration-color: currentColor; }
 /* 10. Playground ----------------------------------------------------------- */
 .page-intro { margin-top: 56px; }
 .page-intro h1 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.35; letter-spacing: -0.015em; }
-.page-intro h1 .serif { font-size: 1.12em; font-weight: 400; }
 .page-intro p { margin-top: 4px; color: var(--muted); }
 
 .pieces { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 12px; }
@@ -426,7 +445,7 @@ a.brand:hover { text-decoration-color: currentColor; }
 }
 .piece img { width: 100%; height: auto; transition: transform 0.6s var(--ease-out); }
 .piece button:hover img { transform: scale(1.015); }
-.piece button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.piece button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .piece-label {
   position: absolute;
   bottom: 10px;
@@ -480,7 +499,7 @@ a.brand:hover { text-decoration-color: currentColor; }
 .gh-cells i[data-l="4"], .gh-scale i[data-l="4"] { background: var(--gh-4); }
 .gh-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; font-size: 13px; color: var(--muted); }
 .gh-foot a { color: var(--fg); text-decoration: underline 1px var(--line-strong); text-underline-offset: 3px; }
-.gh-foot a:hover { text-decoration-color: currentColor; }
+.gh-foot a:hover { text-decoration-color: var(--accent); }
 .gh-scale { display: inline-flex; align-items: center; gap: 4px; }
 .gh-scale i { width: 10px; }
 
@@ -822,7 +841,7 @@ a.brand:hover { text-decoration-color: currentColor; }
   .foot { flex-direction: column; flex-wrap: wrap; gap: 4px; }
   .foot-menu { display: flex; order: -1; gap: 20px; margin-bottom: 8px; font-size: 14px; }
   .foot-menu a { color: var(--muted); }
-  .foot-menu a[aria-current="page"] { color: var(--fg); }
+  .foot-menu a[aria-current="page"] { color: var(--accent-text); }
 }
 @media (max-width: 400px) {
   .top .avatar { width: 36px; height: 36px; }
@@ -850,7 +869,7 @@ a.brand:hover { text-decoration-color: currentColor; }
   color: var(--fg);
   text-wrap: balance;
 }
-.case-lede em { font-family: var(--font-serif); font-size: 1.12em; font-weight: 400; }
+.case-lede em { font-style: normal; color: var(--accent-text); }
 .case-sub { color: var(--muted); }
 
 .facts {
@@ -865,7 +884,7 @@ a.brand:hover { text-decoration-color: currentColor; }
 .facts dd { margin: 2px 0 0; font-size: 14px; }
 
 .text-link { text-decoration: underline 1px var(--line-strong); text-underline-offset: 3px; transition: text-decoration-color 0.2s var(--ease-out); }
-.text-link:hover { text-decoration-color: currentColor; }
+.text-link:hover { color: var(--accent-text); text-decoration-color: var(--accent); }
 
 .media { margin: 40px 0; }
 .media--wide {
@@ -920,7 +939,7 @@ a.brand:hover { text-decoration-color: currentColor; }
   border-top: 1px solid var(--line);
   counter-increment: step;
 }
-.step-list li::before { content: counter(step, decimal-leading-zero); padding-top: 3px; font: 12px var(--font-mono); color: var(--subtle); }
+.step-list li::before { content: counter(step, decimal-leading-zero); padding-top: 3px; font: 12px var(--font-mono); color: var(--accent-text); }
 .step-list strong { font-weight: 500; color: var(--fg); }
 
 .swatch-list {
@@ -948,7 +967,7 @@ a.brand:hover { text-decoration-color: currentColor; }
 .up-next strong { font-weight: 500; }
 .up-next span { font-size: 14px; color: var(--muted); }
 .up-next svg { flex: none; width: 16px; height: 16px; color: var(--muted); transition: transform 0.25s var(--ease-out), color 0.2s; }
-.up-next:hover svg { color: var(--fg); transform: translateX(3px); }
+.up-next:hover svg { color: var(--accent-text); transform: translateX(3px); }
 
 @media (max-width: 640px) {
   .case-intro { margin-top: 40px; }
@@ -958,3 +977,58 @@ a.brand:hover { text-decoration-color: currentColor; }
   .cols-3 { gap: 8px; }
   .tray { padding: 14px; border-radius: 12px; }
 }
+
+/* 17. Layout em duas colunas (home) ---------------------------------------- */
+/* Desktop: coluna da esquerda (identidade, intro, redes e contato) fica fixa;
+   a da direita (projetos, cases, empresas e rodapé) rola. Mobile: uma coluna. */
+@media (min-width: 1024px) {
+  .shell--split {
+    display: grid;
+    grid-template-columns: minmax(300px, var(--side)) minmax(0, var(--column));
+    justify-content: space-between;
+    column-gap: 72px;
+    max-width: calc(var(--side) + var(--column) + 72px + 96px);
+    padding: 0 48px;
+  }
+  .side {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    padding: 72px 0 48px;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .side::-webkit-scrollbar { display: none; }
+  .side .contact-block { margin-top: auto; padding-top: 40px; }
+  .flow { padding: 80px 0 48px; }
+  .flow main > .block:first-child { margin-top: 0; }
+  .flow .foot { margin-top: 96px; }
+}
+
+/* 18. Comparação de fontes (/fontes/) --------------------------------------- */
+.font-flag {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 80;
+  translate: -50% 0;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: var(--accent-fg);
+  white-space: nowrap;
+  background: var(--accent);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+.font-flag span { margin-left: 4px; text-decoration: underline; text-underline-offset: 2px; }
+.font-list { margin-top: 40px; }
+.font-list li { padding: 20px 0; }
+.font-sample { margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; }
+.font-sample > span { font-size: 15px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+.font-links { display: flex; gap: 16px; margin: 10px 0 0; font-size: 14px; }
+.ds-hint { margin-top: 32px; font-size: 14px; color: var(--muted); }
+.ds-hint code { font: 12px var(--font-mono); color: var(--fg); }

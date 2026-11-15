@@ -14,6 +14,8 @@ projetos/case-01/          Página do Case 01 (pt-BR) — modelo de case longo
 projetos/case-02/          Página do Case 02 (pt-BR) — modelo de case curto e visual
 en/projetos/case-0X/       Mesmas páginas em inglês
 design/                    Guia visual do design system (fora do menu, noindex)
+fontes/                    Comparação de fontes: home + Case 01 em Stack Sans Text, Figtree e Manrope (noindex)
+content/                   Cópia dos arquivos .md do cofre do Obsidian (conteúdo editável; veja content/00 - Leia-me.md)
 DESIGN.md                  Especificação do design system (tokens, tipografia, componentes)
 styles.css                 Todo o visual: tokens de cor, tipografia, layout, tema escuro
 main.js                    Interações (tema, relógio, preview, Ver mais, Inspetor, loader, playground)
@@ -67,6 +69,24 @@ Arquivos: `projetos/case-01/index.html`, `projetos/case-02/index.html` e as cóp
 
 Para criar o Case 03: copie a pasta `projetos/case-01/` (e a de `en/`), troque os textos e imagens,
 aponte o `href` da linha na home e ajuste o `up-next` dos cases vizinhos.
+
+## Layout, marca e fontes
+
+- **Home em duas colunas** (a partir de 1024px): a coluna da esquerda (`.side`: cabeçalho, intro, redes
+  e contato) fica fixa e a da direita (`.flow`: projetos, cases, empresas e rodapé) rola. No celular
+  vira uma coluna. CSS na seção 17 de `styles.css`.
+- **Cor da marca:** laranja `#FF5E00` (`--accent`) para ações; `--accent-text` para texto em laranja;
+  `--accent-fg` para texto sobre o laranja. O tema escuro usa o off-black `#201C1D`. Tabela em `DESIGN.md`.
+- **Destaques:** `<span class="hl">…</span>` deixa o trecho em laranja (substitui o itálico serifado).
+- **Fontes:** padrão Figtree (`--font-sans`). Compare em `/fontes/`. Cada variante só muda
+  `data-font="…"` no `<html>` e o link do Google Fonts.
+
+## Conteúdo no Obsidian
+
+Os textos do site também existem em Markdown, no cofre do Obsidian do Pedro, com cópia em `content/`.
+Os arquivos são `Home.md`, `Cases/Case 01.md`, `Cases/Case 02.md` e os modelos `Cases/_Modelo - Case*.md`.
+O site **não** lê esses arquivos sozinho: quando o `Home.md` muda, as alterações são aplicadas no HTML
+(pt e en) e publicadas.
 
 ## Design system
 

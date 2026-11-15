@@ -9,12 +9,12 @@
   <meta property="og:title" content="Design system | Pedro Medeiros">
   <meta property="og:description" content="Guia visual do sistema de design do portfólio.">
   <meta property="og:image" content="/assets/covers/projeto-01.svg">
-  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#faf9f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#201c1d" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
   <script src="/theme-init.js"></script>
   <script src="/main.js" defer></script>
   <!-- Analytics: desligado. Adicione o script do provedor aqui quando quiser medir visitas. -->
@@ -41,7 +41,7 @@
 
     <main id="conteudo">
       <section class="page-intro fade-in" style="--n:1">
-        <h1>Design system <span class="serif">do portfólio</span></h1>
+        <h1>Design system <span class="hl">do portfólio</span></h1>
         <p>Página interna (fora do menu e com noindex). Tudo aqui lê os tokens de <code>/styles.css</code>: mude um valor lá e esta página acompanha. Especificação completa em <code>DESIGN.md</code>.</p>
         <nav class="ds-toc" aria-label="Seções">
           <a href="#tipografia">Tipografia</a><a href="#cores">Cores</a><a href="#bordas">Bordas e raios</a><a href="#espacamento">Espaçamento</a><a href="#sombras">Sombras</a><a href="#movimento">Movimento</a><a href="#componentes">Componentes</a>
@@ -49,30 +49,30 @@
       </section>
 
       <section class="ds-sec" id="tipografia">
-        <h2 class="block-title">Tipografia <small>3 famílias</small></h2>
+        <h2 class="block-title">Tipografia <small>2 famílias + destaque</small></h2>
         <div class="ds-fonts">
-          <div><span class="ds-big" style="font-family:var(--font-sans)">Aa</span><code>--font-sans</code><p>Geist · 400 / 500 / 600<br>Interface e texto</p></div>
+          <div><span class="ds-big" style="font-family:var(--font-sans)">Aa</span><code>--font-sans</code><p>Figtree (padrão em teste) · 400 / 500 / 600<br>Interface e texto. Alternativas em <a class="text-link" href="/fontes/">/fontes/</a></p></div>
           <div><span class="ds-big" style="font-family:var(--font-mono)">Aa</span><code>--font-mono</code><p>Geist Mono · 400<br>Anos, números, códigos</p></div>
-          <div><span class="ds-big" style="font-family:var(--font-serif);font-style:italic">Aa</span><code>--font-serif</code><p>Instrument Serif itálico<br>Acentos dentro de títulos</p></div>
+          <div><span class="ds-big" style="font-family:var(--font-sans);color:var(--accent-text)">Aa</span><code>.hl</code><p>Destaque: fonte principal em --accent-text<br>Substitui o antigo itálico serifado</p></div>
         </div>
         <p class="ds-pangram" style="font-family:var(--font-sans)">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ÁÉÍÓÚ ãõç — “” @ # & % → ·</p>
         <h3 class="ds-h3">Pesos</h3>
         <div class="ds-weights"><span style="font-weight:400">400 Regular</span><span style="font-weight:500">500 Medium</span><span style="font-weight:600">600 Semibold <small>(carregado, sem uso)</small></span></div>
         <h3 class="ds-h3">Escala tipográfica</h3>
         <ol class="ds-type">
-          <li><div class="ds-type-meta"><strong>Lede / título de página</strong><code>Geist 500 · 22 / 1.35 · −0.015em (20px até 640px)</code><span>.page-intro h1, .case-lede</span></div><p style="font-size:22px;line-height:1.35;font-weight:500;letter-spacing:-0.015em">Lorem ipsum dolor <span class="serif" style="font-size:1.12em;font-weight:400">sit amet</span></p></li>
-          <li><div class="ds-type-meta"><strong>Número</strong><code>Geist 500 · 22 / 1.65 · −0.02em</code><span>.numbers strong</span></div><p style="font-size:22px;font-weight:500;letter-spacing:-0.02em">000–000 · 0,0%</p></li>
-          <li><div class="ds-type-meta"><strong>Título de seção</strong><code>Geist 500 · 17 / 1.4 · −0.01em</code><span>.story h3</span></div><p style="font-size:17px;line-height:1.4;font-weight:500;letter-spacing:-0.01em">Ut enim ad minim veniam, quis nostrud</p></li>
-          <li><div class="ds-type-meta"><strong>Corpo</strong><code>Geist 400 · 15 / 1.65</code><span>body, p, .hero</span></div><p style="font-size:15px;line-height:1.65">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p></li>
-          <li><div class="ds-type-meta"><strong>Corpo forte</strong><code>Geist 500 · 15 / 1.65</code><span>.work-name, .top-name strong, .case-intro h1</span></div><p style="font-size:15px;line-height:1.65;font-weight:500">Case 01 · Pedro Medeiros</p></li>
-          <li><div class="ds-type-meta"><strong>Apoio</strong><code>Geist 400 · 14 / 1.55</code><span>.work-desc, .menu a, .cta, .show-more, .facts dd</span></div><p style="font-size:14px;line-height:1.55">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
-          <li><div class="ds-type-meta"><strong>Rótulo</strong><code>Geist 400 · 13 / 1.65</code><span>.block-title, .work-tag, .foot, figcaption, .facts dt, .story h2</span></div><p style="font-size:13px">Projetos · Legenda · Ano</p></li>
+          <li><div class="ds-type-meta"><strong>Lede / título de página</strong><code>Sans 500 · 22 / 1.35 · −0.015em (20px até 640px)</code><span>.page-intro h1, .case-lede</span></div><p style="font-size:22px;line-height:1.35;font-weight:500;letter-spacing:-0.015em">Lorem ipsum dolor <span class="hl">sit amet</span></p></li>
+          <li><div class="ds-type-meta"><strong>Número</strong><code>Sans 500 · 22 / 1.65 · −0.02em</code><span>.numbers strong</span></div><p style="font-size:22px;font-weight:500;letter-spacing:-0.02em">000–000 · 0,0%</p></li>
+          <li><div class="ds-type-meta"><strong>Título de seção</strong><code>Sans 500 · 17 / 1.4 · −0.01em</code><span>.story h3</span></div><p style="font-size:17px;line-height:1.4;font-weight:500;letter-spacing:-0.01em">Ut enim ad minim veniam, quis nostrud</p></li>
+          <li><div class="ds-type-meta"><strong>Corpo</strong><code>Sans 400 · 15 / 1.65</code><span>body, p, .hero</span></div><p style="font-size:15px;line-height:1.65">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p></li>
+          <li><div class="ds-type-meta"><strong>Corpo forte</strong><code>Sans 500 · 15 / 1.65</code><span>.work-name, .top-name strong, .case-intro h1</span></div><p style="font-size:15px;line-height:1.65;font-weight:500">Case 01 · Pedro Medeiros</p></li>
+          <li><div class="ds-type-meta"><strong>Apoio</strong><code>Sans 400 · 14 / 1.55</code><span>.work-desc, .menu a, .cta, .show-more, .facts dd</span></div><p style="font-size:14px;line-height:1.55">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+          <li><div class="ds-type-meta"><strong>Rótulo</strong><code>Sans 400 · 13 / 1.65</code><span>.block-title, .work-tag, .foot, figcaption, .facts dt, .story h2</span></div><p style="font-size:13px">Projetos · Legenda · Ano</p></li>
           <li><div class="ds-type-meta"><strong>Mono</strong><code>Geist Mono 400 · 12 · +0.01em</code><span>.mono, .work-year, contador de .step-list</span></div><p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.01em">2026 · 01 · 12:00</p></li>
           <li><div class="ds-type-meta"><strong>Mono pequeno</strong><code>Geist Mono 400 · 11 · +0.02em</code><span>.block-title small, .swatch-list span, Inspetor</span></div><p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.02em">#FAFAF9 · 08</p></li>
           <li><div class="ds-type-meta"><strong>Micro</strong><code>Geist Mono 400 · 10</code><span>Rótulos do Inspetor e do loader</span></div><p style="font-family:var(--font-mono);font-size:10px">600 × 72 · pad 16</p></li>
-          <li><div class="ds-type-meta"><strong>Acento serifado</strong><code>Instrument Serif itálico · 1.18em (1.12em em títulos) · lh 1 · −0.005em</code><span>.serif, .case-lede em</span></div><p style="font-family:var(--font-serif);font-style:italic;font-size:1.18em;line-height:1;letter-spacing:-0.005em">sed do eiusmod</p></li>
+          <li><div class="ds-type-meta"><strong>Destaque</strong><code>Fonte principal, mesmo tamanho e peso do texto em volta · cor --accent-text</code><span>.hl, .case-lede em</span></div><p style="color:var(--accent-text)">sed do eiusmod tempor</p></li>
         </ol>
-        <p class="ds-note">Hierarquia é feita mais por cor (<code>--fg</code> → <code>--muted</code> → <code>--subtle</code>) do que por tamanho. Corpo usa <code>text-wrap: balance</code>.</p>
+        <p class="ds-note">Hierarquia é feita mais por cor (<code>--fg</code> → <code>--muted</code> → <code>--subtle</code>) do que por tamanho; o laranja (<code>--accent-text</code>) marca destaques e estados ativos. "Sans" = <code>--font-sans</code> (Figtree por padrão). Corpo usa <code>text-wrap: balance</code>.</p>
       </section>
 
       <section class="ds-sec" id="cores">
@@ -99,9 +99,12 @@
             <li><i style="background:var(--line)"></i><div><code>--line</code><span class="ds-val" data-token="--line"></span><p>Divisórias de 1px e contornos de imagens, avatar e chips</p></div></li>
             <li><i style="background:var(--line-strong)"></i><div><code>--line-strong</code><span class="ds-val" data-token="--line-strong"></span><p>Contorno de botões secundários e sublinhado de links</p></div></li>
           </ul>
-          <h3 class="ds-h3">Ação</h3>
+          <h3 class="ds-h3">Marca / ação</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Anel de foco (:focus-visible). Igual nos dois temas</p></div></li>
+            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Laranja da marca (Stack Orange #FF5E00). Preenchimento de ações: CTA principal, seleção de texto, sublinhado no hover</p></div></li>
+            <li><i style="background:var(--accent-fg)"></i><div><code>--accent-fg</code><span class="ds-val" data-token="--accent-fg"></span><p>Texto e ícones sobre o laranja (off-black: 5.5:1; branco daria só 3.06:1)</p></div></li>
+            <li><i style="background:var(--accent-text)"></i><div><code>--accent-text</code><span class="ds-val" data-token="--accent-text"></span><p>Laranja para texto e linhas sobre o fundo: destaques, hover de links, item ativo, foco (≥ 4.5:1)</p></div></li>
+            <li><i style="background:var(--accent-soft)"></i><div><code>--accent-soft</code><span class="ds-val" data-token="--accent-soft"></span><p>Laranja translúcido para fundos sutis (reservado)</p></div></li>
           </ul>
           <h3 class="ds-h3">Inspetor (ferramenta de dev)</h3>
           <ul class="ds-colors">
@@ -142,9 +145,12 @@
             <li><i style="background:var(--line)"></i><div><code>--line</code><span class="ds-val" data-token="--line"></span><p>Divisórias de 1px e contornos de imagens, avatar e chips</p></div></li>
             <li><i style="background:var(--line-strong)"></i><div><code>--line-strong</code><span class="ds-val" data-token="--line-strong"></span><p>Contorno de botões secundários e sublinhado de links</p></div></li>
           </ul>
-          <h3 class="ds-h3">Ação</h3>
+          <h3 class="ds-h3">Marca / ação</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Anel de foco (:focus-visible). Igual nos dois temas</p></div></li>
+            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Laranja da marca (Stack Orange #FF5E00). Preenchimento de ações: CTA principal, seleção de texto, sublinhado no hover</p></div></li>
+            <li><i style="background:var(--accent-fg)"></i><div><code>--accent-fg</code><span class="ds-val" data-token="--accent-fg"></span><p>Texto e ícones sobre o laranja (off-black: 5.5:1; branco daria só 3.06:1)</p></div></li>
+            <li><i style="background:var(--accent-text)"></i><div><code>--accent-text</code><span class="ds-val" data-token="--accent-text"></span><p>Laranja para texto e linhas sobre o fundo: destaques, hover de links, item ativo, foco (≥ 4.5:1)</p></div></li>
+            <li><i style="background:var(--accent-soft)"></i><div><code>--accent-soft</code><span class="ds-val" data-token="--accent-soft"></span><p>Laranja translúcido para fundos sutis (reservado)</p></div></li>
           </ul>
           <h3 class="ds-h3">Inspetor (ferramenta de dev)</h3>
           <ul class="ds-colors">

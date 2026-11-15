@@ -165,7 +165,7 @@
       [".top", "Header"],
       [".foot", "Footer"],
     ];
-    const TOKENS = ["bg", "panel", "chip", "hover", "fg", "muted", "subtle", "line", "line-strong", "accent"];
+    const TOKENS = ["bg", "panel", "chip", "hover", "fg", "muted", "subtle", "line", "line-strong", "accent", "accent-text", "accent-fg"];
 
     // Menu
     const menu = document.createElement("div");
