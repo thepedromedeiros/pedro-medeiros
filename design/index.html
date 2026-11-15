@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,12 +9,12 @@
   <meta property="og:title" content="Design system | Pedro Medeiros">
   <meta property="og:description" content="Guia visual do sistema de design do portfólio.">
   <meta property="og:image" content="/assets/covers/projeto-01.svg">
-  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#121110">
+    <link rel="icon" href="/assets/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
   <script src="/theme-init.js"></script>
   <script src="/main.js" defer></script>
   <!-- Analytics: desligado. Adicione o script do provedor aqui quando quiser medir visitas. -->
@@ -31,17 +31,11 @@
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3m4-4L3 8l4 4"/></svg>
         Pedro Medeiros
       </a>
-      <div class="top-tools">
-        <button class="ghost-btn theme-btn" type="button" data-theme-btn aria-label="Alternar tema claro e escuro">
-          <svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.6 9.6A5.6 5.6 0 0 1 6.4 2.4a5.6 5.6 0 1 0 7.2 7.2Z"/></svg>
-          <svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.6v1.3M8 13.1v1.3M1.6 8h1.3M13.1 8h1.3M3.5 3.5l.9.9M11.6 11.6l.9.9M3.5 12.5l.9-.9M11.6 4.4l.9-.9"/></svg>
-        </button>
-      </div>
     </header>
 
     <main id="conteudo">
       <section class="page-intro fade-in" style="--n:1">
-        <h1>Design system <span class="serif">do portfólio</span></h1>
+        <h1>Design system <span class="hl">do portfólio</span></h1>
         <p>Página interna (fora do menu e com noindex). Tudo aqui lê os tokens de <code>/styles.css</code>: mude um valor lá e esta página acompanha. Especificação completa em <code>DESIGN.md</code>.</p>
         <nav class="ds-toc" aria-label="Seções">
           <a href="#tipografia">Tipografia</a><a href="#cores">Cores</a><a href="#bordas">Bordas e raios</a><a href="#espacamento">Espaçamento</a><a href="#sombras">Sombras</a><a href="#movimento">Movimento</a><a href="#componentes">Componentes</a>
@@ -49,30 +43,32 @@
       </section>
 
       <section class="ds-sec" id="tipografia">
-        <h2 class="block-title">Tipografia <small>3 famílias</small></h2>
+        <h2 class="block-title">Tipografia <small>2 famílias + destaque</small></h2>
         <div class="ds-fonts">
-          <div><span class="ds-big" style="font-family:var(--font-sans)">Aa</span><code>--font-sans</code><p>Geist · 400 / 500 / 600<br>Interface e texto</p></div>
+          <div><span class="ds-big" style="font-family:var(--font-sans)">Aa</span><code>--font-sans</code><p>Manrope · 400 / 500 / 600 / 700<br>Interface e texto</p></div>
           <div><span class="ds-big" style="font-family:var(--font-mono)">Aa</span><code>--font-mono</code><p>Geist Mono · 400<br>Anos, números, códigos</p></div>
-          <div><span class="ds-big" style="font-family:var(--font-serif);font-style:italic">Aa</span><code>--font-serif</code><p>Instrument Serif itálico<br>Acentos dentro de títulos</p></div>
+          <div><span class="ds-big" style="font-family:var(--font-sans);color:var(--accent-text)">Aa</span><code>.hl</code><p>Destaque: fonte principal em --accent-text<br>Substitui o antigo itálico serifado</p></div>
         </div>
         <p class="ds-pangram" style="font-family:var(--font-sans)">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 ÁÉÍÓÚ ãõç — “” @ # & % → ·</p>
         <h3 class="ds-h3">Pesos</h3>
-        <div class="ds-weights"><span style="font-weight:400">400 Regular</span><span style="font-weight:500">500 Medium</span><span style="font-weight:600">600 Semibold <small>(carregado, sem uso)</small></span></div>
+        <div class="ds-weights"><span style="font-weight:400">400 Regular</span><span style="font-weight:500">500 Medium</span><span style="font-weight:600">600 Semibold</span><span style="font-weight:700">700 Bold <small>(carregado, sem uso)</small></span></div>
         <h3 class="ds-h3">Escala tipográfica</h3>
         <ol class="ds-type">
-          <li><div class="ds-type-meta"><strong>Lede / título de página</strong><code>Geist 500 · 22 / 1.35 · −0.015em (20px até 640px)</code><span>.page-intro h1, .case-lede</span></div><p style="font-size:22px;line-height:1.35;font-weight:500;letter-spacing:-0.015em">Lorem ipsum dolor <span class="serif" style="font-size:1.12em;font-weight:400">sit amet</span></p></li>
-          <li><div class="ds-type-meta"><strong>Número</strong><code>Geist 500 · 22 / 1.65 · −0.02em</code><span>.numbers strong</span></div><p style="font-size:22px;font-weight:500;letter-spacing:-0.02em">000–000 · 0,0%</p></li>
-          <li><div class="ds-type-meta"><strong>Título de seção</strong><code>Geist 500 · 17 / 1.4 · −0.01em</code><span>.story h3</span></div><p style="font-size:17px;line-height:1.4;font-weight:500;letter-spacing:-0.01em">Ut enim ad minim veniam, quis nostrud</p></li>
-          <li><div class="ds-type-meta"><strong>Corpo</strong><code>Geist 400 · 15 / 1.65</code><span>body, p, .hero</span></div><p style="font-size:15px;line-height:1.65">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p></li>
-          <li><div class="ds-type-meta"><strong>Corpo forte</strong><code>Geist 500 · 15 / 1.65</code><span>.work-name, .top-name strong, .case-intro h1</span></div><p style="font-size:15px;line-height:1.65;font-weight:500">Case 01 · Pedro Medeiros</p></li>
-          <li><div class="ds-type-meta"><strong>Apoio</strong><code>Geist 400 · 14 / 1.55</code><span>.work-desc, .menu a, .cta, .show-more, .facts dd</span></div><p style="font-size:14px;line-height:1.55">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
-          <li><div class="ds-type-meta"><strong>Rótulo</strong><code>Geist 400 · 13 / 1.65</code><span>.block-title, .work-tag, .foot, figcaption, .facts dt, .story h2</span></div><p style="font-size:13px">Projetos · Legenda · Ano</p></li>
+          <li><div class="ds-type-meta"><strong>Lede / título de página</strong><code>Sans 500 · 22 / 1.35 · −0.015em (20px até 640px)</code><span>.page-intro h1, .case-lede</span></div><p style="font-size:22px;line-height:1.35;font-weight:500;letter-spacing:-0.015em">Lorem ipsum dolor <span class="hl">sit amet</span></p></li>
+          <li><div class="ds-type-meta"><strong>Número</strong><code>Sans 500 · 22 / 1.65 · −0.02em</code><span>.numbers strong</span></div><p style="font-size:22px;font-weight:500;letter-spacing:-0.02em">000–000 · 0,0%</p></li>
+          <li><div class="ds-type-meta"><strong>Título de seção</strong><code>Sans 500 · 17 / 1.4 · −0.01em</code><span>.story h3</span></div><p style="font-size:17px;line-height:1.4;font-weight:500;letter-spacing:-0.01em">Ut enim ad minim veniam, quis nostrud</p></li>
+          <li><div class="ds-type-meta"><strong>Corpo</strong><code>Sans 400 · 15 / 1.65</code><span>body, p, .hero</span></div><p style="font-size:15px;line-height:1.65">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p></li>
+          <li><div class="ds-type-meta"><strong>Título da home</strong><code>Sans 600 · 15 / 1.65 · −0.005em</code><span>.hero p:first-child</span></div><p style="font-size:15px;line-height:1.65;font-weight:600;letter-spacing:-0.005em">Lorem ipsum dolor sit amet, <span class="hl">sed do eiusmod.</span></p></li>
+          <li><div class="ds-type-meta"><strong>Nome em lista</strong><code>Sans 600 · 15 / 1.65</code><span>.work-name, .grave-name, .insight strong</span></div><p style="font-size:15px;line-height:1.65;font-weight:600">Case 01 · Projeto Alfa</p></li>
+          <li><div class="ds-type-meta"><strong>Corpo forte</strong><code>Sans 500 · 15 / 1.65</code><span>.top-name strong, .case-intro h1</span></div><p style="font-size:15px;line-height:1.65;font-weight:500">Pedro Medeiros</p></li>
+          <li><div class="ds-type-meta"><strong>Apoio</strong><code>Sans 400 · 14 / 1.55</code><span>.work-desc, .menu a, .cta, .show-more, .facts dd</span></div><p style="font-size:14px;line-height:1.55">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+          <li><div class="ds-type-meta"><strong>Rótulo</strong><code>Sans 400 · 13 / 1.65</code><span>.block-title, .work-tag, .foot, figcaption, .facts dt, .story h2</span></div><p style="font-size:13px">Projetos · Legenda · Ano</p></li>
           <li><div class="ds-type-meta"><strong>Mono</strong><code>Geist Mono 400 · 12 · +0.01em</code><span>.mono, .work-year, contador de .step-list</span></div><p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.01em">2026 · 01 · 12:00</p></li>
-          <li><div class="ds-type-meta"><strong>Mono pequeno</strong><code>Geist Mono 400 · 11 · +0.02em</code><span>.block-title small, .swatch-list span, Inspetor</span></div><p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.02em">#FAFAF9 · 08</p></li>
-          <li><div class="ds-type-meta"><strong>Micro</strong><code>Geist Mono 400 · 10</code><span>Rótulos do Inspetor e do loader</span></div><p style="font-family:var(--font-mono);font-size:10px">600 × 72 · pad 16</p></li>
-          <li><div class="ds-type-meta"><strong>Acento serifado</strong><code>Instrument Serif itálico · 1.18em (1.12em em títulos) · lh 1 · −0.005em</code><span>.serif, .case-lede em</span></div><p style="font-family:var(--font-serif);font-style:italic;font-size:1.18em;line-height:1;letter-spacing:-0.005em">sed do eiusmod</p></li>
+          <li><div class="ds-type-meta"><strong>Mono pequeno</strong><code>Geist Mono 400 · 11 · +0.02em</code><span>.block-title small, .swatch-list span</span></div><p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.02em">#FAFAF9 · 08</p></li>
+          <li><div class="ds-type-meta"><strong>Etiqueta</strong><code>Geist Mono 500 · 10 / 1.5 · +0.02em · caixa alta</code><span>.soon-tag</span></div><p style="font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:0.02em;text-transform:uppercase;color:var(--muted)">em breve</p></li>
+          <li><div class="ds-type-meta"><strong>Destaque</strong><code>Fonte principal, mesmo tamanho e peso do texto em volta · cor --accent-text</code><span>.hl, .case-lede em</span></div><p style="color:var(--accent-text)">sed do eiusmod tempor</p></li>
         </ol>
-        <p class="ds-note">Hierarquia é feita mais por cor (<code>--fg</code> → <code>--muted</code> → <code>--subtle</code>) do que por tamanho. Corpo usa <code>text-wrap: balance</code>.</p>
+        <p class="ds-note">Hierarquia é feita mais por cor (<code>--fg</code> → <code>--muted</code> → <code>--subtle</code>) do que por tamanho; o laranja (<code>--accent-text</code>) marca destaques e estados ativos. "Sans" = <code>--font-sans</code> (Manrope). Corpo usa <code>text-wrap: balance</code>.</p>
       </section>
 
       <section class="ds-sec" id="cores">
@@ -90,7 +86,7 @@
           </ul>
           <h3 class="ds-h3">Texto</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--fg)"></i><div><code>--fg</code><span class="ds-val" data-token="--fg"></span><p>Texto principal, títulos, nome do projeto, fundo do botão principal</p></div></li>
+            <li><i style="background:var(--fg)"></i><div><code>--fg</code><span class="ds-val" data-token="--fg"></span><p>Texto principal, títulos, nome do projeto</p></div></li>
             <li><i style="background:var(--muted)"></i><div><code>--muted</code><span class="ds-val" data-token="--muted"></span><p>Texto secundário: parágrafos de apoio, menu, descrições, títulos de bloco</p></div></li>
             <li><i style="background:var(--subtle)"></i><div><code>--subtle</code><span class="ds-val" data-token="--subtle"></span><p>Texto terciário: anos, tags, legendas, rodapé, rótulos de meta</p></div></li>
           </ul>
@@ -99,19 +95,18 @@
             <li><i style="background:var(--line)"></i><div><code>--line</code><span class="ds-val" data-token="--line"></span><p>Divisórias de 1px e contornos de imagens, avatar e chips</p></div></li>
             <li><i style="background:var(--line-strong)"></i><div><code>--line-strong</code><span class="ds-val" data-token="--line-strong"></span><p>Contorno de botões secundários e sublinhado de links</p></div></li>
           </ul>
-          <h3 class="ds-h3">Ação</h3>
+          <h3 class="ds-h3">Marca / ação</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Anel de foco (:focus-visible). Igual nos dois temas</p></div></li>
+            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Laranja da marca (Stack Orange #FF5E00). Cor de ação fora dos botões: seleção de texto, sublinhado no hover, foco</p></div></li>
+            <li><i style="background:var(--accent-fg)"></i><div><code>--accent-fg</code><span class="ds-val" data-token="--accent-fg"></span><p>Texto sobre o laranja (seleção de texto): branco</p></div></li>
+            <li><i style="background:var(--accent-text)"></i><div><code>--accent-text</code><span class="ds-val" data-token="--accent-text"></span><p>Laranja para texto e linhas sobre o fundo: destaques, hover de links e nomes, contador de passos (≥ 4.5:1)</p></div></li>
+            <li><i style="background:var(--accent-soft)"></i><div><code>--accent-soft</code><span class="ds-val" data-token="--accent-soft"></span><p>Laranja translúcido para fundos sutis (reservado)</p></div></li>
           </ul>
-          <h3 class="ds-h3">Inspetor (ferramenta de dev)</h3>
+          <h3 class="ds-h3">Botões (neutros, sem laranja)</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--ins-grid)"></i><div><code>--ins-grid</code><span class="ds-val" data-token="--ins-grid"></span><p>Contornos e guias da coluna (camada Layout)</p></div></li>
-            <li><i style="background:var(--ins-grid-strong)"></i><div><code>--ins-grid-strong</code><span class="ds-val" data-token="--ins-grid-strong"></span><p>Elemento em hover, botão ativo e loader</p></div></li>
-            <li><i style="background:var(--ins-pad)"></i><div><code>--ins-pad</code><span class="ds-val" data-token="--ins-pad"></span><p>Padding (camada Espaçamento)</p></div></li>
-            <li><i style="background:var(--ins-margin)"></i><div><code>--ins-margin</code><span class="ds-val" data-token="--ins-margin"></span><p>Margin (camada Espaçamento)</p></div></li>
-            <li><i style="background:var(--ins-gap)"></i><div><code>--ins-gap</code><span class="ds-val" data-token="--ins-gap"></span><p>Gap (camada Espaçamento)</p></div></li>
-            <li><i style="background:var(--ins-comp)"></i><div><code>--ins-comp</code><span class="ds-val" data-token="--ins-comp"></span><p>Rótulos de componentes</p></div></li>
-            <li><i style="background:var(--ins-color)"></i><div><code>--ins-color</code><span class="ds-val" data-token="--ins-color"></span><p>Camada Cores</p></div></li>
+            <li><i style="background:var(--btn-bg)"></i><div><code>--btn-bg</code><span class="ds-val" data-token="--btn-bg"></span><p>Fundo do botão principal (WhatsApp) e da pílula de seção ativa: quase branco no escuro</p></div></li>
+            <li><i style="background:var(--btn-fg)"></i><div><code>--btn-fg</code><span class="ds-val" data-token="--btn-fg"></span><p>Texto e ícone do botão principal (16.0:1 no escuro)</p></div></li>
+            <li><i style="background:var(--btn-hover)"></i><div><code>--btn-hover</code><span class="ds-val" data-token="--btn-hover"></span><p>Hover do botão principal</p></div></li>
           </ul>
           <h3 class="ds-h3">GitHub (seção oculta)</h3>
           <ul class="ds-colors">
@@ -133,7 +128,7 @@
           </ul>
           <h3 class="ds-h3">Texto</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--fg)"></i><div><code>--fg</code><span class="ds-val" data-token="--fg"></span><p>Texto principal, títulos, nome do projeto, fundo do botão principal</p></div></li>
+            <li><i style="background:var(--fg)"></i><div><code>--fg</code><span class="ds-val" data-token="--fg"></span><p>Texto principal, títulos, nome do projeto</p></div></li>
             <li><i style="background:var(--muted)"></i><div><code>--muted</code><span class="ds-val" data-token="--muted"></span><p>Texto secundário: parágrafos de apoio, menu, descrições, títulos de bloco</p></div></li>
             <li><i style="background:var(--subtle)"></i><div><code>--subtle</code><span class="ds-val" data-token="--subtle"></span><p>Texto terciário: anos, tags, legendas, rodapé, rótulos de meta</p></div></li>
           </ul>
@@ -142,19 +137,18 @@
             <li><i style="background:var(--line)"></i><div><code>--line</code><span class="ds-val" data-token="--line"></span><p>Divisórias de 1px e contornos de imagens, avatar e chips</p></div></li>
             <li><i style="background:var(--line-strong)"></i><div><code>--line-strong</code><span class="ds-val" data-token="--line-strong"></span><p>Contorno de botões secundários e sublinhado de links</p></div></li>
           </ul>
-          <h3 class="ds-h3">Ação</h3>
+          <h3 class="ds-h3">Marca / ação</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Anel de foco (:focus-visible). Igual nos dois temas</p></div></li>
+            <li><i style="background:var(--accent)"></i><div><code>--accent</code><span class="ds-val" data-token="--accent"></span><p>Laranja da marca (Stack Orange #FF5E00). Cor de ação fora dos botões: seleção de texto, sublinhado no hover, foco</p></div></li>
+            <li><i style="background:var(--accent-fg)"></i><div><code>--accent-fg</code><span class="ds-val" data-token="--accent-fg"></span><p>Texto sobre o laranja (seleção de texto): branco</p></div></li>
+            <li><i style="background:var(--accent-text)"></i><div><code>--accent-text</code><span class="ds-val" data-token="--accent-text"></span><p>Laranja para texto e linhas sobre o fundo: destaques, hover de links e nomes, contador de passos (≥ 4.5:1)</p></div></li>
+            <li><i style="background:var(--accent-soft)"></i><div><code>--accent-soft</code><span class="ds-val" data-token="--accent-soft"></span><p>Laranja translúcido para fundos sutis (reservado)</p></div></li>
           </ul>
-          <h3 class="ds-h3">Inspetor (ferramenta de dev)</h3>
+          <h3 class="ds-h3">Botões (neutros, sem laranja)</h3>
           <ul class="ds-colors">
-            <li><i style="background:var(--ins-grid)"></i><div><code>--ins-grid</code><span class="ds-val" data-token="--ins-grid"></span><p>Contornos e guias da coluna (camada Layout)</p></div></li>
-            <li><i style="background:var(--ins-grid-strong)"></i><div><code>--ins-grid-strong</code><span class="ds-val" data-token="--ins-grid-strong"></span><p>Elemento em hover, botão ativo e loader</p></div></li>
-            <li><i style="background:var(--ins-pad)"></i><div><code>--ins-pad</code><span class="ds-val" data-token="--ins-pad"></span><p>Padding (camada Espaçamento)</p></div></li>
-            <li><i style="background:var(--ins-margin)"></i><div><code>--ins-margin</code><span class="ds-val" data-token="--ins-margin"></span><p>Margin (camada Espaçamento)</p></div></li>
-            <li><i style="background:var(--ins-gap)"></i><div><code>--ins-gap</code><span class="ds-val" data-token="--ins-gap"></span><p>Gap (camada Espaçamento)</p></div></li>
-            <li><i style="background:var(--ins-comp)"></i><div><code>--ins-comp</code><span class="ds-val" data-token="--ins-comp"></span><p>Rótulos de componentes</p></div></li>
-            <li><i style="background:var(--ins-color)"></i><div><code>--ins-color</code><span class="ds-val" data-token="--ins-color"></span><p>Camada Cores</p></div></li>
+            <li><i style="background:var(--btn-bg)"></i><div><code>--btn-bg</code><span class="ds-val" data-token="--btn-bg"></span><p>Fundo do botão principal (WhatsApp) e da pílula de seção ativa: quase branco no escuro</p></div></li>
+            <li><i style="background:var(--btn-fg)"></i><div><code>--btn-fg</code><span class="ds-val" data-token="--btn-fg"></span><p>Texto e ícone do botão principal (16.0:1 no escuro)</p></div></li>
+            <li><i style="background:var(--btn-hover)"></i><div><code>--btn-hover</code><span class="ds-val" data-token="--btn-hover"></span><p>Hover do botão principal</p></div></li>
           </ul>
           <h3 class="ds-h3">GitHub (seção oculta)</h3>
           <ul class="ds-colors">
@@ -177,29 +171,28 @@
         <h2 class="block-title">Bordas e raios</h2>
         <h3 class="ds-h3">Raios</h3>
         <ul class="ds-radii">
-          <li><i style="border-radius:2px"></i><code>2px</code><span>Células do GitHub, overlays do Inspetor</span></li>
-          <li><i style="border-radius:3px"></i><code>3px</code><span>Rótulos do Inspetor</span></li>
-          <li><i style="border-radius:4px"></i><code>4px</code><span>Anel de foco, amostra da paleta</span></li>
+          <li><i style="border-radius:2px"></i><code>2px</code><span>Células do GitHub</span></li>
+          <li><i style="border-radius:4px"></i><code>4px</code><span>Anel de foco</span></li>
           <li><i style="border-radius:5px"></i><code>5px</code><span>Ícone do chip de marca</span></li>
-          <li><i style="border-radius:6px"></i><code>6px</code><span>Logo de experiência, skip-link, tooltip</span></li>
+          <li><i style="border-radius:6px"></i><code>6px</code><span>Logo de experiência, skip-link, tooltip dos logos</span></li>
           <li><i style="border-radius:7px"></i><code>7px</code><span>Cor dentro da amostra</span></li>
-          <li><i style="border-radius:8px"></i><code>8px</code><span>Botão fantasma, item de menu, miniatura</span></li>
-          <li><i style="border-radius:10px"></i><code>10px</code><span>CTA</span></li>
-          <li><i style="border-radius:12px"></i><code>12px</code><span>Mídia, preview flutuante, logo, menus, amostra</span></li>
-          <li><i style="border-radius:14px"></i><code>14px</code><span>Peça do playground, grade de números</span></li>
-          <li><i style="border-radius:16px"></i><code>16px</code><span>Bandeja de imagens, zoom</span></li>
-          <li><i style="border-radius:999px"></i><code>999px</code><span>Pílula (rótulo do playground)</span></li>
+          <li><i style="border-radius:8px"></i><code>8px</code><span>Botão fantasma, bandeiras de idioma</span></li>
+          <li><i style="border-radius:9px"></i><code>9px</code><span>Ícone do Cemitério</span></li>
+          <li><i style="border-radius:10px"></i><code>10px</code><span>CTA, pílulas, miniatura das linhas</span></li>
+          <li><i style="border-radius:12px"></i><code>12px</code><span>Mídia dos cases, logo, amostra</span></li>
+          <li><i style="border-radius:14px"></i><code>14px</code><span>Linha de projeto (hover), grade de números, caixa Em breve</span></li>
+          <li><i style="border-radius:16px"></i><code>16px</code><span>Bandeja de imagens</span></li>
+          <li><i style="border-radius:999px"></i><code>999px</code><span>Etiqueta em breve</span></li>
           <li><i style="border-radius:50%"></i><code>50%</code><span>Avatar</span></li>
         </ul>
         <h3 class="ds-h3">Linhas</h3>
         <ul class="ds-lines">
           <li><i style="border-top:1px solid var(--line)"></i><code>1px solid var(--line)</code><span>Divisória entre linhas, rodapé, meta, etapas, próximo case</span></li>
           <li><i class="ds-ring" style="box-shadow:0 0 0 1px var(--line)"></i><code>box-shadow: 0 0 0 1px var(--line)</code><span>Anel de 1px em avatar, imagens, chips, amostras (não ocupa espaço)</span></li>
-          <li><i class="ds-ring" style="box-shadow:0 0 0 1px var(--line-strong)"></i><code>box-shadow: 0 0 0 1px var(--line-strong)</code><span>CTA secundário, menus do Inspetor</span></li>
+          <li><i class="ds-ring" style="box-shadow:0 0 0 1px var(--line-strong)"></i><code>box-shadow: 0 0 0 1px var(--line-strong)</code><span>CTA secundário e pílulas de seção</span></li>
           <li><i class="ds-u"><a class="text-link" href="#bordas">Link sublinhado</a></i><code>underline 1px var(--line-strong) · offset 3px</code><span>Links no texto; no hover a linha vira currentColor</span></li>
           <li><i class="ds-ring ds-focus"></i><code>outline: 2px solid var(--accent) · offset 3px</code><span>Foco por teclado (:focus-visible)</span></li>
-          <li><i style="border-top:1px dashed var(--ins-grid)"></i><code>1px dashed var(--ins-grid)</code><span>Guias da coluna (Inspetor e loader)</span></li>
-          <li><i style="border-top:1px dotted var(--ins-grid-strong)"></i><code>1px dotted var(--ins-grid-strong)</code><span>Caixas e medidas do loader</span></li>
+          <li><i class="ds-u"><s class="grave-name">Projeto Alfa</s></i><code>line-through 1.5px var(--subtle)</code><span>Nome riscado no Cemitério</span></li>
         </ul>
       </section>
 
@@ -231,7 +224,7 @@
           <li><code>--column: 600px</code><span>Coluna de texto. <code>.shell</code> = 600 + 2 × 24 de padding</span></li>
           <li><code>--wide: 880px</code><span>Mídia larga dos cases, limitada a <code>100vw − 40px</code></span></li>
           <li><code>.shell padding</code><span>72 24 48 · até 640px: 40 20 32</span></li>
-          <li><code>Breakpoints</code><span>≤ 400 (avatar 36) · ≤ 640 (mobile) · ≤ 899 ou sem hover (Inspetor some) · hover:none (miniaturas)</span></li>
+          <li><code>Breakpoints</code><span>≤ 400 (avatar 36) · ≤ 640 (mobile) · ≥ 1024 (home em duas colunas, esquerda fixa)</span></li>
         </ul>
       </section>
 
@@ -261,10 +254,9 @@
           <li><code>--ease-out</code><span>cubic-bezier(0.22, 1, 0.36, 1) · curva padrão de tudo</span></li>
           <li><code>.fade-in</code><span>rise 700ms · de translateY(8px) + blur(4px) + opacity 0 · atraso <code>--n × 70ms</code></span></li>
           <li><code>150–200ms</code><span>Cores, hover, tooltips, press do CTA (150ms)</span></li>
-          <li><code>250–350ms</code><span>Opacidade das linhas, setas, preview flutuante, menu do Inspetor, zoom</span></li>
-          <li><code>400–700ms</code><span>Loader: caixas 340–400ms, cortina 700ms cubic-bezier(0.65, 0, 0.35, 1)</span></li>
-          <li><code>600ms</code><span>Zoom de imagem no hover do playground</span></li>
-          <li><code>prefers-reduced-motion</code><span>Desliga todas as animações e transições e o loader</span></li>
+          <li><code>250–350ms</code><span>Fundo das linhas (200ms), setas (250ms), zoom da miniatura (400ms)</span></li>
+          <li><code>smooth scroll</code><span>Pílulas de seção rolam suave até a seção (scroll-margin-top 72px) e marcam a ativa com o estilo do botão principal (neutro). Escondidas abaixo de 1024px</span></li>
+          <li><code>prefers-reduced-motion</code><span>Desliga todas as animações e transições; a rolagem das pílulas fica instantânea</span></li>
         </ul>
       </section>
 
@@ -272,11 +264,13 @@
         <h2 class="block-title">Componentes <small>amostras ao vivo</small></h2>
         <div class="ds-demo">
           <div class="cta-row"><a class="cta cta--main" href="#componentes"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 13.8 3 10.9A5.9 5.9 0 1 1 5.2 13Z"/><path d="M6 5.6c.2-.4.6-.5.9-.2l.6 1.2c.1.3 0 .5-.2.7l-.3.3c.4.8 1 1.4 1.8 1.8l.3-.3c.2-.2.5-.3.7-.2l1.2.6c.3.2.2.7-.2.9-.6.4-1.3.5-2 .2A5.3 5.3 0 0 1 5.8 7.6c-.3-.7-.2-1.4.2-2Z" fill="currentColor" stroke="none"/></svg> CTA principal</a><a class="cta" href="#componentes"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.6 2.2a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM2.4 6h2.4v7.6H2.4Zm3.9 0h2.3v1c.4-.7 1.3-1.2 2.4-1.2 2.2 0 2.7 1.4 2.7 3.3v4.5h-2.4v-4c0-1-.1-2.1-1.3-2.1-1.3 0-1.5 1-1.5 2v4.1H6.3Z"/></svg> CTA secundário</a></div>
-          <div class="ds-row"><nav class="menu" aria-label="Exemplo"><a href="#componentes" aria-current="page">Ativo</a><a href="#componentes">Menu</a></nav><button class="ghost-btn" type="button" aria-label="Botão fantasma"><svg class="job-plus" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></button><button class="show-more" type="button">Mostrar mais</button></div>
+          <nav class="section-nav" style="position:static;background:none;padding:0;margin:0" aria-label="Exemplo"><a class="cta" href="#componentes" aria-current="true">Ativa</a><a class="cta" href="#componentes">Pílula</a><a class="cta" href="#componentes">Insights <span class="soon-tag">em breve</span></a></nav>
+          <div class="ds-row"><nav class="lang-switch" aria-label="Exemplo"><a class="ghost-btn" href="#componentes" aria-current="true"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="#009c3b"/><path d="M16 7.5 27.5 16 16 24.5 4.5 16Z" fill="#ffdf00"/><circle cx="16" cy="16" r="5" fill="#002776"/><path d="M11.2 15.1c3.2-.6 6.6 0 9.6 1.7" stroke="#fff" stroke-width=".9" fill="none"/><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="none" stroke="#000" stroke-opacity=".15"/></svg></a><a class="ghost-btn" href="#componentes"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="#fff"/><g fill="#b22234"><rect x="1.5" y="4.5" width="29" height="2.6"/><rect x="1.5" y="9.8" width="29" height="2.6"/><rect x="1.5" y="15.1" width="29" height="2.6"/><rect x="1.5" y="20.4" width="29" height="2.6"/><rect x="1.5" y="25" width="29" height="2.5"/></g><rect x="1.5" y="4.5" width="14" height="12.4" fill="#3c3b6e"/><g fill="#fff"><circle cx="4.5" cy="7.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="12.5" cy="7.5" r=".8"/><circle cx="6.5" cy="10.5" r=".8"/><circle cx="10.5" cy="10.5" r=".8"/><circle cx="4.5" cy="13.5" r=".8"/><circle cx="8.5" cy="13.5" r=".8"/><circle cx="12.5" cy="13.5" r=".8"/></g><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="none" stroke="#000" stroke-opacity=".15"/></svg></a></nav><a class="ghost-btn" href="#componentes" aria-label="X"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.33 6.93 14.13 1.5h-1.14L8.82 6.22 5.5 1.5H1.66l5.03 7.16-5.03 5.69H2.8l4.4-4.97 3.51 4.97h3.84L9.33 6.93Zm-1.56 1.76-.51-.71L3.2 2.34h1.75l3.27 4.58.51.71 4.26 5.96h-1.75L7.77 8.69Z"/></svg></a><button class="show-more" type="button">Ver mais</button></div>
           <ul class="rows work-list">
-            <li><a class="work" href="#componentes"><span class="work-year mono">0000</span><span class="work-info"><span class="work-name">Linha de projeto</span><span class="work-desc">Descrição em --muted, 14 / 1.55</span></span><span class="work-tag">Tag</span></a></li>
-            <li><a class="work" href="#componentes"><span class="work-year mono">0000</span><span class="work-info"><span class="work-name">Hover esmaece as outras</span><span class="work-desc">opacity .45 nas linhas sem hover</span></span><span class="work-tag">Tag</span></a></li>
+            <li><a class="work" href="#componentes"><span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-03.svg" alt=""></span><span class="work-info"><span class="work-name">Linha de projeto</span><span class="work-desc">Miniatura à esquerda, descrição em --muted</span></span><span class="work-meta"><span class="work-tag">Categoria</span><span class="work-year mono">0000</span></span></a></li>
           </ul>
+          <ul class="grave-list"><li><span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-01.svg" alt=""></span><span class="grave-text"><s class="grave-name">Projeto Alfa</s><span class="grave-desc">Item do Cemitério</span></span></li></ul>
+          <div class="soon-box"><strong>Em breve</strong>Estado vazio (Insights)</div>
           <dl class="facts"><div><dt>Rótulo</dt><dd>Valor</dd></div><div><dt>Rótulo</dt><dd>Valor</dd></div><div><dt>Rótulo</dt><dd>Valor</dd></div></dl>
           <div class="numbers"><div><strong>00</strong><span>Número</span></div><div><strong>00%</strong><span>Número</span></div><div><strong>~00</strong><span>Número</span></div></div>
         </div>
@@ -285,13 +279,10 @@
 
     <footer class="foot">
       <span>Pedro Medeiros © 2026</span>
-      <nav class="foot-menu" aria-label="Rodapé"><a href="/playground/">Playground</a></nav>
       <span class="foot-clock" data-clock>Brasil</span>
     </footer>
   </div>
 
-  <button class="ghost-btn inspect-btn" type="button" data-inspect-btn aria-haspopup="menu" aria-expanded="false" aria-label="Inspecionar" title="Inspecionar">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5 1.5 8 5 11.5M11 4.5 14.5 8 11 11.5M9.2 2.8l-2.4 10.4"/></svg>
-  </button>
+
 </body>
 </html>

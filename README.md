@@ -1,50 +1,52 @@
 # Pedro Medeiros — portfólio
 
 Site estático (HTML, CSS e JS puros, sem framework e sem build), hospedado na Vercel.
-Cada `git push` na branch `main` publica uma nova versão automaticamente.
+Cada `git push` na branch `main` publica uma nova versão automaticamente; outras branches geram só um Preview.
 
 ## Estrutura
 
 ```
 index.html                 Home em português (pt-BR)
 en/index.html              Home em inglês
-playground/index.html      Playground (pt-BR)
-en/playground/index.html   Playground (inglês)
-projetos/case-01/          Página do Case 01 (pt-BR) — modelo de case longo
-projetos/case-02/          Página do Case 02 (pt-BR) — modelo de case curto e visual
-en/projetos/case-0X/       Mesmas páginas em inglês
+projetos/case-01/          Case 01 (pt-BR) — modelo de case longo
+projetos/case-02/          Case 02 (pt-BR) — modelo de case curto e visual
+en/projetos/case-0X/       Mesmos cases em inglês
 design/                    Guia visual do design system (fora do menu, noindex)
-DESIGN.md                  Especificação do design system (tokens, tipografia, componentes)
-styles.css                 Todo o visual: tokens de cor, tipografia, layout, tema escuro
-main.js                    Interações (tema, relógio, preview, Ver mais, Inspetor, loader, playground)
-theme-init.js              Roda antes da pintura: aplica o tema salvo e liga o loader
-assets/                    Imagens (todas provisórias)
+DESIGN.md                  Especificação do design system
+content/                   Cópia dos .md do cofre do Obsidian (conteúdo editável; veja content/00 - Leia-me.md)
+styles.css                 Todo o visual: tokens, tipografia, layout
+main.js                    Relógio, "Ver mais", vídeos de capa, pílulas de seção (rolagem + seção ativa)
+theme-init.js              Força o tema escuro antes da pintura
+assets/                    Avatar, favicon, miniaturas, logos e imagens dos cases
 ```
 
-> Tudo que está em **lorem ipsum**, `0000`, `00`, "Empresa A…T", "Projeto 01", "Case 01" etc. é
-> conteúdo provisório. Procure por esses textos para saber onde editar. Lembre de editar
-> **as duas versões** (`index.html` e `en/index.html`).
+> Tudo que está em **lorem ipsum**, `0000`, `00`, "Empresa A…T", "Projeto 01", "Case 01", "Projeto Alfa" etc.
+> é provisório. Edite **as duas versões** (`index.html` e `en/index.html`).
 
-## Onde editar cada bloco
+## Onde editar cada bloco da home
 
-| Bloco | Arquivo / trecho | O que trocar |
+A home tem duas colunas no desktop: a **esquerda** (`<div class="side">`) fica fixa e a **direita**
+(`<div class="flow">`) rola. No celular vira uma coluna.
+
+| Bloco | Trecho | O que trocar |
 | --- | --- | --- |
-| Título da aba, descrição e imagem de compartilhamento | `<head>` de cada HTML (`<title>`, `meta description`, `og:*`) | Textos e `og:image` |
-| Foto | `assets/avatar.svg` (comentário `FOTO` no cabeçalho) | Coloque sua foto (ex.: `assets/avatar.webp`) e atualize o `src`. Troque também `assets/favicon.svg` |
-| Nome e cargo | `<header class="top">` | "Pedro Medeiros" / "Product Designer" |
-| Texto principal | `<section class="hero">` (comentário `INTRO`) | Os 3 parágrafos. Trechos em itálico serif usam `<span class="serif">…</span>` |
-| Empresas citadas no texto | `.brand` dentro da intro | Nome, link e logo (`assets/logos/…`). Logos escuros: mantenha `class="invert-dark"` para clarear no tema escuro |
-| Redes sociais | `<ul class="socials">` (comentário `REDES`) | `href` de LinkedIn, Dribbble, Instagram, Behance e e-mail (remova os que não usar) |
-| Projetos | `<section … aria-labelledby="projetos">` | Um `<li>` por projeto: ano (`work-year`), nome (`work-name`), descrição (`work-desc`), categoria (`work-tag`), link (`href`) e capa (`data-cover` + `<img>` da miniatura). Atualize o contador `<small>` |
-| Cases | `<section … aria-labelledby="cases">` | Igual aos projetos. Itens com `data-extra hidden` só aparecem após "Ver mais". Case 01 e Case 02 já apontam para `/projetos/case-01/` e `/projetos/case-02/` (no inglês, `/en/projetos/…`) |
-| Experiência (oculta) | `<section … aria-labelledby="experiencia" hidden>` | Edite os cargos e remova `hidden` para exibir |
-| Empresas que conhecem meu trabalho | `<ul class="logo-grid">` | Um `<li data-name="…">` por empresa; troque os SVGs em `assets/logos/` (o `data-name` vira o tooltip) |
-| GitHub (oculto) | `<section … aria-labelledby="github" hidden>` | Dados de exemplo. Remova `hidden` se decidir exibir e troque o link do perfil |
-| Contato | `<section … aria-labelledby="contato">` | WhatsApp (principal): troque `phone=5500000000000` e o texto `text=…`. LinkedIn (secundário): troque a URL `linkedin.com/in/placeholder` |
-| Rodapé | `<footer class="foot">` | Ano/nome. O relógio usa o fuso America/Sao_Paulo (em `main.js`) |
-| Playground | `playground/index.html` e `en/playground/index.html` | Cada `<li class="piece">`: imagem (`src`), versão ampliada (`data-zoom`), largura/altura reais e legenda |
-| Capas e peças | `assets/covers/`, `assets/playground/` | Substitua os SVGs provisórios por imagens reais (WebP/JPG) e atualize os caminhos |
-| Cores, fontes e espaçamentos | `styles.css`, seção **1. Tokens** | Variáveis `--bg`, `--fg`, `--muted`… (claro em `:root, [data-theme="light"]`, escuro em `[data-theme="dark"]`). Referência completa em `DESIGN.md` e `/design/` |
+| Título da aba e compartilhamento | `<head>` (`<title>`, `meta description`, `og:*`) | Textos e `og:image` |
+| Foto | `<picture>` no cabeçalho | `assets/avatar-160.webp/.jpg` e `avatar-320.webp/.jpg` (recorte quadrado; o círculo é feito no CSS). Favicon: `assets/favicon-64.png` e `apple-touch-icon.png` |
+| Nome e cargo | `.top-name` | "Pedro Medeiros" / "Product Designer" |
+| Idiomas | `<nav class="lang-switch">` | Bandeiras BR/US; a do idioma da página tem `aria-current="true"` (fica colorida) |
+| Título e intro | `<section class="hero">` | 3 parágrafos; o 1º é o título (peso 600). Destaque em laranja: `<span class="hl">…</span>` |
+| Empresas na intro | `.brand` | Nome, link e logo (`assets/logos/…`); mantenha `class="invert-dark"` em logos escuros |
+| Redes | `<ul class="socials">` | X, Behance e e-mail (`href`); o LinkedIn fica só no botão de Contato |
+| Contato | `.contact-block` | WhatsApp: `phone=5531971361175` e `text=…` (mensagem em pt e en); LinkedIn: URL |
+| Atalhos de seção | `<nav class="section-nav">` | Pílulas com `href="#id-da-seção"`; o `soon-tag` marca "em breve" |
+| Projetos | `<section id="projetos">` | Um `<li>` por projeto: miniatura (`.work-thumb img`), nome, descrição, categoria (`work-tag`), ano (`work-year`), link. Atualize o contador `<small>` |
+| Cases | `<section id="cases">` | Igual. Itens com `data-extra hidden` aparecem após "Ver mais". Case 01/02 apontam para `/projetos/case-0X/` |
+| Insights | `<section id="insights">` | Hoje "Em breve" (`.soon-box`). O comentário no HTML mostra a estrutura de item (`.insight-list`) |
+| Empresas | `<ul class="logo-grid">` | Um `<li data-name="…">` por empresa (o nome vira tooltip) |
+| Cemitério | `<section id="cemiterio">` | Frase de abertura (`.block-lede`) e um `<li>` por item: ícone (`assets/cemiterio/`), nome riscado (`<s class="grave-name">`), descrição |
+| Experiência / GitHub | seções com `hidden` | Ocultas; remova `hidden` para exibir |
+| Rodapé | `<footer class="foot">` | Nome/ano; relógio em America/Sao_Paulo |
+| Cores, fontes, espaços | `styles.css`, seção 1 | Ver `DESIGN.md` e `/design/` |
 
 ## Páginas de case
 
@@ -68,6 +70,20 @@ Arquivos: `projetos/case-01/index.html`, `projetos/case-02/index.html` e as cóp
 Para criar o Case 03: copie a pasta `projetos/case-01/` (e a de `en/`), troque os textos e imagens,
 aponte o `href` da linha na home e ajuste o `up-next` dos cases vizinhos.
 
+## Marca, tema e fonte
+
+- **Cor de ação:** laranja `#FF5E00` (`--accent`), texto branco no botão principal. Laranja em texto: `--accent-text`.
+- **Tema:** só escuro por enquanto (`--bg: #121110`, off-black quente). O tema claro segue no CSS; para reativar, volte a ler
+  `localStorage` em `theme-init.js` e devolva um botão de troca.
+- **Fonte:** Manrope (`--font-sans`) + Geist Mono para números e etiquetas.
+
+## Conteúdo no Obsidian
+
+Os textos também existem em Markdown no cofre do Obsidian do Pedro, com cópia em `content/`:
+`Home.md`, `Cases/Case 01.md`, `Cases/Case 02.md`, os modelos `Cases/_Modelo - Case*.md` e
+`Insights/_Modelo - Insight.md`. O site **não** lê esses arquivos sozinho: quando o `Home.md` muda,
+as alterações são aplicadas no HTML (pt e en) e publicadas.
+
 ## Design system
 
 - **`DESIGN.md`**: todos os valores (cores claro/escuro, tipografia, espaçamentos, raios, sombras,
@@ -78,18 +94,13 @@ aponte o `href` da linha na home e ajuste o `up-next` dos cases vizinhos.
 
 ## Recursos
 
-- **Tema claro/escuro** com persistência (`localStorage`) e sem flash do tema errado (`theme-init.js`).
-- **Idioma**: bandeira no cabeçalho alterna entre `/` e `/en/`.
+- **Idioma**: bandeiras no cabeçalho alternam entre `/` e `/en/` (e entre as versões de cada case).
+- **Pílulas de seção** no topo da coluna direita: rolagem suave e seção atual no estilo do botão principal (branco). Escondidas no celular/tablet (< 1024px). Botões não usam laranja.
 - **Relógio** local (horário de Brasília) no rodapé.
-- **Preview da capa** que segue o cursor nos projetos/cases (só com mouse). No toque aparece a miniatura.
 - **Ver mais** revela os cases extras.
-- **Inspetor** (botão `</>` no canto inferior esquerdo, só desktop): camadas de layout, espaçamentos, cores e componentes.
-- **Loader de construção**: na primeira visita a página é desenhada como planta antes do conteúdo
-  (adicione `?build` na URL para ver de novo). Tem fallback se o script atrasar.
-- **Playground** com diálogo que amplia a peça.
-- **Vídeos de capa** (opcional): use `<video data-autoplay muted loop playsinline poster="…">`.
-- Respeita `prefers-reduced-motion`.
-- **Analytics**: desligado. Há um espaço comentado em `main.js` e no `<head>`.
+- **Vídeos de capa** (opcional): `<video data-autoplay muted loop playsinline poster="…">`.
+- Entrada suave dos blocos (`.fade-in`); respeita `prefers-reduced-motion`.
+- **Analytics**: desligado (espaço comentado em `main.js` e no `<head>`).
 
 ## Rodar localmente
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +8,14 @@
   <meta property="og:title" content="Pedro Medeiros | Product Designer">
   <meta property="og:description" content="Product Designer no Brasil. Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
   <meta property="og:image" content="/assets/covers/projeto-01.svg">
-  <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#121110">
   <link rel="alternate" hreflang="pt-BR" href="/">
   <link rel="alternate" hreflang="en" href="/en/">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
   <script src="/theme-init.js"></script>
   <script src="/main.js" defer></script>
   <!-- Analytics: desligado. Adicione o script do provedor aqui quando quiser medir visitas. -->
@@ -24,116 +24,135 @@
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <div class="shell">
+  <div class="shell shell--split">
+    <!-- COLUNA DA ESQUERDA (fixa no desktop): cabeçalho, intro, redes e contato -->
+    <div class="side">
     <header class="top fade-in" style="--n:0">
       <a class="top-id" href="/">
-        <!-- FOTO: troque /assets/avatar.svg pela sua foto (ex.: /assets/avatar.webp, 88×88 ou maior) -->
-        <img class="avatar" src="/assets/avatar.svg" alt="Foto de Pedro Medeiros" width="44" height="44">
+        <!-- FOTO: /assets/avatar-160.webp (1×) e avatar-320.webp (2×); JPG como reserva -->
+        <picture>
+          <source type="image/webp" srcset="/assets/avatar-160.webp 1x, /assets/avatar-320.webp 2x">
+          <img class="avatar" src="/assets/avatar-160.jpg" srcset="/assets/avatar-160.jpg 1x, /assets/avatar-320.jpg 2x" alt="Foto de Pedro Medeiros" width="44" height="44">
+        </picture>
         <span class="top-name">
           <strong>Pedro Medeiros</strong>
           <span>Product Designer</span>
         </span>
       </a>
       <div class="top-tools">
-        <nav class="menu" aria-label="Principal"><a href="/playground/">Playground</a></nav>
-        <a class="ghost-btn lang-btn" href="/en/" hreflang="en" lang="en" title="Read in English" aria-label="Read in English"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="#fff"/><g fill="#b22234"><rect x="1.5" y="4.5" width="29" height="2.6"/><rect x="1.5" y="9.8" width="29" height="2.6"/><rect x="1.5" y="15.1" width="29" height="2.6"/><rect x="1.5" y="20.4" width="29" height="2.6"/><rect x="1.5" y="25" width="29" height="2.5"/></g><rect x="1.5" y="4.5" width="14" height="12.4" fill="#3c3b6e"/><g fill="#fff"><circle cx="4.5" cy="7.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="12.5" cy="7.5" r=".8"/><circle cx="6.5" cy="10.5" r=".8"/><circle cx="10.5" cy="10.5" r=".8"/><circle cx="4.5" cy="13.5" r=".8"/><circle cx="8.5" cy="13.5" r=".8"/><circle cx="12.5" cy="13.5" r=".8"/></g><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="none" stroke="#000" stroke-opacity=".15"/></svg></a>
-        <button class="ghost-btn theme-btn" type="button" data-theme-btn aria-label="Alternar tema claro e escuro">
-          <svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.6 9.6A5.6 5.6 0 0 1 6.4 2.4a5.6 5.6 0 1 0 7.2 7.2Z"/></svg>
-          <svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="2.9"/><path d="M8 1.6v1.3M8 13.1v1.3M1.6 8h1.3M13.1 8h1.3M3.5 3.5l.9.9M11.6 11.6l.9.9M3.5 12.5l.9-.9M11.6 4.4l.9-.9"/></svg>
-        </button>
+        <nav class="lang-switch" aria-label="Idioma">
+          <a class="ghost-btn" href="/" hreflang="pt-BR" lang="pt-BR" title="Português" aria-label="Português" aria-current="true"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="#009c3b"/><path d="M16 7.5 27.5 16 16 24.5 4.5 16Z" fill="#ffdf00"/><circle cx="16" cy="16" r="5" fill="#002776"/><path d="M11.2 15.1c3.2-.6 6.6 0 9.6 1.7" stroke="#fff" stroke-width=".9" fill="none"/><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="none" stroke="#000" stroke-opacity=".15"/></svg></a>
+          <a class="ghost-btn" href="/en/" hreflang="en" lang="en" title="English" aria-label="English"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="#fff"/><g fill="#b22234"><rect x="1.5" y="4.5" width="29" height="2.6"/><rect x="1.5" y="9.8" width="29" height="2.6"/><rect x="1.5" y="15.1" width="29" height="2.6"/><rect x="1.5" y="20.4" width="29" height="2.6"/><rect x="1.5" y="25" width="29" height="2.5"/></g><rect x="1.5" y="4.5" width="14" height="12.4" fill="#3c3b6e"/><g fill="#fff"><circle cx="4.5" cy="7.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="12.5" cy="7.5" r=".8"/><circle cx="6.5" cy="10.5" r=".8"/><circle cx="10.5" cy="10.5" r=".8"/><circle cx="4.5" cy="13.5" r=".8"/><circle cx="8.5" cy="13.5" r=".8"/><circle cx="12.5" cy="13.5" r=".8"/></g><rect x="1.5" y="4.5" width="29" height="23" rx="4" fill="none" stroke="#000" stroke-opacity=".15"/></svg></a>
+        </nav>
       </div>
     </header>
 
-    <main id="conteudo">
-      <!-- INTRO: texto principal, destaques em serif e empresas -->
+      <!-- INTRO: o 1º parágrafo é o "título" (peso 600); destaques com class="hl" ficam em laranja -->
       <section class="hero fade-in" style="--n:1">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <span class="serif">sed do eiusmod tempor incididunt.</span></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <span class="hl">sed do eiusmod tempor incididunt.</span></p>
         <p>São mais de 00 anos em lorem ipsum, dolor sit amet e consectetur adipiscing, da ideia à interface em uso. Hoje sou product designer na <a class="brand" href="#"><img class="invert-dark" src="/assets/logos/empresa-a.svg" alt="">Empresa A</a>, onde ut enim ad minim veniam, quis nostrud exercitation.</p>
         <p>Meu último cargo foi Lorem Designer na <a class="brand" href="#"><img class="invert-dark" src="/assets/logos/empresa-b.svg" alt="">Empresa B</a>, onde duis aute irure dolor in reprehenderit. Antes passei pela <span class="brand"><img class="invert-dark" src="/assets/logos/empresa-c.svg" alt="">Empresa C</span> e pela <span class="brand"><img class="invert-dark" src="/assets/logos/empresa-d.svg" alt="">Empresa D</span>. Excepteur sint occaecat cupidatat non proident.</p>
 
-        <!-- REDES: troque os href (LinkedIn é o principal) -->
+        <!-- REDES: X, Behance e e-mail (o LinkedIn fica só no botão de Contato) -->
         <ul class="socials">
-          <li><a class="ghost-btn" href="https://www.linkedin.com/in/placeholder" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="2"/><path d="M5.5 7.2v3.6M5.5 5.2v.01M8 10.8V7.2m0 1.7c0-1.3 2.6-1.8 2.6.1v1.8"/></svg></a></li>
-          <li><a class="ghost-btn" href="#" aria-label="Dribbble"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="M4.4 3.7c2.2 1.8 3.4 4.2 3.7 7.2M2.6 7.4c3 0 5.5-.9 8-3.1M5.7 12.6c.8-2.2 2.5-3.9 5.8-4.4"/></svg></a></li>
-          <li><a class="ghost-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="3.2"/><circle cx="8" cy="8" r="2.4"/><path d="M11.2 4.8h.01"/></svg></a></li>
-          <li><a class="ghost-btn" href="#" aria-label="Behance"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5h3.2a1.7 1.7 0 0 1 0 3.4H2Zm0 3.4h3.6a1.8 1.8 0 0 1 0 3.6H2Z"/><path d="M9.5 9.4h4.4a2.2 2.2 0 1 0-.6 1.7M10 5h3"/></svg></a></li>
-          <li><a class="ghost-btn" href="mailto:contato@exemplo.com" aria-label="E-mail"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.6"/><path d="m2.6 4.6 5.4 3.9 5.4-3.9"/></svg></a></li>
+          <li><a class="ghost-btn" href="https://x.com/themedeiross" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.33 6.93 14.13 1.5h-1.14L8.82 6.22 5.5 1.5H1.66l5.03 7.16-5.03 5.69H2.8l4.4-4.97 3.51 4.97h3.84L9.33 6.93Zm-1.56 1.76-.51-.71L3.2 2.34h1.75l3.27 4.58.51.71 4.26 5.96h-1.75L7.77 8.69Z"/></svg></a></li>
+          <li><a class="ghost-btn" href="https://www.behance.net/pedromedeiros1" target="_blank" rel="noopener noreferrer" aria-label="Behance" title="Behance"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5h3.2a1.7 1.7 0 0 1 0 3.4H2Zm0 3.4h3.6a1.8 1.8 0 0 1 0 3.6H2Z"/><path d="M9.5 9.4h4.4a2.2 2.2 0 1 0-.6 1.7M10 5h3"/></svg></a></li>
+          <li><a class="ghost-btn" href="mailto:pedr.henrique16medeiros@gmail.com" aria-label="E-mail" title="E-mail"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.6"/><path d="m2.6 4.6 5.4 3.9 5.4-3.9"/></svg></a></li>
         </ul>
       </section>
 
-      <!-- PROJETOS: um <li> por projeto. data-cover = imagem do preview que segue o cursor -->
-      <section class="block fade-in" style="--n:2" aria-labelledby="projetos">
-        <h2 class="block-title" id="projetos">Projetos <small>02</small></h2>
+      <!-- CONTATO: WhatsApp (principal) e LinkedIn (secundário) -->
+      <section class="block contact-block fade-in" style="--n:2" aria-labelledby="contato-titulo">
+        <h2 class="block-title" id="contato-titulo">Contato</h2>
+        <div class="cta-row">
+          <a class="cta cta--main" href="https://api.whatsapp.com/send?phone=5531971361175&amp;text=Ol%C3%A1%20Pedro%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 13.8 3 10.9A5.9 5.9 0 1 1 5.2 13Z"/><path d="M6 5.6c.2-.4.6-.5.9-.2l.6 1.2c.1.3 0 .5-.2.7l-.3.3c.4.8 1 1.4 1.8 1.8l.3-.3c.2-.2.5-.3.7-.2l1.2.6c.3.2.2.7-.2.9-.6.4-1.3.5-2 .2A5.3 5.3 0 0 1 5.8 7.6c-.3-.7-.2-1.4.2-2Z" fill="currentColor" stroke="none"/></svg>
+            Chamar no WhatsApp
+          </a>
+          <a class="cta" href="https://www.linkedin.com/in/thepedromedeiros/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.6 2.2a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM2.4 6h2.4v7.6H2.4Zm3.9 0h2.3v1c.4-.7 1.3-1.2 2.4-1.2 2.2 0 2.7 1.4 2.7 3.3v4.5h-2.4v-4c0-1-.1-2.1-1.3-2.1-1.3 0-1.5 1-1.5 2v4.1H6.3Z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- COLUNA DA DIREITA (rola): atalhos, projetos, cases, insights, empresas, cemitério e rodapé -->
+    <div class="flow">
+      <!-- ATALHOS: pílulas que rolam até cada seção (href = id da seção) -->
+      <nav class="section-nav fade-in" style="--n:1" aria-label="Seções" data-section-nav>
+        <a class="cta" href="#projetos">Projetos</a>
+        <a class="cta" href="#cases">Cases</a>
+        <a class="cta" href="#insights">Insights <span class="soon-tag">em breve</span></a>
+        <a class="cta" href="#cemiterio">Cemitério</a>
+      </nav>
+
+    <main id="conteudo">
+      <!-- PROJETOS: um <li> por projeto. A miniatura fica em /assets/covers/ -->
+      <section class="block fade-in" style="--n:2" id="projetos" aria-labelledby="projetos-titulo">
+        <h2 class="block-title" id="projetos-titulo">Projetos – O que estou construindo <small>02</small></h2>
         <ul class="rows work-list" id="projetos-lista">
           <li>
-            <a class="work" href="#" data-cover="/assets/covers/projeto-01.svg">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-01.svg" alt="" width="88" height="66" loading="lazy" decoding="async"></span>
-              <span class="work-year mono">0000</span>
+            <a class="work" href="#">
+              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-01.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
               <span class="work-info"><span class="work-name">Projeto 01</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</span></span>
-              <span class="work-tag">Categoria</span>
+              <span class="work-meta"><span class="work-tag">Categoria</span><span class="work-year mono">0000</span></span>
             </a>
           </li>
           <li>
-            <a class="work" href="#" data-cover="/assets/covers/projeto-02.svg">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-02.svg" alt="" width="88" height="66" loading="lazy" decoding="async"></span>
-              <span class="work-year mono">0000</span>
+            <a class="work" href="#">
+              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-02.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
               <span class="work-info"><span class="work-name">Projeto 02</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</span></span>
-              <span class="work-tag">Categoria</span>
+              <span class="work-meta"><span class="work-tag">Categoria</span><span class="work-year mono">0000</span></span>
             </a>
           </li>
         </ul>
       </section>
 
       <!-- CASES: itens com data-extra hidden só aparecem ao clicar em "Ver mais" -->
-      <section class="block fade-in" style="--n:3" aria-labelledby="cases">
-        <h2 class="block-title" id="cases">Cases <small>06</small></h2>
+      <section class="block fade-in" style="--n:3" id="cases" aria-labelledby="cases-titulo">
+        <h2 class="block-title" id="cases-titulo">Cases <small>06</small></h2>
         <ul class="rows work-list" id="cases-lista">
           <li>
-            <a class="work" href="/projetos/case-01/" data-cover="/assets/covers/projeto-03.svg">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-03.svg" alt="" width="88" height="66" loading="lazy" decoding="async"></span>
-              <span class="work-year mono">0000</span>
+            <a class="work" href="/projetos/case-01/">
+              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-03.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
               <span class="work-info"><span class="work-name">Case 01</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-tag">SaaS · IA</span>
+              <span class="work-meta"><span class="work-tag">SaaS · IA</span><span class="work-year mono">0000</span></span>
             </a>
           </li>
           <li>
-            <a class="work" href="/projetos/case-02/" data-cover="/assets/covers/projeto-04.svg">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-04.svg" alt="" width="88" height="66" loading="lazy" decoding="async"></span>
-              <span class="work-year mono">0000</span>
+            <a class="work" href="/projetos/case-02/">
+              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-04.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
               <span class="work-info"><span class="work-name">Case 02</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-tag">Design System</span>
+              <span class="work-meta"><span class="work-tag">Design System</span><span class="work-year mono">0000</span></span>
             </a>
           </li>
           <li data-extra hidden>
-            <a class="work" href="#" data-cover="/assets/covers/projeto-05.svg">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-05.svg" alt="" width="88" height="66" loading="lazy" decoding="async"></span>
-              <span class="work-year mono">0000</span>
+            <a class="work" href="#">
+              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-05.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
               <span class="work-info"><span class="work-name">Case 03</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-tag">Site institucional</span>
+              <span class="work-meta"><span class="work-tag">Site institucional</span><span class="work-year mono">0000</span></span>
             </a>
           </li>
           <li data-extra hidden>
-            <a class="work" href="#" data-cover="/assets/covers/projeto-06.svg">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-06.svg" alt="" width="88" height="66" loading="lazy" decoding="async"></span>
-              <span class="work-year mono">0000</span>
+            <a class="work" href="#">
+              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-06.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
               <span class="work-info"><span class="work-name">Case 04</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-tag">Web & Mobile App</span>
+              <span class="work-meta"><span class="work-tag">Web & Mobile App</span><span class="work-year mono">0000</span></span>
             </a>
           </li>
           <li data-extra hidden>
-            <a class="work" href="#" data-cover="/assets/covers/projeto-07.svg">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-07.svg" alt="" width="88" height="66" loading="lazy" decoding="async"></span>
-              <span class="work-year mono">0000</span>
+            <a class="work" href="#">
+              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-07.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
               <span class="work-info"><span class="work-name">Case 05</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-tag">Mobile App</span>
+              <span class="work-meta"><span class="work-tag">Mobile App</span><span class="work-year mono">0000</span></span>
             </a>
           </li>
           <li>
-            <a class="work" href="#" data-cover="/assets/covers/projeto-08.svg">
-              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-08.svg" alt="" width="88" height="66" loading="lazy" decoding="async"></span>
-              <span class="work-year mono">0000</span>
+            <a class="work" href="#">
+              <span class="work-thumb" aria-hidden="true"><img src="/assets/covers/projeto-08.svg" alt="" width="144" height="108" loading="lazy" decoding="async"></span>
               <span class="work-info"><span class="work-name">Case 06</span><span class="work-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span></span>
-              <span class="work-tag">Portal</span>
+              <span class="work-meta"><span class="work-tag">Portal</span><span class="work-year mono">0000</span></span>
             </a>
           </li>
         </ul>
@@ -141,8 +160,8 @@
       </section>
 
       <!-- EXPERIÊNCIA: oculta (remova o atributo hidden para exibir) -->
-      <section class="block fade-in" style="--n:3" aria-labelledby="experiencia" hidden>
-        <h2 class="block-title" id="experiencia">Experiência <small>0000 — hoje</small></h2>
+      <section class="block" aria-labelledby="experiencia-titulo" hidden>
+        <h2 class="block-title" id="experiencia-titulo">Experiência <small>0000 — hoje</small></h2>
         <ul class="rows">
           <li>
             <details class="job">
@@ -180,9 +199,21 @@
         </ul>
       </section>
 
+      <!-- INSIGHTS: por enquanto "em breve". Quando houver itens, troque o .soon-box por:
+           <ul class="insight-list">
+             <li><a class="insight" href="/insights/slug/"><time datetime="2026-01-01">01.01.2026</time><span><strong>Título</strong><span>Descrição curta</span></span></a></li>
+           </ul> -->
+      <section class="block fade-in" style="--n:4" id="insights" aria-labelledby="insights-titulo">
+        <h2 class="block-title" id="insights-titulo"><span>Insights <span class="soon-tag">em breve</span></span> <small>00</small></h2>
+        <div class="soon-box">
+          <strong>Em breve</strong>
+          Notas curtas sobre produto, design e o que venho aprendendo pelo caminho. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+      </section>
+
       <!-- EMPRESAS: data-name aparece no tooltip; troque os SVGs em /assets/logos -->
-      <section class="block fade-in" style="--n:4" aria-labelledby="empresas">
-        <h2 class="block-title" id="empresas">Empresas que conhecem meu trabalho <small>20</small></h2>
+      <section class="block fade-in" style="--n:5" aria-labelledby="empresas-titulo">
+        <h2 class="block-title" id="empresas-titulo">Empresas que conhecem meu trabalho <small>20</small></h2>
         <ul class="logo-grid">
           <li data-name="Empresa A"><img src="/assets/logos/empresa-a.svg" alt="Empresa A" loading="lazy" decoding="async"></li>
           <li data-name="Empresa B"><img src="/assets/logos/empresa-b.svg" alt="Empresa B" loading="lazy" decoding="async"></li>
@@ -208,8 +239,8 @@
       </section>
 
       <!-- GITHUB: oculto até decidir (remova hidden para exibir; os dados são de exemplo) -->
-      <section class="block fade-in" style="--n:5" aria-labelledby="github" hidden>
-        <h2 class="block-title" id="github">GitHub <small>000 contribuições no último ano</small></h2>
+      <section class="block" aria-labelledby="github-titulo" hidden>
+        <h2 class="block-title" id="github-titulo">GitHub <small>000 contribuições no último ano</small></h2>
         <div class="gh">
           <div class="gh-months" aria-hidden="true"><span style="grid-column:2">nov</span><span style="grid-column:7">dez</span><span style="grid-column:11">jan</span><span style="grid-column:15">fev</span><span style="grid-column:19">mar</span><span style="grid-column:24">abr</span><span style="grid-column:28">mai</span><span style="grid-column:33">jun</span><span style="grid-column:37">jul</span><span style="grid-column:41">ago</span><span style="grid-column:46">set</span><span style="grid-column:50">out</span></div>
           <div class="gh-cells" role="img" aria-label="Contribuições no GitHub nos últimos 12 meses (dados de exemplo)"><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="1"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="1"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="2"></i><i data-l="4"></i><i data-l="3"></i><i data-l="3"></i><i data-l="1"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="1"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="1"></i><i data-l="1"></i><i data-l="3"></i><i data-l="0"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="4"></i><i data-l="1"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="1"></i><i data-l="0"></i><i data-l="3"></i><i data-l="1"></i><i data-l="0"></i><i data-l="4"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="2"></i><i data-l="3"></i><i data-l="0"></i><i data-l="4"></i><i data-l="1"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="1"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="1"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="3"></i><i data-l="4"></i><i data-l="0"></i><i data-l="4"></i><i data-l="2"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="1"></i><i data-l="2"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="4"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="1"></i><i data-l="3"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="2"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="4"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="2"></i><i data-l="4"></i><i data-l="2"></i><i data-l="1"></i><i data-l="0"></i><i data-l="3"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i><i data-l="1"></i><i data-l="1"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="0"></i><i data-l="4"></i><i data-l="0"></i><i data-l="0"></i></div>
@@ -220,32 +251,44 @@
         </div>
       </section>
 
-      <!-- CONTATO: WhatsApp (principal) e LinkedIn (secundário) -->
-      <section class="block fade-in" style="--n:6" aria-labelledby="contato">
-        <h2 class="block-title" id="contato">Contato</h2>
-        <div class="cta-row">
-          <a class="cta cta--main" href="https://api.whatsapp.com/send?phone=5500000000000&amp;text=Ol%C3%A1%20Pedro" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 13.8 3 10.9A5.9 5.9 0 1 1 5.2 13Z"/><path d="M6 5.6c.2-.4.6-.5.9-.2l.6 1.2c.1.3 0 .5-.2.7l-.3.3c.4.8 1 1.4 1.8 1.8l.3-.3c.2-.2.5-.3.7-.2l1.2.6c.3.2.2.7-.2.9-.6.4-1.3.5-2 .2A5.3 5.3 0 0 1 5.8 7.6c-.3-.7-.2-1.4.2-2Z" fill="currentColor" stroke="none"/></svg>
-            Chamar no WhatsApp
-          </a>
-          <a class="cta" href="https://www.linkedin.com/in/placeholder" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.6 2.2a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM2.4 6h2.4v7.6H2.4Zm3.9 0h2.3v1c.4-.7 1.3-1.2 2.4-1.2 2.2 0 2.7 1.4 2.7 3.3v4.5h-2.4v-4c0-1-.1-2.1-1.3-2.1-1.3 0-1.5 1-1.5 2v4.1H6.3Z"/></svg>
-            LinkedIn
-          </a>
-        </div>
+      <!-- CEMITÉRIO: o que tentei e não deu certo. Ícone em /assets/cemiterio/, nome riscado, descrição curta -->
+      <section class="block fade-in" style="--n:6" id="cemiterio" aria-labelledby="cemiterio-titulo">
+        <h2 class="block-title" id="cemiterio-titulo">Cemitério <small>06</small></h2>
+        <p class="block-lede">Coisas que tentei construir e não deram certo. Lorem ipsum dolor sit amet. Descansem em paz.</p>
+        <ul class="grave-list">
+          <li>
+            <span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-01.svg" alt="" width="36" height="36" loading="lazy" decoding="async"></span>
+            <span class="grave-text"><s class="grave-name">Projeto Alfa</s><span class="grave-desc">Lorem ipsum dolor sit amet</span></span>
+          </li>
+          <li>
+            <span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-02.svg" alt="" width="36" height="36" loading="lazy" decoding="async"></span>
+            <span class="grave-text"><s class="grave-name">Projeto Beta</s><span class="grave-desc">Consectetur adipiscing elit</span></span>
+          </li>
+          <li>
+            <span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-03.svg" alt="" width="36" height="36" loading="lazy" decoding="async"></span>
+            <span class="grave-text"><s class="grave-name">Projeto Gama</s><span class="grave-desc">Sed do eiusmod tempor</span></span>
+          </li>
+          <li>
+            <span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-04.svg" alt="" width="36" height="36" loading="lazy" decoding="async"></span>
+            <span class="grave-text"><s class="grave-name">Projeto Delta</s><span class="grave-desc">Ut enim ad minim veniam</span></span>
+          </li>
+          <li>
+            <span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-05.svg" alt="" width="36" height="36" loading="lazy" decoding="async"></span>
+            <span class="grave-text"><s class="grave-name">Projeto Épsilon</s><span class="grave-desc">Quis nostrud exercitation</span></span>
+          </li>
+          <li>
+            <span class="grave-icon" aria-hidden="true"><img src="/assets/cemiterio/item-06.svg" alt="" width="36" height="36" loading="lazy" decoding="async"></span>
+            <span class="grave-text"><s class="grave-name">Projeto Zeta</s><span class="grave-desc">Duis aute irure dolor</span></span>
+          </li>
+        </ul>
       </section>
     </main>
 
     <footer class="foot">
       <span>Pedro Medeiros © 2026</span>
-      <nav class="foot-menu" aria-label="Rodapé"><a href="/playground/">Playground</a></nav>
       <span class="foot-clock" data-clock>Brasil</span>
     </footer>
+    </div>
   </div>
-
-  <div class="cursor-cover" aria-hidden="true"><img alt=""></div>
-  <button class="ghost-btn inspect-btn" type="button" data-inspect-btn aria-haspopup="menu" aria-expanded="false" aria-label="Inspecionar" title="Inspecionar">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5 1.5 8 5 11.5M11 4.5 14.5 8 11 11.5M9.2 2.8l-2.4 10.4"/></svg>
-  </button>
 </body>
 </html>
