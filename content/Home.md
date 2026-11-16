@@ -109,9 +109,10 @@ No celular vira uma coluna só, nessa mesma ordem. O site está só no tema escu
 | Miniatura                     | Nome   | Descrição                                                                                                      | Categoria | Ano  | Link | Etiqueta |
 | ----------------------------- | ------ | -------------------------------------------------------------------------------------------------------------- | --------- | ---- | ---- | -------- |
 | /assets/covers/projeto-01.svg | Voally | Viaje mais, procure menos. Encontre excursões e bate-voltas tudo num lugar só.                                | SaaS · IA | 2026 | —    | building |
-| /assets/covers/projeto-02.svg | Planly | Organize seus eventos em família sem dor de cabeça. Um organizador de eventos familiares, facilitando a vida de quem fica responsável. | SaaS · IA | 2026 | —    | building |
+| /assets/covers/projeto-02.svg | Planly  | Organize seus eventos em família sem dor de cabeça. Um organizador de eventos familiares, facilitando a vida de quem fica responsável. | SaaS · IA          | 2026 | —    | building |
+| /assets/covers/bustime.png    | BusTime | Os próximos ônibus direto no pulso, em tempo real. App para relógios Garmin, com previsão ao vivo e fallback para a programação.      | Garmin · Connect IQ | 2026 | —    | building |
 
-%% Miniatura: imagem horizontal 4:3 (ex.: 288×216). Ela é cortada para caber. %%
+%% Miniatura: imagem horizontal 4:3 (ex.: 288×216). Ela é cortada para caber. A do BusTime é uma captura real; as outras seguem como placeholder. %%
 
 ---
 
